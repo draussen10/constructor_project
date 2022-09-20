@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=v, initial-scale=1.0">
+			<link rel="stylesheet" href="tilda.css">
+			<link rel="stylesheet" href="index.css">
+      <title>Document</title>
+   </head>
+   <body>
+		<div class="my-container">
+			<section>
+				 <div class="constructor">
+						<div class="leftSide">
+							 <div class="category">
+									<div add-price="4300" category="bathrobe" class="active">Халат</div>
+									<div add-price="1200">Автонакидка</div>
+									<div add-price="1850">Подушка</div>
+							 </div>
+							 <section class="container">
+									<div class="addition">
+										 <div addition="noHood" class="active">Без капюшона</div>
+										 <div addition="hood" add-price="500">С капюшоном</div>
+									</div>
+							 </section>
+							 <section class="container">
+									<div class="title">
+										 <h3 class="size-title">Размер</h3>
+										 <span class="popup-size-list">Смотреть таблицу размеров</span>
+									</div>
+									
+									<div class="size">
+										 <div from-category="bathrobe">
+											<span  size-id="1" size="42-44(S)" class="active">42-44<br>(S)</span> 
+											<span  size-id="2" size="46-48(M)">46-48<br>(M)</span> 
+											<span  size-id="3" size="50-52(L)">50-52<br>(L)</span> 
+											<span  size-id="4" size="54-56(XL)">54-56<br>(XL)</span> 
+											<span  size-id="5" size="58-60(XXL)">58-60<br>(XXL)</span> 
+										</div>
+
+										<div class="size62">
+											<div class="size62">Если халат больше 60 размера, укажите размер тут и мы с вами свяжемся</div>
+											<form action=""><input name="size60-height" placeholder="Ваш размер / Рост см"></form>
+										</div>
+
+									</div>
+							 </section>
+							 <section class="container">
+									<div class="title">
+										 <h3>Ткань</h3>
+									</div>
+									<div class="cloth" from-category="bathrobe"><span cloth="Махровый" add-price="4300" class="active">Махровый</span> <span cloth="Велюровый" add-price="5200">Велюровый</span> <span cloth="Вафельный" add-price="5100">Вафельный</span></div>
+									<div class="cloth" from-category="pillow" style="display: none">
+										<span cloth="Велюр" add-price="1850">Велюр</span> 
+										<span cloth="Алькантара" add-price="2100">Алькантара</span></div>
+							 </section>
+							 <section class="container">
+									<div class="title">
+										 <h3>Вышивка спереди</h3>
+									</div>
+									<div class="front-text" from-category="all"><span cloth="Нет" class="active">Нет</span> <span cloth="Вышивка спереди" add-price="300">ДА</span></div>
+							 </section>
+							 <div class="colors-container">
+									<section class="container">
+										 <div class="title">
+												<h3>Цвет изделия</h3>
+										 </div>
+										 <div from-category="bathrobe" gender="adult" material="terry" class="color">
+											<span color-name="Белый" image-variable="white" style="background-color: white" class="active"></span> 
+											<span color-name="Серый" image-variable="gray" style="background-color: gray"></span> 
+											<span color-name="Чёрный" image-variable="black" style="background-color: black"></span> 
+											<span color-name="Шоколадный" image-variable="brown" style="background-color: SaddleBrown"></span> 
+											<span color-name="Синий" image-variable="blue" style="background-color: blue"></span> 
+											<span color-name="Тёмносиний" image-variable="darkBlue" style="background-color: darkblue"></span> 
+											<span color-name="Бордовый" image-variable="bord" style="background-color: darkred"></span>
+										</div>
+										<div from-category="towel" class="color" style="display: none">
+											<span color-name="Белый" image-variable="white" style="background-color: white"></span> 
+											<span color-name="Чёрный" image-variable="black" style="background-color: black"></span> 
+											<span color-name="Шоколадный" image-variable="brown" style="background-color: SaddleBrown"></span> 
+											<span color-name="Синий" image-variable="blue" style="background-color: blue"></span> 
+											<span color-name="Розовый" image-variable="pink" style="background-color: pink"></span> 
+											<span color-name="Тёмносиний" image-variable="darkBlue" style="background-color: darkblue"></span> 
+											<span color-name="Vinous" image-variable="vinous" style="background-color: #9c0505"></span> 
+											<span color-name="Crimson" image-variable="crimson" style="background-color: #DC143C"></span>
+										</div>
+										 <div from-category="pillow" material="flock" class="color" style="display: none">
+											<span color-name="Чёрный" image-variable="black" style="background-color: black"></span> 
+											<span color-name="Синий" image-variable="blue" style="background-color: blue"></span> 
+											<span color-name="Бежевый" image-variable="beige" style="background-color: beige"></span> 
+											<span color-name="Оранжевый" image-variable="orange" style="background-color: orange"></span>
+										</div>
+									</section>
+									<section class="container">
+										 <div class="title">
+												<h3>Цвет вышивки</h3>
+										 </div>
+										 <div class="colorEmbroidery">
+											<span color-variable="black" style="background-color: black" class="active"></span> 
+											<span color-variable="white" style="background-color: white"></span> 
+											<span color-variable="pink" style="background-color: pink"></span> 
+											<span color-variable="orange" style="background-color: orange"></span> 
+											<span color-variable="purple" style="background-color: purple"></span> 
+											<span color-variable="red" style="background-color: red"></span> 
+											<span color-variable="darkblue" style="background-color: darkblue"></span>
+										</div>
+									</section>
+							 </div>
+							 <section class="container">
+									<div class="title">
+										 <h3>Рисунки</h3>
+									</div>
+									<div class="imageButton"><span class="image1">Верхний рисунок</span> <span class="image2">Нижний рисунок</span></div>
+							 </section>
+							 <div class="userfont-container">
+									<section class="container">
+										 <div class="title">
+												<h3>Текст вышивки</h3>
+										 </div>
+										 <div><textarea name="userText" id="userText" cols="30" rows="9" placeholder="Ваш текст">Мой текст</textarea></div>
+									</section>
+									<section class="container">
+										 <div class="title">
+												<h3>Выберите шрифт</h3>
+										 </div>
+										 <div class="userFont">
+											<span style="font-family: 'Alexander'" class="active">Alexander</span> 
+											<span style="font-family: 'Arlekino'">Arlekino</span> 
+											<span style="font-family: 'BatmanForeverAlternative'">BatmanForeverAlternative</span> 
+											<span style="font-family: 'Boyarsky'">Boyarsky</span> 
+											<span style="font-family: 'Cleopatra'">Cleopatra</span> 
+											<span style="font-family: 'DisneyPark'">DisneyPark</span> 
+											<span style="font-family: 'Drevnerusskij'">Drevnerusskij</span> 
+											<span style="font-family: 'Gelatina Elemente'">Gelatina Elemente</span> 
+											<span style="font-family: 'Izhitsa'">Izhitsa</span> 
+											<span style="font-family: 'Jacoba'">Jacoba</span>
+
+											<span style="font-family: 'Lobster'">Lobster</span> 
+											<span style="font-family: 'Magnolia'">Magnolia</span> 
+											<span style="font-family: 'Majestic'">Majestic</span> 
+											<span style="font-family: 'Marutya'">Marutya</span> 
+											<span style="font-family: 'Mon_Amour_One'">Mon_Amour_One</span> 
+											<span style="font-family: 'Mon_Amour_Two'">Mon_Amour_Two</span> 
+											<span style="font-family: 'Monotype_Corsiva'">Monotype_Corsiva</span> 
+											<span style="font-family: 'NautilusPompilius'">NautilusPompilius</span> 
+											<span style="font-family: 'Painter'">Painter</span> 
+											<span style="font-family: 'PopularScript'">PopularScript</span>
+											<span style="font-family: 'RupsterScriptFree'">RupsterScriptFree</span> 
+											<span style="font-family: 'Tango'">Tango</span>
+										</div>
+									</section>
+							 </div>
+						</div>
+						<div class="rightSide">
+							 <div class="userImage1"></div>
+							 <span class="userText" style="font-family: Lobster;">Мой текст</span>
+							 <div class="userImage2"></div>
+							 <div class="additionHoodBox" style="display: none"></div>
+							 <div class="imageBox" style="background-image: url(&quot;https://storage.yandexcloud.net/rtme-public-for-cdn/bathrobe/c3717bbc2f5fdcceae24.png&quot;);"></div>
+							 <div class="formWrapper">
+									<form action="" id="form-order">
+										 <input name="where-talk" placeholder="Где удобнее общаться"> <input name="data-contact" placeholder="Данные для связи"> <input class="inputHidden" name="category" placeholder="category"> <input class="inputHidden" name="gender" placeholder="gender"> <input class="inputHidden" name="addition" placeholder="addition"> <input class="inputHidden" name="size" placeholder="size"> <input class="inputHidden" name="height" placeholder="height"> <input class="inputHidden" name="cloth" placeholder="cloth"> <input class="inputHidden" name="color" placeholder="color"> <input class="inputHidden" name="user-text" placeholder="user-text"> <input class="inputHidden" name="front-text" placeholder="front-text"> <input class="inputHidden" name="user-text-size" placeholder="user-text-size"> <input class="inputHidden" name="user-category-1" placeholder="user-category-1"> <input class="inputHidden" name="user-image-1" placeholder="user-image-1"> <input class="inputHidden" name="user-category-2" placeholder="user-category-2"> <input class="inputHidden" name="user-image-2" placeholder="user-image-2"> <input class="inputHidden" name="user-font" placeholder="user-font"> <input class="inputHidden" name="user-color" placeholder="user-color"> <input class="inputHidden" name="final-price" placeholder="final-price">
+										 <div class="money"><span>Расчёт стоимости: </span><span class="calc-value">4300 руб.</span></div>
+										 <button style="background: rgb(176, 138, 57); color: rgb(255, 255, 255); font-weight: 600;">Оформить заказ</button>
+									</form>
+							 </div>
+						</div>
+				 </div>
+			</section>
+ </div>
+ 
+	<div class="popupImage1" style="display: none">
+		 <div class="close"><span>✕</span></div>
+		 <div class="filterImage"></div>
+		 <div class="imageList"></div>
+	</div>
+	<div class="popupSizeList" style="display: none">
+		 <div class="close"><span>✕</span></div>
+		 <div class="size-list">
+				<div class="size-row">
+					 <div class="title">Мужская таблица размеров</div>
+					 <div class="list">
+							<div class="col"><span>Межд. Размер</span> <span>XS</span> <span>S</span> <span>M-L</span> <span>XL-2XL</span> <span>2XL-3XL</span> <span>3XL-BXL</span></div>
+							<div class="col"><span>Российский размер</span> <span>40-42</span> <span>44-46</span> <span>48-50</span> <span>52-54</span> <span>56-58</span> <span>60-62</span></div>
+							<div class="col"><span>Обхват груди</span> <span>78-85</span> <span>86-93</span> <span>94-101</span> <span>102-109</span> <span>110-117</span> <span>118-125</span></div>
+							<div class="col"><span>Обхват бёдер</span> <span>64-73</span> <span>74-81</span> <span>82-89</span> <span>90-99</span> <span>100-109</span> <span>110-119</span></div>
+					 </div>
+				</div>
+				<div class="size-row">
+					 <div class="title">Женская таблица размеров</div>
+					 <div class="list">
+							<div class="col"><span>Межд. Размер</span> <span>2XS-XS</span> <span>S-M</span> <span>L-XL</span> <span>2XL-3XL</span> <span>BXL-BXXL</span> <span>BXXL+</span></div>
+							<div class="col"><span>Российский размер</span> <span>40-42</span> <span>44-46</span> <span>48-50</span> <span>52-54</span> <span>56-58</span> <span>60-62</span></div>
+							<div class="col"><span>Обхват груди</span> <span>78-85</span> <span>86-94</span> <span>94-102</span> <span>102-110</span> <span>110-118</span> <span>118-126</span></div>
+							<div class="col"><span>Обхват бёдер</span> <span>84-92</span> <span>92-100</span> <span>100-108</span> <span>108-116</span> <span>116-124</span> <span>124-132</span></div>
+					 </div>
+				</div>
+				<div class="size-row">
+					 <div class="title">Детская таблица размеров</div>
+					 <div class="list">
+							<div class="col"><span>Размер</span> <span>26</span> <span>26</span> <span>26-28</span> <span>28</span> <span>28-30</span> <span>30</span> <span>30-32</span> <span>32</span> <span>34</span> <span>36</span> <span>38</span></div>
+							<div class="col"><span>Возраст</span> <span>2 года</span> <span>3 года</span> <span>4 года</span> <span>5 лет</span> <span>6 лет</span> <span>7 лет</span> <span>8 лет</span> <span>9 лет</span> <span>10 лет</span> <span>11 лет</span> <span>12 лет</span></div>
+							<div class="col"><span>Обхват груди</span> <span>52</span> <span>56</span> <span>56</span> <span>60</span> <span>60</span> <span>64</span> <span>64</span> <span>68</span> <span>72</span> <span>76</span> <span>80</span></div>
+							<div class="col"><span>Обхват бёдер</span> <span>92</span> <span>92-98</span> <span>98-104</span> <span>104-110</span> <span>110-116</span> <span>116-122</span> <span>122-128</span> <span>128-134</span> <span>134-140</span> <span>140-146</span> <span>146-152</span></div>
+					 </div>
+				</div>
+		 </div>
+	</div>
+ 
+	<div class="popupImage2">
+		 <div class="filterImage2"></div>
+		 <div class="imageList2"></div>
+	</div>
+ 
+   </body>
+</html>
