@@ -215,10 +215,10 @@ const watch = (array, valueOfObject) => {
 				keyOrder(order.category)
 				setActiveItemToFirst()
 				viewLeftDivs()
+				updateView()
 			}
 		}
 	})
-	updateView()
 	showObjectInConsole()
 }
 
