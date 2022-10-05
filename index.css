@@ -554,6 +554,7 @@ textarea {
 }
 
 .filterImage {
+	max-width: 95%;
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 30px;
@@ -607,23 +608,20 @@ textarea {
 
 .close {
 	position: fixed;
-	top: 15px;
-	right: 50%;
+	top: 40px;
+	left: 46%;
 	margin-left: auto;
 	width: 40px;
 	height: 40px;
 	transition: .3s;
-	background: #fff;
-	color: #000;
+	background: red;
+	color: #fff;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
-	border-radius: 50px
-}
-
-.close:hover {
-	background: #b08a39
+	border-radius: 50px;
+	z-index: 1000;
 }
 
 .close span {
@@ -758,6 +756,29 @@ textarea {
 	.rightSide {
 		top: -100px
 	}
+
+	.popupImage1, .popupImage2 {
+		width: 100%;
+		padding: 10px;
+	}
+
+	.filterImage {
+		width: 87%;
+	}
+
+	.close {
+		top: 7px;
+		right: 1%;
+		width: 50px;
+		height: 50px;
+		color: #fff;
+		background-color: red;
+		display: flex;
+		font-size: 18px;
+		
+		align-items: center;
+		justify-content: center;
+	}
 }
 
 @media(max-width: 414px) {
@@ -765,10 +786,9 @@ textarea {
 		width: 370px
 	}
 
-	.popupImage1 {
-		width: 100%
+	.imageList div {
+    width: 20%;
 	}
-
 	.imageButton span {
 		margin-bottom: 10px
 	}
@@ -939,7 +959,7 @@ span[plus=silver]::before {
 		width: 100%;
 	}
 	span {
-		margin-bottom: 10px;
+		margin-bottom: 5px;
 	}
 	section{
 		padding: 15px;
