@@ -77,6 +77,12 @@ section p {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between
+
+}
+
+.userFont {
+	font-family: 'for-constructor';
+	font-size: 20px;
 }
 
 @media(max-width: 768px) {
@@ -257,17 +263,19 @@ section p {
 	background: #000;
 	color: #fff;
 	padding: 12px;
-	width: 26.6666666667%;
+	width: 44%;
 	border-radius: 50px;
 	cursor: pointer;
-	text-decoration: none
+	text-decoration: none;
+	margin-bottom: 10px;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 980px) {
 	.category div {
-		width: 23.3333333333%
+		width: 40%
 	}
 }
+
 
 .category div:hover {
 	background: #b08a39;
@@ -321,6 +329,7 @@ section p {
 
 .userFont span {
 	width: 100%;
+	height: 40px;
 }
 
 .gender div::before,
@@ -344,6 +353,14 @@ section p {
 	height: 20px;
 	border: 1px solid #000;
 	border-radius: 50px
+}
+
+.userFont span::before{
+	top: 10px;
+}
+
+.userFont > span:nth-child(6):before {
+	top: 15px;
 }
 
 .gender .active::before,
@@ -460,9 +477,11 @@ section p {
 
 .color .active,
 .colorEmbroidery .active {
-	border-color: #000;
+	border: #000 3px solid;
 	outline-style: auto;
-	outline-offset: -1px
+	outline-offset: -2px;
+	width: 30px;
+	height: 30px;
 }
 
 .imageButton {
@@ -512,7 +531,7 @@ section p {
 
 textarea {
 	width: 93%;
-	padding: 10px;
+	padding: 15px;
 	border-radius: 25px
 }
 
@@ -522,7 +541,7 @@ textarea {
 	}
 }
 
-.popupImage1 {
+.popupImage1, .popupImage2 {
 	background-color: beige;
 	position: fixed;
 	width: 45%;
@@ -534,16 +553,14 @@ textarea {
 	padding-bottom: 120px
 }
 
-.filterImage,
-.filterImage2 {
+.filterImage {
 	display: flex;
 	flex-direction: row;
 	margin-bottom: 30px;
 	flex-wrap: wrap
 }
 
-.filterImage span,
-.filterImage2 span {
+.filterImage span{
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -555,22 +572,20 @@ textarea {
 	background: #fff
 }
 
-.filterImage .active,
-.filterImage2 .active {
+.filterImage .active{
 	background: #b08a39;
 	border-color: #b08a39;
 	color: #fff
 }
 
-.imageList,
-.imageList2 {
+.imageList {
 	display: flex;
 	flex-direction: row;
-	flex-wrap: wrap
+	flex-wrap: wrap;
+	margin-bottom: 50px;
 }
 
-.imageList div,
-.imageList2 div {
+.imageList div {
 	width: 80px;
 	height: 80px;
 	background-position: center;
@@ -586,8 +601,7 @@ textarea {
 	padding: 10px
 }
 
-.imageList .active,
-.imageList2 .active {
+.imageList .active {
 	border: 2px solid orange
 }
 
@@ -770,7 +784,7 @@ textarea {
 	}
 }
 
-@media(max-width: 320px) {
+@media(max-width: 420px) {
 	.rightSide .formWrapper {
 		width: 240px
 	}
@@ -839,7 +853,7 @@ span[plus=silver]::before {
 
 .delImage1::after,
 .delImage2::after {
-	content: "&times";
+	content: "╳";
 	font-size: 8px;
 	width: 30px;
 	height: 30px;

@@ -6,6 +6,7 @@
       <meta name="viewport" content="width=v, initial-scale=1.0">
 			<link rel="stylesheet" href="tilda.css">
 			<link rel="stylesheet" href="index.css">
+			<link rel="stylesheet" href="fonts.css">
       <title>Document</title>
    </head>
    <body>
@@ -13,25 +14,26 @@
 			<section>
 				 <div class="constructor">
 						<div class="leftSide">
-							 <div class="category">
+							 <div class="category main-category">
 									<div add-price="4300" category="bathrobe" class="active">Халат</div>
-									<div add-price="1200">Автонакидка</div>
-									<div add-price="1850">Подушка</div>
+									<div add-price="1200" category="autonakidka">Автонакидка</div>
+									<div add-price="1850" category="pillow">Подушка</div>
+									<div add-price="1850" category="cap">Кепка</div>
 							 </div>
-							 <section class="container">
+							 <section class="container main-hood">
 									<div class="addition">
 										 <div addition="noHood" class="active">Без капюшона</div>
 										 <div addition="hood" add-price="500">С капюшоном</div>
 									</div>
 							 </section>
-							 <section class="container">
+							 <section class="container main-size">
 									<div class="title">
 										 <h3 class="size-title">Размер</h3>
 										 <span class="popup-size-list">Смотреть таблицу размеров</span>
 									</div>
 									
 									<div class="size">
-										 <div from-category="bathrobe">
+										 <div>
 											<span  size-id="1" size="42-44(S)" class="active">42-44<br>(S)</span> 
 											<span  size-id="2" size="46-48(M)">46-48<br>(M)</span> 
 											<span  size-id="3" size="50-52(L)">50-52<br>(L)</span> 
@@ -50,46 +52,57 @@
 									<div class="title">
 										 <h3>Ткань</h3>
 									</div>
-									<div class="cloth" from-category="bathrobe"><span cloth="Махровый" add-price="4300" class="active">Махровый</span> <span cloth="Велюровый" add-price="5200">Велюровый</span> <span cloth="Вафельный" add-price="5100">Вафельный</span></div>
-									<div class="cloth" from-category="pillow" style="display: none">
+									<div class="cloth bathrobe">
+										<span cloth="Махровый" add-price="4300" class="active">Махровый</span> 
+										<span cloth="Велюровый" add-price="5200">Велюровый</span> 
+										<span cloth="Вафельный" add-price="5100">Вафельный</span>
+									</div>
+									<div class="cloth autonakidka" style="display: none">
+										<span cloth="Алькантара" add-price="2100">Алькантара</span>
 										<span cloth="Велюр" add-price="1850">Велюр</span> 
-										<span cloth="Алькантара" add-price="2100">Алькантара</span></div>
+									</div>
+									<div class="cloth pillow" style="display: none">
+										<span cloth="Алькантара" add-price="0">Алькантара</span>
+									</div>
+									<div class="cloth cap" style="display: none">
+										<span cloth="Алькантара" add-price="0">Алькантара</span>
+									</div>
 							 </section>
-							 <section class="container">
+							 <section class="container main-front-text">
 									<div class="title">
 										 <h3>Вышивка спереди</h3>
 									</div>
-									<div class="front-text" from-category="all"><span cloth="Нет" class="active">Нет</span> <span cloth="Вышивка спереди" add-price="300">ДА</span></div>
+									<div class="front-text" from-category="all">
+										<span frontText="no" class="active">Нет</span> 
+										<span frontText="yes" add-price="300">Да</span>
+									</div>
 							 </section>
-							 <div class="colors-container">
+							 <div class="colors-container main-colors">
 									<section class="container">
 										 <div class="title">
 												<h3>Цвет изделия</h3>
 										 </div>
-										 <div from-category="bathrobe" gender="adult" material="terry" class="color">
-											<span color-name="Белый" image-variable="white" style="background-color: white" class="active"></span> 
-											<span color-name="Серый" image-variable="gray" style="background-color: gray"></span> 
-											<span color-name="Чёрный" image-variable="black" style="background-color: black"></span> 
-											<span color-name="Шоколадный" image-variable="brown" style="background-color: SaddleBrown"></span> 
-											<span color-name="Синий" image-variable="blue" style="background-color: blue"></span> 
-											<span color-name="Тёмносиний" image-variable="darkBlue" style="background-color: darkblue"></span> 
-											<span color-name="Бордовый" image-variable="bord" style="background-color: darkred"></span>
+										 <div class="color bathrobe">
+											<span color="Белый" style="background-color: white" class="active"></span> 
+											<span color="Серый" style="background-color: gray"></span> 
+											<span color="Чёрный" style="background-color: black"></span> 
+											<span color="Шоколадный" style="background-color: SaddleBrown"></span> 
+											<span color="Синий" style="background-color: blue"></span> 
+											<span color="Тёмносиний" style="background-color: darkblue"></span> 
+											<span color="Бордовый" style="background-color: darkred"></span>
+											<span color="Красный" style="background-color: red"></span>
+											<span color="Пудровый" style="background-color: #ffb2d0"></span>
+											<span color="Розовый" style="background-color: pink"></span>
+											<span color="Персиковый" style="background-color: #ffe5b4"></span>
 										</div>
-										<div from-category="towel" class="color" style="display: none">
-											<span color-name="Белый" image-variable="white" style="background-color: white"></span> 
-											<span color-name="Чёрный" image-variable="black" style="background-color: black"></span> 
-											<span color-name="Шоколадный" image-variable="brown" style="background-color: SaddleBrown"></span> 
-											<span color-name="Синий" image-variable="blue" style="background-color: blue"></span> 
-											<span color-name="Розовый" image-variable="pink" style="background-color: pink"></span> 
-											<span color-name="Тёмносиний" image-variable="darkBlue" style="background-color: darkblue"></span> 
-											<span color-name="Vinous" image-variable="vinous" style="background-color: #9c0505"></span> 
-											<span color-name="Crimson" image-variable="crimson" style="background-color: #DC143C"></span>
+										<div class="color autonakidka" style="display: none">
+											<span color="Чёрный" image-variable="black" style="background-color: black"></span> 
 										</div>
-										 <div from-category="pillow" material="flock" class="color" style="display: none">
-											<span color-name="Чёрный" image-variable="black" style="background-color: black"></span> 
-											<span color-name="Синий" image-variable="blue" style="background-color: blue"></span> 
-											<span color-name="Бежевый" image-variable="beige" style="background-color: beige"></span> 
-											<span color-name="Оранжевый" image-variable="orange" style="background-color: orange"></span>
+										 <div class="color pillow" style="display: none">
+											<span color="Чёрный" image-variable="black" style="background-color: black"></span> 
+										</div>
+										<div class="color cap" style="display: none">
+											<span color="Чёрный" image-variable="black" style="background-color: black"></span> 
 										</div>
 									</section>
 									<section class="container">
@@ -97,24 +110,31 @@
 												<h3>Цвет вышивки</h3>
 										 </div>
 										 <div class="colorEmbroidery">
-											<span color-variable="black" style="background-color: black" class="active"></span> 
-											<span color-variable="white" style="background-color: white"></span> 
-											<span color-variable="pink" style="background-color: pink"></span> 
-											<span color-variable="orange" style="background-color: orange"></span> 
-											<span color-variable="purple" style="background-color: purple"></span> 
-											<span color-variable="red" style="background-color: red"></span> 
-											<span color-variable="darkblue" style="background-color: darkblue"></span>
+											<span colorOfFont="Черный" style="background-color: black" class="active"></span> 
+											<span colorOfFont="Белый" style="background-color: white"></span> 
+											<span colorOfFont="Золотой" style="background-color: gold"></span> 
+											<span colorOfFont="Серебро" style="background-color: silver"></span> 
+											<span colorOfFont="Красный" style="background-color: red"></span> 
+											<span colorOfFont="Пурпурный" style="background-color: purple"></span> 
+											<span colorOfFont="Зеленый" style="background-color: green"></span> 
+											<span colorOfFont="Коричневый" style="background-color: brown"></span> 
+											<span colorOfFont="Графит" style="background-color: #474a51"></span> 
+											<span colorOfFont="Синий" style="background-color: blue"></span>
+											<span colorOfFont="Тёмносиний" style="background-color: darkblue"></span>
 										</div>
 									</section>
 							 </div>
-							 <section class="container">
+							 <section class="container main-image">
 									<div class="title">
 										 <h3>Рисунки</h3>
 									</div>
-									<div class="imageButton"><span class="image1">Верхний рисунок</span> <span class="image2">Нижний рисунок</span></div>
+									<div class="imageButton">
+										<span class="image1">Верхний рисунок <b class="delImage1" style="display: none;"></b></span> 
+										<span class="image2">Нижний рисунок <b class="delImage2" style="display: none;"></b></span>
+									</div>
 							 </section>
-							 <div class="userfont-container">
-									<section class="container">
+							 <div class="userfont-container main-userfont">
+									<section class="container ">
 										 <div class="title">
 												<h3>Текст вышивки</h3>
 										 </div>
@@ -125,39 +145,25 @@
 												<h3>Выберите шрифт</h3>
 										 </div>
 										 <div class="userFont">
-											<span style="font-family: 'Alexander'" class="active">Alexander</span> 
-											<span style="font-family: 'Arlekino'">Arlekino</span> 
-											<span style="font-family: 'BatmanForeverAlternative'">BatmanForeverAlternative</span> 
-											<span style="font-family: 'Boyarsky'">Boyarsky</span> 
-											<span style="font-family: 'Cleopatra'">Cleopatra</span> 
-											<span style="font-family: 'DisneyPark'">DisneyPark</span> 
-											<span style="font-family: 'Drevnerusskij'">Drevnerusskij</span> 
-											<span style="font-family: 'Gelatina Elemente'">Gelatina Elemente</span> 
-											<span style="font-family: 'Izhitsa'">Izhitsa</span> 
-											<span style="font-family: 'Jacoba'">Jacoba</span>
-
-											<span style="font-family: 'Lobster'">Lobster</span> 
-											<span style="font-family: 'Magnolia'">Magnolia</span> 
-											<span style="font-family: 'Majestic'">Majestic</span> 
-											<span style="font-family: 'Marutya'">Marutya</span> 
-											<span style="font-family: 'Mon_Amour_One'">Mon_Amour_One</span> 
-											<span style="font-family: 'Mon_Amour_Two'">Mon_Amour_Two</span> 
-											<span style="font-family: 'Monotype_Corsiva'">Monotype_Corsiva</span> 
-											<span style="font-family: 'NautilusPompilius'">NautilusPompilius</span> 
-											<span style="font-family: 'Painter'">Painter</span> 
-											<span style="font-family: 'PopularScript'">PopularScript</span>
-											<span style="font-family: 'RupsterScriptFree'">RupsterScriptFree</span> 
-											<span style="font-family: 'Tango'">Tango</span>
+											<span userFont="Alexander" style=" font-weight: 100;" class="active">Alexander</span> 
+											<span userFont="Boyarsky" style=" font-weight: 200;">Boyarsky</span> 
+											<span userFont="Jacoba" style=" font-weight: 300;">Jacoba</span>
+											<span userFont="Lobster" style=" font-weight: 400;">Lobster</span> 
+											<span userFont="Majestic" style=" font-weight: 500;">Majestic</span> 
+											<span userFont="Mon_Amour_One" style=" font-weight: 600;">Mon_Amour_One</span> 
+											<span userFont="Mon_Amour_Two" style=" font-weight: 700;">Mon_Amour_Two</span> 
+											<span userFont="Painter" style=" font-weight: 800;">Painter</span> 
+											<span userFont="Славянский" style=" font-weight: 900;">Славянский</span> 
 										</div>
 									</section>
 							 </div>
 						</div>
 						<div class="rightSide">
-							 <div class="userImage1"></div>
-							 <span class="userText" style="font-family: Lobster;">Мой текст</span>
-							 <div class="userImage2"></div>
-							 <div class="additionHoodBox" style="display: none"></div>
-							 <div class="imageBox" style="background-image: url(&quot;https://storage.yandexcloud.net/rtme-public-for-cdn/bathrobe/c3717bbc2f5fdcceae24.png&quot;);"></div>
+							 <div class="userImage1"></b></div>
+							 <span class="userText" style="font-family: 'for-constructor'; font-weight: 100;">Мой текст</span>
+							 <div class="userImage2"></b></div>
+							 <div class="additionHoodBox" style="display: none; background-image: url(/img/hood.png);"></div>
+							 <div class="imageBox" style="background-image: url(./img/bathrobe.png);"></div>
 							 <div class="formWrapper">
 									<form action="" id="form-order">
 										 <input name="where-talk" placeholder="Где удобнее общаться"> <input name="data-contact" placeholder="Данные для связи"> <input class="inputHidden" name="category" placeholder="category"> <input class="inputHidden" name="gender" placeholder="gender"> <input class="inputHidden" name="addition" placeholder="addition"> <input class="inputHidden" name="size" placeholder="size"> <input class="inputHidden" name="height" placeholder="height"> <input class="inputHidden" name="cloth" placeholder="cloth"> <input class="inputHidden" name="color" placeholder="color"> <input class="inputHidden" name="user-text" placeholder="user-text"> <input class="inputHidden" name="front-text" placeholder="front-text"> <input class="inputHidden" name="user-text-size" placeholder="user-text-size"> <input class="inputHidden" name="user-category-1" placeholder="user-category-1"> <input class="inputHidden" name="user-image-1" placeholder="user-image-1"> <input class="inputHidden" name="user-category-2" placeholder="user-category-2"> <input class="inputHidden" name="user-image-2" placeholder="user-image-2"> <input class="inputHidden" name="user-font" placeholder="user-font"> <input class="inputHidden" name="user-color" placeholder="user-color"> <input class="inputHidden" name="final-price" placeholder="final-price">
@@ -168,50 +174,217 @@
 						</div>
 				 </div>
 			</section>
- </div>
- 
-	<div class="popupImage1" style="display: none">
-		 <div class="close"><span>✕</span></div>
-		 <div class="filterImage"></div>
-		 <div class="imageList"></div>
-	</div>
-	<div class="popupSizeList" style="display: none">
-		 <div class="close"><span>✕</span></div>
-		 <div class="size-list">
-				<div class="size-row">
-					 <div class="title">Мужская таблица размеров</div>
-					 <div class="list">
-							<div class="col"><span>Межд. Размер</span> <span>XS</span> <span>S</span> <span>M-L</span> <span>XL-2XL</span> <span>2XL-3XL</span> <span>3XL-BXL</span></div>
-							<div class="col"><span>Российский размер</span> <span>40-42</span> <span>44-46</span> <span>48-50</span> <span>52-54</span> <span>56-58</span> <span>60-62</span></div>
-							<div class="col"><span>Обхват груди</span> <span>78-85</span> <span>86-93</span> <span>94-101</span> <span>102-109</span> <span>110-117</span> <span>118-125</span></div>
-							<div class="col"><span>Обхват бёдер</span> <span>64-73</span> <span>74-81</span> <span>82-89</span> <span>90-99</span> <span>100-109</span> <span>110-119</span></div>
-					 </div>
+		</div>
+		
+			<div class="popupImage1" style="display: none;">
+				<div class="close"><span>✕</span></div>
+				<div class="filterImage"><span name="Военные" class="active">Военные</span><span name="Хобби">Хобби</span><span
+						name="Спорт">Спорт</span><span name="Свадьба">Свадьба</span><span name="Женские">Женские</span><span
+						name="Мужские">Мужские</span><span name="Профессии">Профессии</span><span name="Короны">Короны</span><span
+						name="Детские">Детские</span><span name="Зодиак">Зодиак</span><span name="Животные">Животные</span></div>
+				<div class="imageList">
+					<div upperImage="url('./img/top/1.png')" style="background-image:url('./img/top/1.png')"></div>
+					<div upperImage="url('./img/top/2.png')" style="background-image:url('./img/top/2.png')"></div>
+					<div upperImage="url('./img/top/3.png')" style="background-image:url('./img/top/3.png')"></div>
+					<div upperImage="url('./img/top/4.png')" style="background-image:url('./img/top/4.png')"></div>
+					<div upperImage="url('./img/top/5.png')" style="background-image:url('./img/top/5.png')"></div>
+					<div upperImage="url('./img/top/6.png')" style="background-image:url('./img/top/6.png')"></div>
+					<div upperImage="url('./img/top/7.png')" style="background-image:url('./img/top/7.png')"></div>
+					<div upperImage="url('./img/top/8.png')" style="background-image:url('./img/top/8.png')"></div>
+					<div upperImage="url('./img/top/9.png')" style="background-image:url('./img/top/9.png')"></div>
+					<div upperImage="url('./img/top/10.png')" style="background-image:url('./img/top/10.png')"></div>
+					<div upperImage="url('./img/top/11.png')" style="background-image:url('./img/top/11.png')"></div>
+					<div upperImage="url('./img/top/12.png')" style="background-image:url('./img/top/12.png')"></div>
+					<div upperImage="url('./img/top/13.png')" style="background-image:url('./img/top/13.png')"></div>
+					<div upperImage="url('./img/top/14.png')" style="background-image:url('./img/top/14.png')"></div>
+					<div upperImage="url('./img/top/15.png')" style="background-image:url('./img/top/15.png')"></div>
+					<div upperImage="url('./img/top/16.png')" style="background-image:url('./img/top/16.png')"></div>
+					<div upperImage="url('./img/top/17.png')" style="background-image:url('./img/top/17.png')"></div>
+					<div upperImage="url('./img/top/18.png')" style="background-image:url('./img/top/18.png')"></div>
+					<div upperImage="url('./img/top/19.png')" style="background-image:url('./img/top/19.png')"></div>
+					<div upperImage="url('./img/top/20.png')" style="background-image:url('./img/top/20.png')"></div>
+					<div upperImage="url('./img/top/21.png')" style="background-image:url('./img/top/21.png')"></div>
+					<div upperImage="url('./img/top/22.png')" style="background-image:url('./img/top/22.png')"></div>
+					<div upperImage="url('./img/top/23.png')" style="background-image:url('./img/top/23.png')"></div>
+					<div upperImage="url('./img/top/24.png')" style="background-image:url('./img/top/24.png')"></div>
+					<div upperImage="url('./img/top/25.png')" style="background-image:url('./img/top/25.png')"></div>
+					<div upperImage="url('./img/top/26.png')" style="background-image:url('./img/top/26.png')"></div>
+					<div upperImage="url('./img/top/27.png')" style="background-image:url('./img/top/27.png')"></div>
+					<div upperImage="url('./img/top&bottom/1.png')" style="background-image: url('./img/top&bottom/1.png');"></div>
+					<div upperImage="url('./img/top&bottom/2.png')" style="background-image: url('./img/top&bottom/2.png');"></div>
+					<div upperImage="url('./img/top&bottom/3.png')" style="background-image: url('./img/top&bottom/3.png');"></div>
+					<div upperImage="url('./img/top&bottom/4.png')" style="background-image: url('./img/top&bottom/4.png');"></div>
+					<div upperImage="url('./img/top&bottom/5.png')" style="background-image: url('./img/top&bottom/5.png');"></div>
+					<div upperImage="url('./img/top&bottom/6.png')" style="background-image: url('./img/top&bottom/6.png');"></div>
+					<div upperImage="url('./img/top&bottom/7.png')" style="background-image: url('./img/top&bottom/7.png');"></div>
+					<div upperImage="url('./img/top&bottom/8.png')" style="background-image: url('./img/top&bottom/8.png');"></div>
+					<div upperImage="url('./img/top&bottom/9.png')" style="background-image: url('./img/top&bottom/9.png');"></div>
+					<div upperImage="url('./img/top&bottom/10.png')" style="background-image: url('./img/top&bottom/10.png');"></div>
+					<div upperImage="url('./img/top&bottom/11.png')" style="background-image: url('./img/top&bottom/11.png');"></div>
+					<div upperImage="url('./img/top&bottom/12.png')" style="background-image: url('./img/top&bottom/12.png');"></div>
+					<div upperImage="url('./img/top&bottom/13.png')" style="background-image: url('./img/top&bottom/13.png');"></div>
+					<div upperImage="url('./img/top&bottom/14.png')" style="background-image: url('./img/top&bottom/14.png');"></div>
+					<div upperImage="url('./img/top&bottom/15.png')" style="background-image: url('./img/top&bottom/15.png');"></div>
+					<div upperImage="url('./img/top&bottom/16.png')" style="background-image: url('./img/top&bottom/16.png');"></div>
+					<div upperImage="url('./img/top&bottom/17.png')" style="background-image: url('./img/top&bottom/17.png');"></div>
+					<div upperImage="url('./img/top&bottom/18.png')" style="background-image: url('./img/top&bottom/18.png');"></div>
+					<div upperImage="url('./img/top&bottom/19.png')" style="background-image: url('./img/top&bottom/19.png');"></div>
+					<div upperImage="url('./img/top&bottom/20.png')" style="background-image: url('./img/top&bottom/20.png');"></div>
+					<div upperImage="url('./img/top&bottom/21.png')" style="background-image: url('./img/top&bottom/21.png');"></div>
+					<div upperImage="url('./img/top&bottom/22.png')" style="background-image: url('./img/top&bottom/22.png');"></div>
+					<div upperImage="url('./img/top&bottom/23.png')" style="background-image: url('./img/top&bottom/23.png');"></div>
+					<div upperImage="url('./img/top&bottom/24.png')" style="background-image: url('./img/top&bottom/24.png');"></div>
+					<div upperImage="url('./img/top&bottom/25.png')" style="background-image: url('./img/top&bottom/25.png');"></div>
+					<div upperImage="url('./img/top&bottom/26.png')" style="background-image: url('./img/top&bottom/26.png');"></div>
+					<div upperImage="url('./img/top&bottom/27.png')" style="background-image: url('./img/top&bottom/27.png');"></div>
+					<div upperImage="url('./img/top&bottom/28.png')" style="background-image: url('./img/top&bottom/28.png');"></div>
+					<div upperImage="url('./img/top&bottom/29.png')" style="background-image: url('./img/top&bottom/29.png');"></div>
+					<div upperImage="url('./img/top&bottom/30.png')" style="background-image: url('./img/top&bottom/30.png');"></div>
+					<div upperImage="url('./img/top&bottom/31.png')" style="background-image: url('./img/top&bottom/31.png');"></div>
+					<div upperImage="url('./img/top&bottom/32.png')" style="background-image: url('./img/top&bottom/32.png');"></div>
+					<div upperImage="url('./img/top&bottom/33.png')" style="background-image: url('./img/top&bottom/33.png');"></div>
+					<div upperImage="url('./img/top&bottom/34.png')" style="background-image: url('./img/top&bottom/34.png');"></div>
+					<div upperImage="url('./img/top&bottom/35.png')" style="background-image: url('./img/top&bottom/35.png');"></div>
+					<div upperImage="url('./img/top&bottom/36.png')" style="background-image: url('./img/top&bottom/36.png');"></div>
+					<div upperImage="url('./img/top&bottom/37.png')" style="background-image: url('./img/top&bottom/37.png');"></div>
+					<div upperImage="url('./img/top&bottom/38.png')" style="background-image: url('./img/top&bottom/38.png');"></div>
+					<div upperImage="url('./img/top&bottom/39.png')" style="background-image: url('./img/top&bottom/39.png');"></div>
+					<div upperImage="url('./img/top&bottom/40.png')" style="background-image: url('./img/top&bottom/40.png');"></div>
+					<div upperImage="url('./img/top&bottom/41.png')" style="background-image: url('./img/top&bottom/41.png');"></div>
+					<div upperImage="url('./img/top&bottom/42.png')" style="background-image: url('./img/top&bottom/42.png');"></div>
+					<div upperImage="url('./img/top&bottom/43.png')" style="background-image: url('./img/top&bottom/43.png');"></div>
+					<div upperImage="url('./img/top&bottom/44.png')" style="background-image: url('./img/top&bottom/44.png');"></div>
+					<div upperImage="url('./img/top&bottom/45.png')" style="background-image: url('./img/top&bottom/45.png');"></div>
+					<div upperImage="url('./img/top&bottom/46.png')" style="background-image: url('./img/top&bottom/46.png');"></div>
+					<div upperImage="url('./img/top&bottom/47.png')" style="background-image: url('./img/top&bottom/47.png');"></div>
+					<div upperImage="url('./img/top&bottom/48.png')" style="background-image: url('./img/top&bottom/48.png');"></div>
+					<div upperImage="url('./img/top&bottom/49.png')" style="background-image: url('./img/top&bottom/49.png');"></div>
+					<div upperImage="url('./img/top&bottom/50.png')" style="background-image: url('./img/top&bottom/50.png');"></div>
+					<div upperImage="url('./img/top&bottom/51.png')" style="background-image: url('./img/top&bottom/51.png');"></div>
+					<div upperImage="url('./img/top&bottom/52.png')" style="background-image: url('./img/top&bottom/52.png');"></div>
+					<div upperImage="url('./img/top&bottom/53.png')" style="background-image: url('./img/top&bottom/53.png');"></div>
+					<div upperImage="url('./img/top&bottom/54.png')" style="background-image: url('./img/top&bottom/54.png');"></div>
+					<div upperImage="url('./img/top&bottom/55.png')" style="background-image: url('./img/top&bottom/55.png');"></div>
+					<div upperImage="url('./img/top&bottom/56.png')" style="background-image: url('./img/top&bottom/56.png');"></div>
+					<div upperImage="url('./img/top&bottom/57.png')" style="background-image: url('./img/top&bottom/57.png');"></div>
+					<div upperImage="url('./img/top&bottom/58.png')" style="background-image: url('./img/top&bottom/58.png');"></div>
+					<div upperImage="url('./img/top&bottom/59.png')" style="background-image: url('./img/top&bottom/59.png');"></div>
+					<div upperImage="url('./img/top&bottom/60.png')" style="background-image: url('./img/top&bottom/60.png');"></div>
+					<div upperImage="url('./img/top&bottom/61.png')" style="background-image: url('./img/top&bottom/61.png');"></div>
+					<div upperImage="url('./img/top&bottom/62.png')" style="background-image: url('./img/top&bottom/62.png');"></div>
+					<div upperImage="url('./img/top&bottom/63.png')" style="background-image: url('./img/top&bottom/63.png');"></div>
+					<div upperImage="url('./img/emblems/1.png')" style="background-image:url('./img/emblems/1.png')"></div>
+					<div upperImage="url('./img/emblems/2.png')" style="background-image:url('./img/emblems/2.png')"></div>
+					<div upperImage="url('./img/emblems/3.png')" style="background-image:url('./img/emblems/3.png')"></div>
+					<div upperImage="url('./img/emblems/4.png')" style="background-image:url('./img/emblems/4.png')"></div>
+					<div upperImage="url('./img/emblems/5.png')" style="background-image:url('./img/emblems/5.png')"></div>
+					<div upperImage="url('./img/emblems/6.png')" style="background-image:url('./img/emblems/6.png')"></div>
+					<div upperImage="url('./img/emblems/7.png')" style="background-image:url('./img/emblems/7.png')"></div>
+					<div upperImage="url('./img/emblems/8.png')" style="background-image:url('./img/emblems/8.png')"></div>
+					<div upperImage="url('./img/emblems/9.png')" style="background-image:url('./img/emblems/9.png')"></div>
+					<div upperImage="url('./img/emblems/10.png')" style="background-image:url('./img/emblems/10.png')"></div>
+					<div upperImage="url('./img/emblems/11.png')" style="background-image:url('./img/emblems/11.png')"></div>
+					<div upperImage="url('./img/emblems/12.png')" style="background-image:url('./img/emblems/12.png')"></div>
+					<div upperImage="url('./img/emblems/13.png')" style="background-image:url('./img/emblems/13.png')"></div>
+					<div upperImage="url('./img/emblems/14.png')" style="background-image:url('./img/emblems/14.png')"></div>
+					<div upperImage="url('./img/emblems/15.png')" style="background-image:url('./img/emblems/15.png')"></div>
+					<div upperImage="url('./img/emblems/16.png')" style="background-image:url('./img/emblems/16.png')"></div>
+					<div upperImage="url('./img/emblems/17.png')" style="background-image:url('./img/emblems/17.png')"></div>
+					<div upperImage="url('./img/emblems/18.png')" style="background-image:url('./img/emblems/18.png')"></div>
+					<div upperImage="url('./img/emblems/19.png')" style="background-image:url('./img/emblems/19.png')"></div>
+					<div upperImage="url('./img/emblems/20.png')" style="background-image:url('./img/emblems/20.png')"></div>
+					<div upperImage="url('./img/emblems/21.png')" style="background-image:url('./img/emblems/21.png')"></div>
+					<div upperImage="url('./img/emblems/22.png')" style="background-image:url('./img/emblems/22.png')"></div>
+					<div upperImage="url('./img/emblems/23.png')" style="background-image:url('./img/emblems/23.png')"></div>
+					<div upperImage="url('./img/emblems/24.png')" style="background-image:url('./img/emblems/24.png')"></div>
+					<div upperImage="url('./img/emblems/25.png')" style="background-image:url('./img/emblems/25.png')"></div>
+					<div upperImage="url('./img/emblems/26.png')" style="background-image:url('./img/emblems/26.png')"></div>
+					<div upperImage="url('./img/emblems/27.png')" style="background-image:url('./img/emblems/27.png')"></div>
+					<div upperImage="url('./img/emblems/28.png')" style="background-image:url('./img/emblems/28.png')"></div>
+					<div upperImage="url('./img/emblems/29.png')" style="background-image:url('./img/emblems/29.png')"></div>
+					<div upperImage="url('./img/emblems/30.png')" style="background-image:url('./img/emblems/30.png')"></div>
+					<div upperImage="url('./img/emblems/31.png')" style="background-image:url('./img/emblems/31.png')"></div>
+					<div upperImage="url('./img/emblems/32.png')" style="background-image:url('./img/emblems/32.png')"></div>
 				</div>
-				<div class="size-row">
-					 <div class="title">Женская таблица размеров</div>
-					 <div class="list">
-							<div class="col"><span>Межд. Размер</span> <span>2XS-XS</span> <span>S-M</span> <span>L-XL</span> <span>2XL-3XL</span> <span>BXL-BXXL</span> <span>BXXL+</span></div>
-							<div class="col"><span>Российский размер</span> <span>40-42</span> <span>44-46</span> <span>48-50</span> <span>52-54</span> <span>56-58</span> <span>60-62</span></div>
-							<div class="col"><span>Обхват груди</span> <span>78-85</span> <span>86-94</span> <span>94-102</span> <span>102-110</span> <span>110-118</span> <span>118-126</span></div>
-							<div class="col"><span>Обхват бёдер</span> <span>84-92</span> <span>92-100</span> <span>100-108</span> <span>108-116</span> <span>116-124</span> <span>124-132</span></div>
-					 </div>
+			</div>
+			<div class="popupImage2" style="display: none;">
+				<div class="close"><span>✕</span></div>
+				<div class="filterImage"><span name="Военные" class="active">Военные</span><span name="Хобби">Хобби</span><span
+						name="Спорт">Спорт</span><span name="Свадьба">Свадьба</span><span name="Женские">Женские</span><span
+						name="Мужские">Мужские</span><span name="Профессии">Профессии</span><span name="Короны">Короны</span><span
+						name="Детские">Детские</span><span name="Зодиак">Зодиак</span><span name="Животные">Животные</span></div>
+				<div class="imageList">
+					<div lowerImage="url('./img/bottom/1.png')" style="background-image: url('./img/bottom/1.png');"></div>
+					<div lowerImage="url('./img/bottom/2.png')" style="background-image: url('./img/bottom/2.png');"></div>
+					<div lowerImage="url('./img/bottom/3.png')" style="background-image: url('./img/bottom/3.png');"></div>
+					<div lowerImage="url('./img/bottom/4.png')" style="background-image: url('./img/bottom/4.png');"></div>
+					<div lowerImage="url('./img/bottom/5.png')" style="background-image: url('./img/bottom/5.png');"></div>
+					<div lowerImage="url('./img/bottom/6.png')" style="background-image: url('./img/bottom/6.png');"></div>
+					<div lowerImage="url('./img/top&bottom/1.png')" style="background-image: url('./img/top&bottom/1.png');"></div>
+					<div lowerImage="url('./img/top&bottom/2.png')" style="background-image: url('./img/top&bottom/2.png');"></div>
+					<div lowerImage="url('./img/top&bottom/3.png')" style="background-image: url('./img/top&bottom/3.png');"></div>
+					<div lowerImage="url('./img/top&bottom/4.png')" style="background-image: url('./img/top&bottom/4.png');"></div>
+					<div lowerImage="url('./img/top&bottom/5.png')" style="background-image: url('./img/top&bottom/5.png');"></div>
+					<div lowerImage="url('./img/top&bottom/6.png')" style="background-image: url('./img/top&bottom/6.png');"></div>
+					<div lowerImage="url('./img/top&bottom/7.png')" style="background-image: url('./img/top&bottom/7.png');"></div>
+					<div lowerImage="url('./img/top&bottom/8.png')" style="background-image: url('./img/top&bottom/8.png');"></div>
+					<div lowerImage="url('./img/top&bottom/9.png')" style="background-image: url('./img/top&bottom/9.png');"></div>
+					<div lowerImage="url('./img/top&bottom/10.png')" style="background-image: url('./img/top&bottom/10.png');"></div>
+					<div lowerImage="url('./img/top&bottom/11.png')" style="background-image: url('./img/top&bottom/11.png');"></div>
+					<div lowerImage="url('./img/top&bottom/12.png')" style="background-image: url('./img/top&bottom/12.png');"></div>
+					<div lowerImage="url('./img/top&bottom/13.png')" style="background-image: url('./img/top&bottom/13.png');"></div>
+					<div lowerImage="url('./img/top&bottom/14.png')" style="background-image: url('./img/top&bottom/14.png');"></div>
+					<div lowerImage="url('./img/top&bottom/15.png')" style="background-image: url('./img/top&bottom/15.png');"></div>
+					<div lowerImage="url('./img/top&bottom/16.png')" style="background-image: url('./img/top&bottom/16.png');"></div>
+					<div lowerImage="url('./img/top&bottom/17.png')" style="background-image: url('./img/top&bottom/17.png');"></div>
+					<div lowerImage="url('./img/top&bottom/18.png')" style="background-image: url('./img/top&bottom/18.png');"></div>
+					<div lowerImage="url('./img/top&bottom/19.png')" style="background-image: url('./img/top&bottom/19.png');"></div>
+					<div lowerImage="url('./img/top&bottom/20.png')" style="background-image: url('./img/top&bottom/20.png');"></div>
+					<div lowerImage="url('./img/top&bottom/21.png')" style="background-image: url('./img/top&bottom/21.png');"></div>
+					<div lowerImage="url('./img/top&bottom/22.png')" style="background-image: url('./img/top&bottom/22.png');"></div>
+					<div lowerImage="url('./img/top&bottom/23.png')" style="background-image: url('./img/top&bottom/23.png');"></div>
+					<div lowerImage="url('./img/top&bottom/24.png')" style="background-image: url('./img/top&bottom/24.png');"></div>
+					<div lowerImage="url('./img/top&bottom/25.png')" style="background-image: url('./img/top&bottom/25.png');"></div>
+					<div lowerImage="url('./img/top&bottom/26.png')" style="background-image: url('./img/top&bottom/26.png');"></div>
+					<div lowerImage="url('./img/top&bottom/27.png')" style="background-image: url('./img/top&bottom/27.png');"></div>
+					<div lowerImage="url('./img/top&bottom/28.png')" style="background-image: url('./img/top&bottom/28.png');"></div>
+					<div lowerImage="url('./img/top&bottom/29.png')" style="background-image: url('./img/top&bottom/29.png');"></div>
+					<div lowerImage="url('./img/top&bottom/30.png')" style="background-image: url('./img/top&bottom/30.png');"></div>
+					<div lowerImage="url('./img/top&bottom/31.png')" style="background-image: url('./img/top&bottom/31.png');"></div>
+					<div lowerImage="url('./img/top&bottom/32.png')" style="background-image: url('./img/top&bottom/32.png');"></div>
+					<div lowerImage="url('./img/top&bottom/33.png')" style="background-image: url('./img/top&bottom/33.png');"></div>
+					<div lowerImage="url('./img/top&bottom/34.png')" style="background-image: url('./img/top&bottom/34.png');"></div>
+					<div lowerImage="url('./img/top&bottom/35.png')" style="background-image: url('./img/top&bottom/35.png');"></div>
+					<div lowerImage="url('./img/top&bottom/36.png')" style="background-image: url('./img/top&bottom/36.png');"></div>
+					<div lowerImage="url('./img/top&bottom/37.png')" style="background-image: url('./img/top&bottom/37.png');"></div>
+					<div lowerImage="url('./img/top&bottom/38.png')" style="background-image: url('./img/top&bottom/38.png');"></div>
+					<div lowerImage="url('./img/top&bottom/39.png')" style="background-image: url('./img/top&bottom/39.png');"></div>
+					<div lowerImage="url('./img/top&bottom/40.png')" style="background-image: url('./img/top&bottom/40.png');"></div>
+					<div lowerImage="url('./img/top&bottom/41.png')" style="background-image: url('./img/top&bottom/41.png');"></div>
+					<div lowerImage="url('./img/top&bottom/42.png')" style="background-image: url('./img/top&bottom/42.png');"></div>
+					<div lowerImage="url('./img/top&bottom/43.png')" style="background-image: url('./img/top&bottom/43.png');"></div>
+					<div lowerImage="url('./img/top&bottom/44.png')" style="background-image: url('./img/top&bottom/44.png');"></div>
+					<div lowerImage="url('./img/top&bottom/45.png')" style="background-image: url('./img/top&bottom/45.png');"></div>
+					<div lowerImage="url('./img/top&bottom/46.png')" style="background-image: url('./img/top&bottom/46.png');"></div>
+					<div lowerImage="url('./img/top&bottom/47.png')" style="background-image: url('./img/top&bottom/47.png');"></div>
+					<div lowerImage="url('./img/top&bottom/48.png')" style="background-image: url('./img/top&bottom/48.png');"></div>
+					<div lowerImage="url('./img/top&bottom/49.png')" style="background-image: url('./img/top&bottom/49.png');"></div>
+					<div lowerImage="url('./img/top&bottom/50.png')" style="background-image: url('./img/top&bottom/50.png');"></div>
+					<div lowerImage="url('./img/top&bottom/51.png')" style="background-image: url('./img/top&bottom/51.png');"></div>
+					<div lowerImage="url('./img/top&bottom/52.png')" style="background-image: url('./img/top&bottom/52.png');"></div>
+					<div lowerImage="url('./img/top&bottom/53.png')" style="background-image: url('./img/top&bottom/53.png');"></div>
+					<div lowerImage="url('./img/top&bottom/54.png')" style="background-image: url('./img/top&bottom/54.png');"></div>
+					<div lowerImage="url('./img/top&bottom/55.png')" style="background-image: url('./img/top&bottom/55.png');"></div>
+					<div lowerImage="url('./img/top&bottom/56.png')" style="background-image: url('./img/top&bottom/56.png');"></div>
+					<div lowerImage="url('./img/top&bottom/57.png')" style="background-image: url('./img/top&bottom/57.png');"></div>
+					<div lowerImage="url('./img/top&bottom/58.png')" style="background-image: url('./img/top&bottom/58.png');"></div>
+					<div lowerImage="url('./img/top&bottom/59.png')" style="background-image: url('./img/top&bottom/59.png');"></div>
+					<div lowerImage="url('./img/top&bottom/60.png')" style="background-image: url('./img/top&bottom/60.png');"></div>
+					<div lowerImage="url('./img/top&bottom/61.png')" style="background-image: url('./img/top&bottom/61.png');"></div>
+					<div lowerImage="url('./img/top&bottom/62.png')" style="background-image: url('./img/top&bottom/62.png');"></div>
+					<div lowerImage="url('./img/top&bottom/63.png')" style="background-image: url('./img/top&bottom/63.png');"></div>
 				</div>
-				<div class="size-row">
-					 <div class="title">Детская таблица размеров</div>
-					 <div class="list">
-							<div class="col"><span>Размер</span> <span>26</span> <span>26</span> <span>26-28</span> <span>28</span> <span>28-30</span> <span>30</span> <span>30-32</span> <span>32</span> <span>34</span> <span>36</span> <span>38</span></div>
-							<div class="col"><span>Возраст</span> <span>2 года</span> <span>3 года</span> <span>4 года</span> <span>5 лет</span> <span>6 лет</span> <span>7 лет</span> <span>8 лет</span> <span>9 лет</span> <span>10 лет</span> <span>11 лет</span> <span>12 лет</span></div>
-							<div class="col"><span>Обхват груди</span> <span>52</span> <span>56</span> <span>56</span> <span>60</span> <span>60</span> <span>64</span> <span>64</span> <span>68</span> <span>72</span> <span>76</span> <span>80</span></div>
-							<div class="col"><span>Обхват бёдер</span> <span>92</span> <span>92-98</span> <span>98-104</span> <span>104-110</span> <span>110-116</span> <span>116-122</span> <span>122-128</span> <span>128-134</span> <span>134-140</span> <span>140-146</span> <span>146-152</span></div>
-					 </div>
-				</div>
-		 </div>
-	</div>
- 
-	<div class="popupImage2">
-		 <div class="filterImage2"></div>
-		 <div class="imageList2"></div>
-	</div>
- 
-   </body>
+			</div>
+		<script src="/index.js"></script>
+  </body>
 </html>
