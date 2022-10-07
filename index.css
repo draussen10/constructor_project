@@ -214,7 +214,7 @@ section p {
 	width: 292px;
 	height: 140px;
 	background-position: 0px 20px;
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 10;
@@ -541,7 +541,7 @@ textarea {
 	}
 }
 
-.popupImage1, .popupImage2 {
+.popupImage {
 	background-color: beige;
 	position: fixed;
 	width: 45%;
@@ -590,7 +590,7 @@ textarea {
 	width: 80px;
 	height: 80px;
 	background-position: center;
-	background-size: cover;
+	background-size: contain;
 	background-repeat: no-repeat;
 	z-index: 2;
 	background-color: #e3e3e3;
@@ -598,7 +598,6 @@ textarea {
 	border-radius: 10px;
 	border: 2px solid rgba(0, 0, 0, 0);
 	cursor: pointer;
-	background-size: 60%;
 	padding: 10px
 }
 
@@ -645,7 +644,7 @@ textarea {
 	background-repeat: no-repeat;
 	z-index: 105;
 	position: absolute;
-	background-size: 75%;
+	background-size: contain;
 	top: 176px
 }
 
@@ -656,7 +655,7 @@ textarea {
 	background-repeat: no-repeat;
 	z-index: 105;
 	position: absolute;
-	background-size: 75%;
+	background-size: contain;
 	top: 420px
 }
 
@@ -757,7 +756,7 @@ textarea {
 		top: -100px
 	}
 
-	.popupImage1, .popupImage2 {
+	.popupImage {
 		width: 100%;
 		padding: 10px;
 	}
@@ -856,38 +855,28 @@ span[plus=silver]::before {
 	bottom: -3px
 }
 
-.delImage1,
-.delImage2 {
-	position: absolute;
-	right: 0;
-	top: -20px;
-	width: 20px;
-	height: 20px
-}
-
-.delImage1:hover::after,
-.delImage2:hover::after {
-	color: #000;
-	background: orange
-}
-
-.delImage1::after,
-.delImage2::after {
-	content: "╳";
+.delImage {
 	font-size: 8px;
 	width: 30px;
 	height: 30px;
-	display: block;
+
 	position: absolute;
-	top: 0px;
-	right: -10px;
-	position: absolute;
+	top: -13px;
+	right: -4px;
+	z-index: 100;
+
 	color: orange;
 	background: #000;
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 50%
+}
+
+.delImage:hover {
+	color: #000;
+	background: orange;
 }
 
 .my-container{
@@ -970,6 +959,12 @@ span[plus=silver]::before {
 	.size div span {
 		width: 15%;
 	}
+}
+
+.userImage1-cap {
+	width: 75px;
+	height: 75px;
+	top: 280px;
 }
 
 

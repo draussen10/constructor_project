@@ -40,7 +40,10 @@ const autonakidkaColorDiv = document.querySelector('.color.autonakidka')
 const pillowColorDiv = document.querySelector('.color.pillow')
 const capColorDiv = document.querySelector('.color.cap')
 
-const mainImageDiv = document.querySelector('.main-image')
+const colorEmbroidery = document.querySelector(".colorEmbroidery").parentNode
+
+const mainImageDivBathobe = document.querySelector('.main-image-bathrobe')
+const mainImageDivOther = document.querySelector('.main-image-other')
 const mainUserfontDiv = document.querySelector('.main-userfont')
 
 
@@ -48,17 +51,20 @@ const mainUserfontDiv = document.querySelector('.main-userfont')
 
 const imageList1 = document.querySelectorAll('.popupImage1 .imageList div')
 const imageList2 = document.querySelectorAll('.popupImage2 .imageList div')
+const imageList3 = document.querySelectorAll('.popupImage3 .imageList div')
 
 //
 const categoryDiv = document.querySelector(".imageBox")
 const hoodDiv = document.querySelector(".additionHoodBox")
 
-let activeDivs = [mainCategoryDiv, mainHoodDiv, mainSizeDiv, bathrobeClothDiv, mainFrontTextDiv, bathrobeColorDiv, mainImageDiv, mainUserfontDiv]
 
-const bathrobeDivs = [mainHoodDiv, mainSizeDiv, bathrobeClothDiv, bathrobeColorDiv]
-const autonakidkaDivs = [autonakidkaClothDiv, autonakidkaColorDiv]
-const pillowDivs = [pillowClothDiv, pillowColorDiv]
-const capDivs = [capClothDiv, capColorDiv]
+
+const bathrobeDivs = [mainCategoryDiv, mainHoodDiv, mainSizeDiv, bathrobeClothDiv, bathrobeColorDiv, colorEmbroidery, mainFrontTextDiv, mainUserfontDiv, mainImageDivBathobe]
+const autonakidkaDivs = [mainCategoryDiv, autonakidkaColorDiv, autonakidkaClothDiv, mainImageDivOther]
+const pillowDivs = [mainCategoryDiv, pillowClothDiv, pillowColorDiv, colorEmbroidery, mainUserfontDiv]
+const capDivs = [mainCategoryDiv, capClothDiv, capColorDiv, colorEmbroidery, mainUserfontDiv, mainImageDivOther]
+
+let activeDivs = bathrobeDivs
 
 
 let order = {
@@ -97,14 +103,19 @@ const keyOrder = category => {
 			upperImage: '',
 			userFont: 'Alexander'
 		}
-	}	else {
+	}	else if(category === 'autonakidka') {
 		order = {
 			category: order.category,
 			cloth: 'Алькантара',
 			color: "Белый",
-			colorOfFont: `${order.category === 'autonakidka' ? 'Белый>; white' : 'Черный; black'}`,
-			frontText: '',
-			lowerImage: '',
+			upperImage: '',
+		} 
+	} else {
+		order = {
+			category: order.category,
+			cloth: 'Алькантара',
+			color: "Белый",
+			colorOfFont: 'Черный; black',
 			text: 'Мой текст',
 			upperImage: '',
 			userFont: 'Alexander'
@@ -114,16 +125,11 @@ const keyOrder = category => {
 
 //Удаление и добавление полей ввода
 const viewLeftDivs =  ()  => {
-	let activeCatogoryDivs = []
-
 	for (el of activeDivs) {
 		el.style.display = 'none'
 	}
-
-	activeDivs = [mainCategoryDiv, mainFrontTextDiv, mainImageDiv, mainUserfontDiv]
-
-	activeCatogoryDivs = eval(`${order.category}Divs`)
-	activeDivs = activeDivs.concat(activeCatogoryDivs)
+	
+	activeDivs = eval(`${order.category}Divs`)
 
 	for (el of activeDivs) {
 		el.style.display = 'flex'
@@ -132,13 +138,13 @@ const viewLeftDivs =  ()  => {
 
 const toUpper = str => {
 	return str
-			.toLowerCase()
-			.split(' ')
-			.map(function(word) {
-					return word[0].toUpperCase() + word.substr(1);
-			})
-			.join(' ');
-	 }
+		.toLowerCase()
+		.split(' ')
+		.map(function(word) {
+				return word[0].toUpperCase() + word.substr(1);
+		})
+		.join(' ');
+}
 
 const setActiveItemToFirst = () => {
 	for (key in order) {
@@ -159,35 +165,42 @@ const setActiveItemToFirst = () => {
 }
 
 const updateView = () => {
-	order.category === 'bathrobe' 
-		? categoryDiv.style.backgroundImage = 'url(./img/bathrobe.png)'
-		: order.category === 'autonakidka'
-			? categoryDiv.style.backgroundImage = 'url(./img/autonakidka.png)'
-			: order.category === 'pillow'
-				? categoryDiv.style.backgroundImage = 'url(./img/pillow.png)'
-				: categoryDiv.style.backgroundImage = 'url(./img/cap.png)'
-			
 
+	categoryDiv.style.backgroundImage = `url(./img/${order.category}.png)`
+
+	if(order.category === 'cap') {
+		document.querySelector('.userImage1').classList.add('userImage1-cap')
+	} else {
+		document.querySelector('.userImage1').classList.remove('userImage1-cap')
+	}
+	
 	order.addition === 'hood' ? hoodDiv.style.display = 'block' : hoodDiv.style.display = 'none'
-	const fontWeight = document.querySelector('.userFont span.active').style.fontWeight
-	userText.style = `font-family: 'for-constructor'; font-weight: ${fontWeight}; color: ${order.colorOfFont.split('; ')[1]}`
-	userText.innerHTML = order.text
+
+	if(order.text !== undefined){
+		const fontWeight = document.querySelector('.userFont span.active').style.fontWeight
+		userText.style = `font-family: 'for-constructor'; font-weight: ${fontWeight}; color: ${order.colorOfFont.split('; ')[1]}`
+		userText.innerHTML = order.text
+	} else {
+		userText.innerHTML = ''
+	}
 
 	if(order.upperImage !== '') {
 		document.querySelector(".userImage1").style.backgroundImage = order.upperImage
-		document.querySelector(".delImage1").style.display = 'block'
+		order.category === 'bathrobe' ? document.querySelector(".delImage1").style.display = 'flex' : document.querySelector(".delImage3").style.display = 'flex'
 	} else {
 		document.querySelector(".userImage1").style.backgroundImage = ''
-		document.querySelector(".delImage1").style.display = 'none'
+		order.category === 'bathrobe' ? document.querySelector(".delImage1").style.display = 'none' : document.querySelector(".delImage3").style.display = 'none'
 	}
 
-	if(order.lowerImage !== '') {
+
+	if(order.lowerImage !== '' && order.lowerImage !== undefined) {
 		document.querySelector(".userImage2").style.backgroundImage = order.lowerImage
 		document.querySelector(".delImage2").style.display = 'block'
 	} else {
 		document.querySelector(".userImage2").style.backgroundImage = ''
 		document.querySelector(".delImage2").style.display = 'none'
 	}
+
 }
 
 const setOrderValue = (name, el = null) => {
@@ -217,9 +230,9 @@ const watch = (array, valueOfObject) => {
 				viewLeftDivs()
 				updateView()
 			}
+			showObjectInConsole()
 		}
 	})
-	showObjectInConsole()
 }
 
 textarea.addEventListener('input', () => {
@@ -253,6 +266,7 @@ watch(userFontDivs, 'userFont')
 
 watch(imageList1, 'upperImage')
 watch(imageList2, 'lowerImage')
+watch(imageList3, 'upperImage')
 
 
 //Логика, связанная с переключением полей размеры и ввода значения размера для халата
@@ -276,20 +290,25 @@ sizeDivs.forEach(el => {el.addEventListener('click', () => {sizeInput.value = ''
 const clearImage = (event, number) => {
 	event.stopPropagation()
 
-	number === 1 ? setOrderValue('upperImage') : setOrderValue('lowerImage')
+	number === 2 ? setOrderValue('lowerImage') : setOrderValue('upperImage')
 	
 	activeTopImageDiv = document.querySelector(`.popupImage${number} .imageList div.active`)
 	if(activeTopImageDiv !== null) {
 		activeTopImageDiv.classList.remove("active")
 	}
 	updateView()
+	showObjectInConsole()
 	//Подумать как реализовать изменение красиво
 }
+
 document.querySelector('.delImage1').onclick = (event) => {
 	clearImage(event, 1)
 }
 document.querySelector('.delImage2').onclick = (event) => {
 	clearImage(event, 2)
+}
+document.querySelector('.delImage3').onclick = (event) => {
+	clearImage(event, 3)
 }
 
 
@@ -299,10 +318,16 @@ document.querySelector(".popupImage1 > .close").onclick = () => {
 document.querySelector(".popupImage2 > .close").onclick = () => {
 	document.querySelector(".popupImage2").style.display = "none"
 }
+document.querySelector(".popupImage3 > .close").onclick = () => {
+	document.querySelector(".popupImage3").style.display = "none"
+}
 
 document.querySelector(".image1").onclick = () => {
 	document.querySelector(".popupImage1").style.display = "block"
 }
 document.querySelector(".image2").onclick = () => {
 	document.querySelector(".popupImage2").style.display = "block"
+}
+document.querySelector(".image3").onclick = () => {
+	document.querySelector(".popupImage3").style.display = "block"
 }
