@@ -214,7 +214,7 @@ section p {
 	width: 292px;
 	height: 140px;
 	background-position: 0px 20px;
-	background-size: contain;
+	background-size: 100%;
 	background-repeat: no-repeat;
 	position: absolute;
 	z-index: 10;
@@ -901,7 +901,7 @@ span[plus=silver]::before {
 
 
 @media(max-width: 980px) {
-	.title-size, .title, .category, {
+	.title-size, .title, .category {
 		font-size: 0.8em;
 	}
 		.gender div,
@@ -966,6 +966,11 @@ span[plus=silver]::before {
 	height: 75px;
 	top: 280px;
 }
+
+.userText-pillow {
+	transform: translateX(-26px) translateY(-45px)
+}
+
 
 
 

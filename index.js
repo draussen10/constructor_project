@@ -71,12 +71,12 @@ let order = {
 	category: 'bathrobe',
 	addition: 'noHood',
 	cloth: 'Махровый',
-	color: "Белый",
+	color: "Черный; black",
 	frontText: '',
 	size: '42-44(S)',
 	text: 'Мой текст',
 	userFont: 'Alexander',
-	colorOfFont: 'Черный; black',
+	colorOfFont: 'Белый; white',
 	lowerImage: '',
 	upperImage: '',
 }
@@ -94,12 +94,12 @@ const keyOrder = category => {
 			category: 'bathrobe',
 			addition: 'noHood',
 			cloth: 'Махровый',
-			color: "Белый",
+			color: "Черный; black",
 			frontText: '',
 			size: '42-44(S)',
 			text: 'Мой текст',
 			userFont: 'Alexander',
-			colorOfFont: 'Черный; black',
+			colorOfFont: 'Белый; white',
 			lowerImage: '',
 			upperImage: '',
 		}
@@ -107,26 +107,26 @@ const keyOrder = category => {
 		order = {
 			category: order.category,
 			cloth: 'Алькантара',
-			color: "Белый",
+			color: "Черный",
 			upperImage: '',
 		} 
 	} else if(category === 'pillow') {
 		order = {
 			category: order.category,
 			cloth: 'Алькантара',
-			color: "Белый",		
+			color: "Черный",		
 			text: 'Мой текст',
 			userFont: 'Alexander',
-			colorOfFont: 'Черный; black',
+			colorOfFont: 'Белый; white',
 		}
 	} else {
 		order = {
 			category: order.category,
 			cloth: 'Алькантара',
-			color: "Белый",
+			color: "Black; black",
 			text: 'Мой текст',
 			userFont: 'Alexander',
-			colorOfFont: 'Черный; black',
+			colorOfFont: 'Белый; white',
 			upperImage: '',
 		}
 	}
@@ -142,6 +142,12 @@ const viewDivs = () => {
 
 	for (el of activeDivs) {
 		el.style.display = 'flex'
+	}
+
+	if(order.category === 'pillow'){
+		document.querySelector('.userText').classList.add('userText-pillow')
+	} else {
+		document.querySelector('.userText').classList.remove('userText-pillow')
 	}
 
 	if(order.category === 'cap') {
@@ -185,9 +191,20 @@ const setActiveItemToFirst = () => {
 //Обновление вида и полей объекта order
 const updateView = () => {
 
-	categoryDiv.style.backgroundImage = `url(./img/${order.category}.png)`
+	if(order.category === 'bathrobe' || order.category === 'cap'){
+		categoryDiv.style.backgroundImage = `url(./img/${order.category}/${order.color.split('; ')[1]}.png)`
+	} else {
+		categoryDiv.style.backgroundImage = `url(./img/${order.category}.png)`
+	}
 
-	order.addition === 'hood' ? hoodDiv.style.display = 'block' : hoodDiv.style.display = 'none'
+
+	if (order.addition === 'hood') {
+		hoodDiv.style.backgroundImage = `url(./img/bathrobe/hood/${order.color.split('; ')[1]}.png)`
+		hoodDiv.style.display = 'block'
+	} else{
+		hoodDiv.style.display = 'none'
+	}
+		
 
 	if(order.text !== undefined){
 		const fontWeight = document.querySelector('.userFont span.active').style.fontWeight
@@ -222,7 +239,7 @@ const setOrderValue = (name, el = null) => {
 		order[name] = ''
 	} else {
 		order[name] = el.getAttribute(name)
-		if(name === 'colorOfFont') {
+		if(name === 'colorOfFont' || name === 'color') {
 			order[name] = el.getAttribute(name) + "; " + el.style.backgroundColor
 		}
 	}
