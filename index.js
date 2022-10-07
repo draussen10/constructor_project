@@ -20,35 +20,36 @@ const colorCapDivs = document.querySelectorAll('.color.cap span')
 const frontTextDivs = document.querySelectorAll('.front-text span')
 const colorOfFontDivs = document.querySelectorAll('.colorEmbroidery span')
 const userFontDivs = document.querySelectorAll('.userFont span')
+
 const textarea = document.querySelector("#userText")
 
 //
 
 const mainCategoryDiv = document.querySelector('.main-category')
-const mainHoodDiv = document.querySelector('.main-hood')
+const mainAdditionDiv = document.querySelector('.main-hood')
 const mainSizeDiv = document.querySelector('.main-size')
 
-const bathrobeClothDiv = document.querySelector('.cloth.bathrobe')
-const autonakidkaClothDiv = document.querySelector('.cloth.autonakidka')
-const pillowClothDiv = document.querySelector('.cloth.pillow')
-const capClothDiv = document.querySelector('.cloth.cap')
+const mainBathrobeClothDiv = document.querySelector('.cloth.bathrobe')
+const mainAutonakidkaClothDiv = document.querySelector('.cloth.autonakidka')
+const mainPillowClothDiv = document.querySelector('.cloth.pillow')
+const mainCapClothDiv = document.querySelector('.cloth.cap')
 
 const mainFrontTextDiv = document.querySelector('.main-front-text')
 
-const bathrobeColorDiv = document.querySelector('.color.bathrobe')
-const autonakidkaColorDiv = document.querySelector('.color.autonakidka')
-const pillowColorDiv = document.querySelector('.color.pillow')
-const capColorDiv = document.querySelector('.color.cap')
+const mainBathrobeColorDiv = document.querySelector('.color.bathrobe')
+const mainAutonakidkaColorDiv = document.querySelector('.color.autonakidka')
+const mainPillowColorDiv = document.querySelector('.color.pillow')
+const mainCapColorDiv = document.querySelector('.color.cap')
 
-const colorEmbroidery = document.querySelector(".colorEmbroidery").parentNode
+const mainColorOfFontDiv = document.querySelector(".colorEmbroidery").parentNode
 
-const mainImageDivBathobe = document.querySelector('.main-image-bathrobe')
-const mainImageDivOther = document.querySelector('.main-image-other')
-const mainUserfontDiv = document.querySelector('.main-userfont')
+const mainImageBathobeDiv = document.querySelector('.main-image-bathrobe')
+const mainImageOtherDiv = document.querySelector('.main-image-other')
+
+const mainTextDiv = document.querySelector('.main-userfont')
 
 
 //
-
 const imageList1 = document.querySelectorAll('.popupImage1 .imageList div')
 const imageList2 = document.querySelectorAll('.popupImage2 .imageList div')
 const imageList3 = document.querySelectorAll('.popupImage3 .imageList div')
@@ -58,11 +59,10 @@ const categoryDiv = document.querySelector(".imageBox")
 const hoodDiv = document.querySelector(".additionHoodBox")
 
 
-
-const bathrobeDivs = [mainCategoryDiv, mainHoodDiv, mainSizeDiv, bathrobeClothDiv, bathrobeColorDiv, colorEmbroidery, mainFrontTextDiv, mainUserfontDiv, mainImageDivBathobe]
-const autonakidkaDivs = [mainCategoryDiv, autonakidkaColorDiv, autonakidkaClothDiv, mainImageDivOther]
-const pillowDivs = [mainCategoryDiv, pillowClothDiv, pillowColorDiv, colorEmbroidery, mainUserfontDiv]
-const capDivs = [mainCategoryDiv, capClothDiv, capColorDiv, colorEmbroidery, mainUserfontDiv, mainImageDivOther]
+const bathrobeDivs = [mainCategoryDiv, mainAdditionDiv, mainSizeDiv, mainBathrobeClothDiv, mainBathrobeColorDiv, mainColorOfFontDiv, mainFrontTextDiv, mainTextDiv, mainImageBathobeDiv]
+const autonakidkaDivs = [mainCategoryDiv, mainAutonakidkaColorDiv, mainAutonakidkaClothDiv, mainImageOtherDiv]
+const pillowDivs = [mainCategoryDiv, mainPillowClothDiv, mainPillowColorDiv, mainColorOfFontDiv, mainTextDiv]
+const capDivs = [mainCategoryDiv, mainCapClothDiv, mainCapColorDiv, mainColorOfFontDiv, mainTextDiv, mainImageOtherDiv]
 
 let activeDivs = bathrobeDivs
 
@@ -72,13 +72,13 @@ let order = {
 	addition: 'noHood',
 	cloth: 'Махровый',
 	color: "Белый",
-	colorOfFont: 'Черный; black',
 	frontText: '',
-	lowerImage: '',
 	size: '42-44(S)',
 	text: 'Мой текст',
+	userFont: 'Alexander',
+	colorOfFont: 'Черный; black',
+	lowerImage: '',
 	upperImage: '',
-	userFont: 'Alexander'
 }
 
 const showObjectInConsole = () => {
@@ -95,13 +95,13 @@ const keyOrder = category => {
 			addition: 'noHood',
 			cloth: 'Махровый',
 			color: "Белый",
-			colorOfFont: 'Черный; black',
 			frontText: '',
-			lowerImage: '',
 			size: '42-44(S)',
 			text: 'Мой текст',
+			userFont: 'Alexander',
+			colorOfFont: 'Черный; black',
+			lowerImage: '',
 			upperImage: '',
-			userFont: 'Alexander'
 		}
 	}	else if(category === 'autonakidka') {
 		order = {
@@ -110,21 +110,30 @@ const keyOrder = category => {
 			color: "Белый",
 			upperImage: '',
 		} 
+	} else if(category === 'pillow') {
+		order = {
+			category: order.category,
+			cloth: 'Алькантара',
+			color: "Белый",		
+			text: 'Мой текст',
+			userFont: 'Alexander',
+			colorOfFont: 'Черный; black',
+		}
 	} else {
 		order = {
 			category: order.category,
 			cloth: 'Алькантара',
 			color: "Белый",
-			colorOfFont: 'Черный; black',
 			text: 'Мой текст',
+			userFont: 'Alexander',
+			colorOfFont: 'Черный; black',
 			upperImage: '',
-			userFont: 'Alexander'
 		}
 	}
 }
 
 //Удаление и добавление полей ввода
-const viewLeftDivs =  ()  => {
+const viewDivs = () => {
 	for (el of activeDivs) {
 		el.style.display = 'none'
 	}
@@ -134,8 +143,16 @@ const viewLeftDivs =  ()  => {
 	for (el of activeDivs) {
 		el.style.display = 'flex'
 	}
+
+	if(order.category === 'cap') {
+		document.querySelector('.userImage1').classList.add('userImage1-cap')
+	} else {
+		document.querySelector('.userImage1').classList.remove('userImage1-cap')
+	}
+	
 }
 
+//Приведение первой буквы к верхнему регистру
 const toUpper = str => {
 	return str
 		.toLowerCase()
@@ -146,6 +163,7 @@ const toUpper = str => {
 		.join(' ');
 }
 
+//Каждый первый элемент - активный
 const setActiveItemToFirst = () => {
 	for (key in order) {
 		if(key === 'cloth' || key == 'color'){
@@ -164,16 +182,11 @@ const setActiveItemToFirst = () => {
 	textarea.value = order.text
 }
 
+//Обновление вида и полей объекта order
 const updateView = () => {
 
 	categoryDiv.style.backgroundImage = `url(./img/${order.category}.png)`
 
-	if(order.category === 'cap') {
-		document.querySelector('.userImage1').classList.add('userImage1-cap')
-	} else {
-		document.querySelector('.userImage1').classList.remove('userImage1-cap')
-	}
-	
 	order.addition === 'hood' ? hoodDiv.style.display = 'block' : hoodDiv.style.display = 'none'
 
 	if(order.text !== undefined){
@@ -189,13 +202,13 @@ const updateView = () => {
 		order.category === 'bathrobe' ? document.querySelector(".delImage1").style.display = 'flex' : document.querySelector(".delImage3").style.display = 'flex'
 	} else {
 		document.querySelector(".userImage1").style.backgroundImage = ''
-		order.category === 'bathrobe' ? document.querySelector(".delImage1").style.display = 'none' : document.querySelector(".delImage3").style.display = 'none'
+		document.querySelector(".delImage1").style.display = document.querySelector(".delImage3").style.display = 'none'
 	}
 
 
 	if(order.lowerImage !== '' && order.lowerImage !== undefined) {
 		document.querySelector(".userImage2").style.backgroundImage = order.lowerImage
-		document.querySelector(".delImage2").style.display = 'block'
+		document.querySelector(".delImage2").style.display = 'flex'
 	} else {
 		document.querySelector(".userImage2").style.backgroundImage = ''
 		document.querySelector(".delImage2").style.display = 'none'
@@ -203,6 +216,7 @@ const updateView = () => {
 
 }
 
+//Изменение полей объекта при прямом выборе(изменяется только одно поле)
 const setOrderValue = (name, el = null) => {
 	if(el === null){
 		order[name] = ''
@@ -214,6 +228,7 @@ const setOrderValue = (name, el = null) => {
 	}
 }
 
+//Наблюдение за нажатием на каждом div-поле
 const watch = (array, valueOfObject) => {
 	array.forEach(el => {
 		el.onclick = () => {
@@ -227,7 +242,7 @@ const watch = (array, valueOfObject) => {
 			if(array === categoryDivs){
 				keyOrder(order.category)
 				setActiveItemToFirst()
-				viewLeftDivs()
+				viewDivs()
 				updateView()
 			}
 			showObjectInConsole()
@@ -298,36 +313,19 @@ const clearImage = (event, number) => {
 	}
 	updateView()
 	showObjectInConsole()
-	//Подумать как реализовать изменение красиво
 }
 
-document.querySelector('.delImage1').onclick = (event) => {
-	clearImage(event, 1)
-}
-document.querySelector('.delImage2').onclick = (event) => {
-	clearImage(event, 2)
-}
-document.querySelector('.delImage3').onclick = (event) => {
-	clearImage(event, 3)
-}
-
-
-document.querySelector(".popupImage1 > .close").onclick = () => {
-	document.querySelector(".popupImage1").style.display = "none"
-}
-document.querySelector(".popupImage2 > .close").onclick = () => {
-	document.querySelector(".popupImage2").style.display = "none"
-}
-document.querySelector(".popupImage3 > .close").onclick = () => {
-	document.querySelector(".popupImage3").style.display = "none"
-}
-
-document.querySelector(".image1").onclick = () => {
-	document.querySelector(".popupImage1").style.display = "block"
-}
-document.querySelector(".image2").onclick = () => {
-	document.querySelector(".popupImage2").style.display = "block"
-}
-document.querySelector(".image3").onclick = () => {
-	document.querySelector(".popupImage3").style.display = "block"
+for (let i = 1; i <= 3; i++) {
+	//Очистить изображение
+	document.querySelector(`.delImage${i}`).onclick = (event) => {
+		clearImage(event, i)
+	}
+	//Скрыть Поп-ап с изображениями
+	document.querySelector(`.popupImage${i} > .close`).onclick = () => {
+		document.querySelector(`.popupImage${i}`).style.display = "none"
+	}
+	//Показать Поп-ап с изображениями
+	document.querySelector(`.image${i}`).onclick = () => {
+		document.querySelector(`.popupImage${i}`).style.display = "block"
+	}
 }
