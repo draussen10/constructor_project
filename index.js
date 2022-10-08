@@ -213,6 +213,7 @@ const updateView = () => {
 		userPillowText.style = `font-family: 'for-constructor'; font-weight: ${fontWeight}; color: ${order.colorOfFont.split('; ')[1]}`
 		if(order.category !== 'pillow'){
 			userText.innerHTML = order.text
+			userPillowText.innerHTML = ''
 		} else {
 			userText.innerHTML = order.text.split('\n')[0]
 			userPillowText.innerHTML = order.text.split('\n')[1]
