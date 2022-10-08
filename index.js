@@ -1,5 +1,6 @@
 //Все должно быть либо белого, либо черного цвета
 const userText = document.querySelector("span.userText")
+const userPillowText = document.querySelector(".userPillowText")
 
 const categoryDivs = document.querySelectorAll('.category div')
 const additionDivs = document.querySelectorAll('.addition div')
@@ -115,7 +116,7 @@ const keyOrder = category => {
 			category: order.category,
 			cloth: 'Алькантара',
 			color: "Черный",		
-			text: 'Мой текст',
+			text: 'Госномер\n01',
 			userFont: 'Alexander',
 			colorOfFont: 'Белый; white',
 		}
@@ -209,7 +210,14 @@ const updateView = () => {
 	if(order.text !== undefined){
 		const fontWeight = document.querySelector('.userFont span.active').style.fontWeight
 		userText.style = `font-family: 'for-constructor'; font-weight: ${fontWeight}; color: ${order.colorOfFont.split('; ')[1]}`
-		userText.innerHTML = order.text
+		userPillowText.style = `font-family: 'for-constructor'; font-weight: ${fontWeight}; color: ${order.colorOfFont.split('; ')[1]}`
+		if(order.category !== 'pillow'){
+			userText.innerHTML = order.text
+		} else {
+			userText.innerHTML = order.text.split('\n')[0]
+			userPillowText.innerHTML = order.text.split('\n')[1]
+		}
+		
 	} else {
 		userText.innerHTML = ''
 	}
@@ -268,8 +276,8 @@ const watch = (array, valueOfObject) => {
 }
 
 textarea.addEventListener('input', () => {
-	if (textarea.value.split('\n').length > 3) {
-		textarea.value = textarea.value.split('\n')[0] + '\n' + textarea.value.split('\n')[1] + '\n' + textarea.value.split('\n')[2] 
+	if (textarea.value.split('\n').length > 2) {
+		textarea.value = textarea.value.split('\n')[0] + '\n' + textarea.value.split('\n')[1]
 	}
 	order.text = textarea.value
 	updateView()
