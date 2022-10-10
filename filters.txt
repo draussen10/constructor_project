@@ -1,0 +1,10 @@
+белый - filter: hue-rotate(-360deg) grayscale(0.01) brightness(1.91) saturate(0) ;
+черный - filter: hue-rotate(-360deg) grayscale(0.01) brightness(1.91) invert(1) saturate(0) ;
+серебро - filter: hue-rotate(173deg) grayscale(0.75) brightness(1.16) ;
+красный - filter: brightness(0.63) contrast(1.72) hue-rotate(-41deg) sepia(0.05) ;
+purple - filter: brightness(0.63) contrast(1.86) hue-rotate(-85deg) sepia(0.05) ;
+green - filter: brightness(0.63) contrast(1.89) hue-rotate(-281deg) sepia(0.05) ;
+brown - filter: brightness(0.58) contrast(2.03) hue-rotate(-346deg) saturate(0.85) sepia(0.4) ;
+#474a51 - filter: brightness(0.52) grayscale(1) ;
+blue - filter: brightness(0.75) hue-rotate(190deg) saturate(1.53) ;
+darkblue - filter: brightness(0.42) contrast(1.21) grayscale(0.25) hue-rotate(190deg) saturate(1.53) ;

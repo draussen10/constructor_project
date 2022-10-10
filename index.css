@@ -989,6 +989,60 @@ span[plus=silver]::before {
 }
 
 
+.img-darkblue {
+	filter: brightness(0.42) contrast(1.21) grayscale(0.25) hue-rotate(190deg) saturate(1.53) ;
+	-webkit-filter: brightness(0.42) contrast(1.21) grayscale(0.25) hue-rotate(190deg) saturate(1.53) ;
+	-moz-filter: brightness(0.42) contrast(1.21) grayscale(0.25) hue-rotate(190deg) saturate(1.53) ;
+}
 
+.img-blue {
+	filter: brightness(0.75) hue-rotate(190deg) saturate(1.53) ;
+	-webkit-filter: brightness(0.75) hue-rotate(190deg) saturate(1.53) ;
+	-moz-filter: brightness(0.75) hue-rotate(190deg) saturate(1.53) ;
+}
 
+.img-474a51 {
+	filter: brightness(0.52) grayscale(1) ;
+	-webkit-filter: brightness(0.52) grayscale(1) ;
+	-moz-filter: brightness(0.52) grayscale(1) ;
+}
 
+.img-purple { 
+	filter: brightness(0.63) contrast(1.86) hue-rotate(-85deg) sepia(0.05) ;
+	-webkit-filter: brightness(0.63) contrast(1.86) hue-rotate(-85deg) sepia(0.05) ;
+	-moz-filter: brightness(0.63) contrast(1.86) hue-rotate(-85deg) sepia(0.05) ;
+}
+.img-green { 
+	filter: brightness(0.63) contrast(1.89) hue-rotate(-281deg) sepia(0.05) ;
+	-webkit-filter: brightness(0.63) contrast(1.89) hue-rotate(-281deg) sepia(0.05) ;
+	-moz-filter: brightness(0.63) contrast(1.89) hue-rotate(-281deg) sepia(0.05) ; 
+	}
+.img-brown { 
+	filter: brightness(0.58) contrast(2.03) hue-rotate(-346deg) saturate(0.85) sepia(0.4) ;
+	-webkit-filter: brightness(0.58) contrast(2.03) hue-rotate(-346deg) saturate(0.85) sepia(0.4) ;
+	-moz-filter: brightness(0.58) contrast(2.03) hue-rotate(-346deg) saturate(0.85) sepia(0.4) ;
+}
+
+.img-red { 
+	filter: brightness(0.63) contrast(1.72) hue-rotate(-41deg) sepia(0.05) ;
+	-webkit-filter: brightness(0.63) contrast(1.72) hue-rotate(-41deg) sepia(0.05) ;
+	-moz-filter: brightness(0.63) contrast(1.72) hue-rotate(-41deg) sepia(0.05) ;
+}
+
+.img-silver { 
+	filter: hue-rotate(173deg) grayscale(0.75) brightness(1.16) saturate(0) ;
+	-webkit-filter: hue-rotate(173deg) grayscale(0.75) brightness(1.16) saturate(0) ;
+	-moz-filter: hue-rotate(173deg) grayscale(0.75) brightness(1.16) saturate(0) ;
+}
+
+.img-black { 
+	filter: hue-rotate(-360deg) grayscale(0.01) brightness(1.91) invert(1) saturate(0) ;
+	-webkit-filter: hue-rotate(-360deg) grayscale(0.01) brightness(1.91) invert(1) saturate(0) ;
+	-moz-filter: hue-rotate(-360deg) grayscale(0.01) brightness(1.91) invert(1) saturate(0) ;
+}
+
+.img-white { 
+	filter: hue-rotate(-360deg) grayscale(0.01) brightness(1.91) saturate(0) ;
+	-webkit-filter: hue-rotate(-360deg) grayscale(0.01) brightness(1.91) saturate(0) ;
+	-moz-filter: hue-rotate(-360deg) grayscale(0.01) brightness(1.91) saturate(0) ;
+}
