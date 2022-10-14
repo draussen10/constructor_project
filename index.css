@@ -636,6 +636,9 @@ textarea {
 	transform: rotate(90deg);
 	color: #fff
 }
+.userImage1Autonakidka {
+	width: 97px !important;
+}
 
 .userImage1 {
 	width: 150px;
@@ -649,14 +652,14 @@ textarea {
 }
 
 .userImage2 {
-	width: 140px;
-	height: 50px;
+	width: 174px;
+	height: 84px;
 	background-position: center;
 	background-repeat: no-repeat;
 	z-index: 105;
 	position: absolute;
 	background-size: contain;
-	top: 420px
+	top: 391px;
 }
 
 .money {

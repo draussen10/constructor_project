@@ -181,7 +181,7 @@ const viewDivs = () => {
 //Каждый первый элемент - активный
 const setOriginSettings = () => {
 	for (key in order) {
-		if(key === 'cloth' || key == 'color'){
+		if(key === 'cloth' || key === 'color'){
 			eval(key + toUpper(order.category) + 'Divs').forEach( (el, idx) => {
 				idx === 0 ? el.classList.add("active") : el.classList.remove("active")
 			})
@@ -222,6 +222,11 @@ const updateView = () => {
 		hoodImg.style.display = 'block'
 	} else{
 		hoodImg.style.display = 'none'
+	}
+
+	document.querySelector('.userImage1').classList.remove('userImage1Autonakidka')
+	if(order.category === 'autonakidka') {
+		document.querySelector('.userImage1').classList.add('userImage1Autonakidka')
 	}
 		
 
