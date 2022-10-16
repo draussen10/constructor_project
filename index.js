@@ -1,9 +1,5 @@
-//Все должно быть либо белого, либо черного цвета
-const userText = document.querySelector("span.userText")
-const userPillowText = document.querySelector(".userPillowText")
-
-const categoryDivs = document.querySelectorAll('.category div')
-const additionDivs = document.querySelectorAll('.addition div')
+const categoryDivs = document.querySelectorAll('.category span')
+const additionDivs = document.querySelectorAll('.hood span')
 
 const sizeDivs = document.querySelectorAll('.size div span')
 const sizeInput = document.querySelector('input[name = "size60-height"]')
@@ -19,7 +15,9 @@ const colorPillowDivs = document.querySelectorAll('.color.pillow span')
 const colorCapDivs = document.querySelectorAll('.color.cap span')
 
 const frontTextDivs = document.querySelectorAll('.front-text span')
+
 const colorOfFontDivs = document.querySelectorAll('.colorEmbroidery span')
+
 const userFontDivs = document.querySelectorAll('.userFont span')
 
 const textarea = document.querySelector("#userText")
@@ -42,13 +40,13 @@ const mainAutonakidkaColorDiv = document.querySelector('.color.autonakidka')
 const mainPillowColorDiv = document.querySelector('.color.pillow')
 const mainCapColorDiv = document.querySelector('.color.cap')
 
-const mainColorOfFontDiv = document.querySelector(".colorEmbroideryOther").parentElement
-const mainPillowColorOfFontDiv = document.querySelector(".colorEmbroideryPillow").parentElement
+const mainColorOfFontDiv = document.querySelector(".colorEmbroidery-bathrobe")
+const mainPillowColorOfFontDiv = document.querySelector(".colorEmbroidery-pillow")
 
 const mainImageBathobeDiv = document.querySelector('.main-image-bathrobe')
-const mainImageOtherDiv = document.querySelector('.main-image-other')
+const mainImageOtherDiv = document.querySelector('.main-image-cap')
 
-const mainTextDiv = document.querySelector('.main-userfont')
+const mainTextDiv = document.querySelector('.main-userFont')
 
 
 //
@@ -57,8 +55,12 @@ const imageList2 = document.querySelectorAll('.popupImage2 .imageList div')
 const imageList3 = document.querySelectorAll('.popupImage3 .imageList div')
 
 //
-const categoryImg = document.querySelector(".imageBox")
-const hoodImg = document.querySelector(".additionHoodBox")
+const imageBox = document.querySelector(".imageBox")
+const hoodImg = document.querySelector(".additionBox")
+const userImage1 = document.querySelector(".userImage1")
+const userImage2 = document.querySelector(".userImage2")
+const userText = document.querySelector(".userText")
+const userPillowText = document.querySelector(".userPillowText")
 
 
 const bathrobeDivs = [mainCategoryDiv, mainAdditionDiv, mainSizeDiv, mainBathrobeClothDiv, mainBathrobeColorDiv, mainColorOfFontDiv, mainFrontTextDiv, mainTextDiv, mainImageBathobeDiv]
@@ -98,7 +100,7 @@ const toUpper = str => {
 }
 
 const showObjectInConsole = () => {
-	//console.clear()
+	console.clear()
 	for (key in order){
 		console.log(key + ": " + order[key])
 	}
@@ -113,7 +115,7 @@ const setKeyOrder = category => {
 		order = {
 			category: 'bathrobe',
 			addition: 'noHood',
-			cloth: 'Махровый',
+			cloth: 'terry',
 			color: "Черный; black",
 			frontText: '',
 			size: '42-44(S)',
@@ -126,14 +128,14 @@ const setKeyOrder = category => {
 	}	else if(category === 'autonakidka') {
 		order = {
 			category: order.category,
-			cloth: 'Алькантара',
+			cloth: 'alcantara',
 			color: "Черный",
 			upperImage: '',
 		} 
 	} else if(category === 'pillow') {
 		order = {
 			category: order.category,
-			cloth: 'Алькантара',
+			cloth: 'alcantara',
 			color: "Черный",		
 			text: 'Госномер\n01',
 			userFont: 'Alexander',
@@ -142,7 +144,7 @@ const setKeyOrder = category => {
 	} else {
 		order = {
 			category: order.category,
-			cloth: 'Алькантара',
+			cloth: 'alcantara',
 			color: "Black; black",
 			text: 'Мой текст',
 			userFont: 'Alexander',
@@ -165,15 +167,15 @@ const viewDivs = () => {
 	}
 
 	if(order.category === 'pillow'){
-		document.querySelector('.userText').classList.add('userText-pillow')
+		userText.classList.add('userText-pillow')
 	} else {
-		document.querySelector('.userText').classList.remove('userText-pillow')
+		userText.classList.remove('userText-pillow')
 	}
 
 	if(order.category === 'cap') {
-		document.querySelector('.userImage1').classList.add('userImage1-cap')
+		userImage1.classList.add('userImage1-cap')
 	} else {
-		document.querySelector('.userImage1').classList.remove('userImage1-cap')
+		userImage1.classList.remove('userImage1-cap')
 	}
 	
 }
@@ -188,7 +190,7 @@ const setOriginSettings = () => {
 		} else if(key === 'category' || key === 'lowerImage' || key === 'upperImage' || key === 'text') {
 			continue
 		} else if(order.category === 'pillow' && key === 'colorOfFont') {
-			document.querySelector('.colorEmbroideryPillow span').classList.add("active")
+			document.querySelector('.colorEmbroidery-pillow span').classList.add("active")
 		} else {
 			eval(key + 'Divs').forEach( (el, idx) => {
 				idx === 0 ? el.classList.add("active") : el.classList.remove("active")
@@ -198,7 +200,7 @@ const setOriginSettings = () => {
 	sizeInput.value = ''
 	textarea.value = order.text
 
-	const imageList = [document.querySelector(".userImage1"), document.querySelector(".userImage2")]
+	const imageList = [userImage1, userImage2]
 
 	imageList.forEach(el => {
 		for(color of colors) {
@@ -210,10 +212,12 @@ const setOriginSettings = () => {
 //Обновление вида и полей объекта order
 const updateView = () => {
 
-	if(order.category === 'bathrobe' || order.category === 'cap'){
-		categoryImg.style.backgroundImage = `url(./img/${order.category}/${toColor(order.color)}.png)`
+	if(order.category === 'pillow'){
+		imageBox.style.backgroundImage = `url(./img/${order.category}.png)`
+	} else if(order.category === 'autonakidka') {
+		imageBox.style.backgroundImage = `url(./img/${order.category}/${order.cloth}.png)`
 	} else {
-		categoryImg.style.backgroundImage = `url(./img/${order.category}.png)`
+		imageBox.style.backgroundImage = `url(./img/${order.category}/${toColor(order.color)}.png)`
 	}
 
 
@@ -224,9 +228,9 @@ const updateView = () => {
 		hoodImg.style.display = 'none'
 	}
 
-	document.querySelector('.userImage1').classList.remove('userImage1Autonakidka')
+	userImage1.classList.remove('userImage1-autonakidka')
 	if(order.category === 'autonakidka') {
-		document.querySelector('.userImage1').classList.add('userImage1Autonakidka')
+		userImage1.classList.add('userImage1-autonakidka')
 	}
 		
 
@@ -248,10 +252,10 @@ const updateView = () => {
 	}
 
 	if(order.upperImage !== ''  && order.upperImage !== undefined) {
-		document.querySelector(".userImage1").style.backgroundImage = order.upperImage
+		userImage1.style.backgroundImage = order.upperImage
 		order.category === 'bathrobe' ? document.querySelector(".delImage1").style.display = 'flex' : document.querySelector(".delImage3").style.display = 'flex'
 	} else {
-		document.querySelector(".userImage1").style.backgroundImage = ''
+		userImage1.style.backgroundImage = ''
 		document.querySelector(".delImage1").style.display = document.querySelector(".delImage3").style.display = 'none'
 	}
 
@@ -265,7 +269,7 @@ const updateView = () => {
 	}
 
 	if(order.category === 'bathrobe') {
-		const imageList = [document.querySelector(".userImage1"), document.querySelector(".userImage2")]
+		const imageList = [userImage1,userImage2]
 		
 		imageList.forEach(el => {
 			for(color of colors) {
@@ -389,6 +393,6 @@ for (let i = 1; i <= 3; i++) {
 	}
 	//Показать Поп-ап с изображениями
 	document.querySelector(`.image${i}`).onclick = () => {
-		document.querySelector(`.popupImage${i}`).style.display = "block"
+		document.querySelector(`.popupImage${i}`).style.display = 'block'
 	}
 }

@@ -9,7 +9,7 @@ a {
 
 section {
 	padding: 30px;
-	font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+	font-family: Arial, sans-serif;
 	max-width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -54,7 +54,6 @@ section p {
 }
 
 @media(max-width: 768px) {
-
 	.container .title a,
 	.container .title span {
 		margin-top: 10px;
@@ -73,46 +72,40 @@ section p {
 	align-self: start
 }
 
-.userfont-container {
+.userFont-container {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between
-
-}
-
-.userFont {
-	font-family: 'for-constructor';
-	font-size: 20px;
 }
 
 @media(max-width: 768px) {
-	.userfont-container {
+	.userFont-container {
 		flex-direction: column
 	}
 }
 
-.userfont-container section.container:nth-child(1) {
+.userFont-container section.container:nth-child(1) {
 	width: 35%;
 	justify-content: flex-start;
 	align-items: flex-start
 }
 
 @media(max-width: 768px) {
-	.userfont-container section.container:nth-child(1) {
+	.userFont-container section.container:nth-child(1) {
 		width: 100%
 	}
 }
 
-.userfont-container section.container:nth-child(1) .userFont span {
+.userFont-container section.container:nth-child(1) .userFont span {
 	width: 160px
 }
 
-.userfont-container section.container:nth-child(2) {
+.userFont-container section.container:nth-child(2) {
 	width: 58%
 }
 
 @media(max-width) {
-	.userfont-container section.container:nth-child(2) {
+	.userFont-container section.container:nth-child(2) {
 		width: 100%
 	}
 }
@@ -135,7 +128,6 @@ section p {
 	flex-direction: column;
 	width: 55%
 }
-
 
 .rightSide {
 	display: flex;
@@ -210,7 +202,7 @@ section p {
 	max-width: 40%
 }
 
-.rightSide .additionHoodBox {
+.rightSide .additionBox {
 	width: 292px;
 	height: 140px;
 	background-position: 0px 20px;
@@ -231,7 +223,7 @@ section p {
 	align-content: center;
 	z-index: 20;
 	text-align: center;
-	font-family: "Lobster";
+	font-family: Arial;
 	font-size: 32px;
 	line-height: 1.2em;
 	white-space: break-spaces
@@ -256,7 +248,7 @@ section p {
 	justify-content: space-between
 }
 
-.category div {
+.category span {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -276,7 +268,6 @@ section p {
 	}
 }
 
-
 .category div:hover {
 	background: #b08a39;
 	transition: background .3s
@@ -294,7 +285,7 @@ section p {
 
 .gender,
 .cloth,
-.addition,
+.hood,
 .size-text-field,
 .front-text,
 .userFont {
@@ -309,8 +300,8 @@ section p {
 .gender span,
 .cloth div,
 .cloth span,
-.addition div,
-.addition span,
+.hood div,
+.hood span,
 .size-text-field div,
 .size-text-field span,
 .front-text div,
@@ -336,8 +327,8 @@ section p {
 .gender span::before,
 .cloth div::before,
 .cloth span::before,
-.addition div::before,
-.addition span::before,
+.hood div::before,
+.hood span::before,
 .size-text-field div::before,
 .size-text-field span::before,
 .front-text div::before,
@@ -365,7 +356,7 @@ section p {
 
 .gender .active::before,
 .cloth .active::before,
-.addition .active::before,
+.hood .active::before,
 .size-text-field .active::before,
 .front-text .active::before,
 .userFont .active::before {
@@ -636,7 +627,7 @@ textarea {
 	transform: rotate(90deg);
 	color: #fff
 }
-.userImage1Autonakidka {
+.userImage1-autonakidka {
 	width: 97px !important;
 	top: 130px !important;
 }
@@ -738,7 +729,7 @@ textarea {
 }
 
 @media(max-width: 768px) {
-	.userfont-container section.container:nth-child(2) {
+	.userFont-container section.container:nth-child(2) {
 		width: 100%
 	}
 
@@ -908,8 +899,8 @@ span[plus=silver]::before {
 		.gender span,
 		.cloth div,
 		.cloth span,
-		.addition div,
-		.addition span,
+		.hood div,
+		.hood span,
 		.size-text-field div,
 		.size-text-field span,
 		.front-text div,
@@ -939,8 +930,8 @@ span[plus=silver]::before {
     height: 35px;
 	}
 
-	.addition span,
-	.addition div {
+	.hood span,
+	.hood div {
 		width: 50%;
 	}
 
@@ -1045,4 +1036,9 @@ span[plus=silver]::before {
 	filter: hue-rotate(-360deg) grayscale(0.01) brightness(1.91) saturate(0) ;
 	-webkit-filter: hue-rotate(-360deg) grayscale(0.01) brightness(1.91) saturate(0) ;
 	-moz-filter: hue-rotate(-360deg) grayscale(0.01) brightness(1.91) saturate(0) ;
+}
+
+.userFont {
+	font-family: 'for-constructor';
+	font-size: 20px;
 }

@@ -1,406 +1,595 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=v, initial-scale=1.0">
-			<link rel="stylesheet" href="tilda.css">
-			<link rel="stylesheet" href="index.css">
-			<link rel="stylesheet" href="fonts.css">
-      <title>Document</title>
-   </head>
-   <body>
-		<div class="my-container">
-			<section>
-				 <div class="constructor">
-						<div class="leftSide">
-							 <div class="category main-category">
-									<div add-price="4300" category="bathrobe" class="active">Халат</div>
-									<div add-price="1200" category="autonakidka">Автонакидка</div>
-									<div add-price="1850" category="pillow">Подушка</div>
-									<div add-price="1850" category="cap">Кепка</div>
-							 </div>
-							 <section class="container main-hood">
-									<div class="addition">
-										 <div addition="noHood" class="active">Без капюшона</div>
-										 <div addition="hood" add-price="500">С капюшоном</div>
-									</div>
-							 </section>
-							 <section class="container main-size">
-									<div class="title">
-										 <h3 class="size-title">Размер</h3>
-										 <span class="popup-size-list">Смотреть таблицу размеров</span>
-									</div>
-									
-									<div class="size">
-										 <div>
-											<span  size-id="1" size="42-44(S)" class="active">42-44<br>(S)</span> 
-											<span  size-id="2" size="46-48(M)">46-48<br>(M)</span> 
-											<span  size-id="3" size="50-52(L)">50-52<br>(L)</span> 
-											<span  size-id="4" size="54-56(XL)">54-56<br>(XL)</span> 
-											<span  size-id="5" size="58-60(XXL)">58-60<br>(XXL)</span> 
-										</div>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=v, initial-scale=1.0">
+	<link rel="stylesheet" href="tilda.css">
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="fonts.css">
+	<title>Document</title>
+</head>
+<body>
+<div class="my-container">
+	<section>
+		<div class="constructor">
+			<div class="leftSide">
 
-										<div class="size62">
-											<div class="size62">Если халат больше 60 размера, укажите размер тут и мы с вами свяжемся</div>
-											<form action=""><input name="size60-height" placeholder="Ваш размер / Рост см"></form>
-										</div>
+				<section class="container category main-category">
+					<span add-price="4300" category="bathrobe" class="active">Халат</span>
+					<span add-price="1200" category="autonakidka">Автонакидка</span>
+					<span add-price="1850" category="pillow">Подушка</span>
+					<span add-price="1850" category="cap">Кепка</span>
+				</section>
 
-									</div>
-							 </section>
-							 <section class="container">
-									<div class="title">
-										 <h3>Ткань</h3>
-									</div>
-									<div class="cloth bathrobe">
-										<span cloth="Махровый" add-price="4300" class="active">Махровый</span> 
-										<span cloth="Велюровый" add-price="5200">Велюровый</span> 
-										<span cloth="Вафельный" add-price="5100">Вафельный</span>
-									</div>
-									<div class="cloth autonakidka" style="display: none">
-										<span cloth="Алькантара" add-price="2100">Алькантара</span>
-										<span cloth="Велюр" add-price="1850">Велюр</span> 
-									</div>
-									<div class="cloth pillow" style="display: none">
-										<span cloth="Алькантара" add-price="0">Алькантара</span>
-									</div>
-									<div class="cloth cap" style="display: none">
-										<span cloth="Алькантара" add-price="0">Алькантара</span>
-									</div>
-							 </section>
-							 <section class="container main-front-text">
-									<div class="title">
-										 <h3>Вышивка спереди</h3>
-									</div>
-									<div class="front-text" from-category="all">
-										<span frontText="no" class="active">Нет</span> 
-										<span frontText="yes" add-price="300">Да</span>
-									</div>
-							 </section>
-							 <div class="colors-container main-colors">
-									<section class="container">
-										 <div class="title">
-												<h3>Цвет изделия</h3>
-										 </div>
-										 <div class="color bathrobe">
-											<span color="Чёрный" style="background-color: black" class="active"></span> 
-											<span color="Белый" style="background-color: white"></span> 
-											<span color="Серый" style="background-color: gray"></span> 
-											<span color="Шоколадный" style="background-color: saddlebrown"></span> 
-											<span color="Синий" style="background-color: blue"></span> 
-											<span color="Тёмносиний" style="background-color: darkblue"></span> 
-											<span color="Красный" style="background-color: red"></span>
-											<span color="Бордовый" style="background-color: darkred"></span>
-											<span color="Пудровый" style="background-color: lightpink"></span>
-											<span color="Розовый" style="background-color: pink"></span>
-											<span color="Персиковый" style="background-color: peachpuff"></span>
-										</div>
-										<div class="color autonakidka" style="display: none">
-											<span color="Чёрный" image-variable="black" style="background-color: black"></span> 
-										</div>
-										 <div class="color pillow" style="display: none">
-											<span color="Чёрный" image-variable="black" style="background-color: black"></span> 
-										</div>
-										<div class="color cap" style="display: none">
-											<span color="Чёрный" image-variable="black" style="background-color: black"></span> 
-											<span color="Белый" image-variable="white" style="background-color: white"></span> 
-											<span color="Красная" image-variable="red" style="background-color: red"></span> 
-											<span color="Синяя" image-variable="blue" style="background-color: blue"></span> 
-										</div>
-									</section>
-									<section class="container">
-										<div class="title">
-											<h3>Цвет вышивки</h3>
-										</div>
-										<div class="colorEmbroidery colorEmbroideryOther">
-											<span colorOfFont="Белый" style="background-color: white" class="active"></span> 
-											<span colorOfFont="Черный" style="background-color: black"></span> 
-											<span colorOfFont="Золотой" style="background-color: gold"></span> 
-											<span colorOfFont="Серебро" style="background-color: silver"></span> 
-											<span colorOfFont="Красный" style="background-color: red"></span> 
-											<span colorOfFont="Пурпурный" style="background-color: purple"></span> 
-											<span colorOfFont="Зеленый" style="background-color: green"></span> 
-											<span colorOfFont="Коричневый" style="background-color: brown"></span> 
-											<span colorOfFont="Графит" style="background-color: #474a51"></span> 
-											<span colorOfFont="Синий" style="background-color: blue"></span>
-											<span colorOfFont="Тёмносиний" style="background-color: darkblue"></span>
-										</div>
-									</section>
-									<section class="container" style="display: none;">
-										<div class="title">
-											<h3>Цвет вышивки</h3>
-										</div>
-										<div class="colorEmbroidery colorEmbroideryPillow">
-											<span colorOfFont="Белый" style="background-color: white" class="active"></span>
-										</div>
-									</section>
-							 </div>
-							 <section class="container main-image main-image-bathrobe">
-									<div class="title">
-										 <h3>Рисунки</h3>
-									</div>
-									<div class="imageButton">
-										<span class="image1">Верхний рисунок <b class="delImage delImage1" style="display: none;">╳</b></span> 
-										<span class="image2">Нижний рисунок <b class="delImage delImage2" style="display: none;">╳</b></span>
-									</div>
-							 </section>
-							 <section class="container main-image main-image-other" style="display: none;">
-								<div class="title">
-									 <h3>Рисунки</h3>
-								</div>
-								<div class="imageButton">
-									<span class="image3">Логотип<b class="delImage delImage3" style="display: none;">╳</b></span> 
-								</div>
-						 </section>
-							 <div class="userfont-container main-userfont">
-									<section class="container ">
-										 <div class="title">
-												<h3>Текст вышивки</h3>
-										 </div>
-										 <div><textarea name="userText" id="userText" cols="30" rows="9" placeholder="Ваш текст">Мой текст</textarea></div>
-									</section>
-									<section class="container">
-										 <div class="title">
-												<h3>Выберите шрифт</h3>
-										 </div>
-										 <div class="userFont">
-											<span userFont="Alexander" style=" font-weight: 100;" class="active">Alexander</span> 
-											<span userFont="Boyarsky" style=" font-weight: 200;">Boyarsky</span> 
-											<span userFont="Jacoba" style=" font-weight: 300;">Jacoba</span>
-											<span userFont="Lobster" style=" font-weight: 400;">Lobster</span> 
-											<span userFont="Majestic" style=" font-weight: 500;">Majestic</span> 
-											<span userFont="Mon_Amour_One" style=" font-weight: 600;">Mon_Amour_One</span> 
-											<span userFont="Mon_Amour_Two" style=" font-weight: 700;">Mon_Amour_Two</span> 
-											<span userFont="Painter" style=" font-weight: 800;">Painter</span> 
-											<span userFont="Славянский" style=" font-weight: 900;">Славянский</span> 
-										</div>
-									</section>
-							 </div>
+				<section class="container hood main-hood">
+					<span addition="noHood" class="active">Без капюшона</span>
+					<span addition="hood" add-price="500">С капюшоном</span>
+				</section>
+
+				<section class="container main-size">
+					<div class="title">
+						<h3 class="size-title">Размер</h3>
+					</div>
+
+					<div class="size">
+						<div>
+							<span size-id="1" size="42-44(S)" class="active">42-44<br>(S)</span>
+							<span size-id="2" size="46-48(M)">46-48<br>(M)</span>
+							<span size-id="3" size="50-52(L)">50-52<br>(L)</span>
+							<span size-id="4" size="54-56(XL)">54-56<br>(XL)</span>
+							<span size-id="5" size="58-60(XXL)">58-60<br>(XXL)</span>
 						</div>
-						<div class="rightSide">
-							 <div class="userImage1"></b></div>
-							 <span class="userText" style="color: #fff;font-family: 'for-constructor'; font-weight: 100;">Мой текст</span>
-							 <span class="userPillowText" style="color: #fff;font-family: 'for-constructor'; font-weight: 100;"></span>
-							 <div class="userImage2"></b></div>
-							 <div class="additionHoodBox" style="display: none;"></div>
-							 <div class="imageBox" style="background-image: url(./img/bathrobe/black.png);"></div>
-							 <div class="formWrapper">
-									<form action="" id="form-order">
-										 <input name="where-talk" placeholder="Где удобнее общаться"> <input name="data-contact" placeholder="Данные для связи"> <input class="inputHidden" name="category" placeholder="category"> <input class="inputHidden" name="gender" placeholder="gender"> <input class="inputHidden" name="addition" placeholder="addition"> <input class="inputHidden" name="size" placeholder="size"> <input class="inputHidden" name="height" placeholder="height"> <input class="inputHidden" name="cloth" placeholder="cloth"> <input class="inputHidden" name="color" placeholder="color"> <input class="inputHidden" name="user-text" placeholder="user-text"> <input class="inputHidden" name="front-text" placeholder="front-text"> <input class="inputHidden" name="user-text-size" placeholder="user-text-size"> <input class="inputHidden" name="user-category-1" placeholder="user-category-1"> <input class="inputHidden" name="user-image-1" placeholder="user-image-1"> <input class="inputHidden" name="user-category-2" placeholder="user-category-2"> <input class="inputHidden" name="user-image-2" placeholder="user-image-2"> <input class="inputHidden" name="user-font" placeholder="user-font"> <input class="inputHidden" name="user-color" placeholder="user-color"> <input class="inputHidden" name="final-price" placeholder="final-price">
-										 <div class="money"><span>Расчёт стоимости: </span><span class="calc-value">4300 руб.</span></div>
-										 <button style="background: rgb(176, 138, 57); color: rgb(255, 255, 255); font-weight: 600;">Оформить заказ</button>
-									</form>
-							 </div>
+
+						<div class="size62">
+							<div class="size62">Если халат больше 60 размера, укажите размер тут и мы с вами свяжемся</div>
+							<form action=""><input name="size60-height" placeholder="Ваш размер / Рост см"></form>
 						</div>
-				 </div>
-			</section>
+					</div>
+				</section>
+
+				<section class="container main-cloth">
+					<div class="title">
+						<h3>Ткань</h3>
+					</div>
+
+					<div class="cloth bathrobe">
+						<span cloth="terry" add-price="4300" class="active">Махровый</span>
+						<span cloth="velour" add-price="5200">Велюровый</span>
+						<span cloth="waffle" add-price="5100">Вафельный</span>
+					</div>
+					<div class="cloth autonakidka" style="display: none">
+						<span cloth="alcantara" add-price="2100">Алькантара</span>
+						<span cloth="velour" add-price="1850">Велюр</span>
+					</div>
+					<div class="cloth pillow" style="display: none">
+						<span cloth="alcantara" add-price="0">Алькантара</span>
+					</div>
+					<div class="cloth cap" style="display: none">
+						<span cloth="alcantara" add-price="0">Алькантара</span>
+					</div>
+				</section>
+
+				<section class="container main-front-text">
+					<div class="title">
+						<h3>Вышивка спереди</h3>
+					</div>
+					<div class="front-text">
+						<span frontText="no" class="active">Нет</span>
+						<span frontText="yes" add-price="300">Да</span>
+					</div>
+				</section>
+
+				<div class="colors-container main-colors">
+					<section class="container main-color">
+						<div class="title">
+							<h3>Цвет изделия</h3>
+						</div>
+						<div class="color bathrobe">
+							<span color="Чёрный" style="background-color: black" class="active"></span>
+							<span color="Белый" style="background-color: white"></span>
+							<span color="Серый" style="background-color: gray"></span>
+							<span color="Шоколадный" style="background-color: saddlebrown"></span>
+							<span color="Синий" style="background-color: blue"></span>
+							<span color="Тёмносиний" style="background-color: darkblue"></span>
+							<span color="Красный" style="background-color: red"></span>
+							<span color="Бордовый" style="background-color: darkred"></span>
+							<span color="Пудровый" style="background-color: lightpink"></span>
+							<span color="Розовый" style="background-color: pink"></span>
+							<span color="Персиковый" style="background-color: peachpuff"></span>
+						</div>
+						<div class="color autonakidka" style="display: none">
+							<span color="Чёрный" image-variable="black" style="background-color: black"></span>
+						</div>
+						<div class="color pillow" style="display: none">
+							<span color="Чёрный" image-variable="black" style="background-color: black"></span>
+						</div>
+						<div class="color cap" style="display: none">
+							<span color="Чёрный" image-variable="black" style="background-color: black"></span>
+							<span color="Белый" image-variable="white" style="background-color: white"></span>
+							<span color="Красная" image-variable="red" style="background-color: red"></span>
+							<span color="Синяя" image-variable="blue" style="background-color: blue"></span>
+						</div>
+					</section>
+
+					<section class="container main-colorEmbroidery">
+						<div class="title">
+							<h3>Цвет вышивки</h3>
+						</div>
+						<div class="colorEmbroidery colorEmbroidery-bathrobe colorEmbroidery-cap">
+							<span colorOfFont="Белый" style="background-color: white" class="active"></span>
+							<span colorOfFont="Черный" style="background-color: black"></span>
+							<span colorOfFont="Золотой" style="background-color: gold"></span>
+							<span colorOfFont="Серебро" style="background-color: silver"></span>
+							<span colorOfFont="Красный" style="background-color: red"></span>
+							<span colorOfFont="Пурпурный" style="background-color: purple"></span>
+							<span colorOfFont="Зеленый" style="background-color: green"></span>
+							<span colorOfFont="Коричневый" style="background-color: brown"></span>
+							<span colorOfFont="Графит" style="background-color: #474a51"></span>
+							<span colorOfFont="Синий" style="background-color: blue"></span>
+							<span colorOfFont="Тёмносиний" style="background-color: darkblue"></span>
+						</div>
+						<div class="colorEmbroidery colorEmbroidery-pillow">
+							<span colorOfFont="Белый" style="background-color: white" class="active"></span>
+						</div>
+					</section>
+				</div>
+
+				<section class="container main-image main-image-bathrobe">
+					<div class="title">
+						<h3>Рисунки</h3>
+					</div>
+					<div class="imageButton">
+						<span class="image1">Верхний рисунок <b class="delImage delImage1" style="display: none;">╳</b></span>
+						<span class="image2">Нижний рисунок <b class="delImage delImage2" style="display: none;">╳</b></span>
+					</div>
+				</section>
+
+				<section class="container main-image main-image-cap main-image-autonakidka" style="display: none;">
+					<div class="title">
+						<h3>Рисунки</h3>
+					</div>
+					<div class="imageButton">
+						<span class="image3">Логотип<b class="delImage delImage3" style="display: none;">╳</b></span>
+					</div>
+				</section>
+
+				<div class="userFont-container main-userFont">
+					<section class="container">
+						<div class="title">
+							<h3>Текст вышивки</h3>
+						</div>
+						<div><textarea name="userText" id="userText" cols="30" rows="9" placeholder="Ваш текст">Мой текст</textarea>
+						</div>
+					</section>
+					<section class="container">
+						<div class="title">
+							<h3>Выберите шрифт</h3>
+						</div>
+						<div class="userFont">
+							<span userFont="Alexander" style=" font-weight: 100;" class="active">Alexander</span>
+							<span userFont="Boyarsky" style=" font-weight: 200;">Boyarsky</span>
+							<span userFont="Jacoba" style=" font-weight: 300;">Jacoba</span>
+							<span userFont="Lobster" style=" font-weight: 400;">Lobster</span>
+							<span userFont="Majestic" style=" font-weight: 500;">Majestic</span>
+							<span userFont="Mon_Amour_One" style=" font-weight: 600;">Mon_Amour_One</span>
+							<span userFont="Mon_Amour_Two" style=" font-weight: 700;">Mon_Amour_Two</span>
+							<span userFont="Painter" style=" font-weight: 800;">Painter</span>
+							<span userFont="Славянский" style=" font-weight: 900;">Славянский</span>
+						</div>
+					</section>
+				</div>
+			</div>
+			<div class="rightSide">
+				<div class="userImage1"></b></div>
+				<span class="userText" style="color: #fff;font-family: 'for-constructor'; font-weight: 100;">Мой текст</span>
+				<span class="userPillowText" style="color: #fff;font-family: 'for-constructor'; font-weight: 100;"></span>
+				<div class="userImage2"></b></div>
+				<div class="additionBox" style="display: none;"></div>
+				<div class="imageBox" style="background-image: url(./img/bathrobe/black.png);"></div>
+				<div class="formWrapper">
+					<form action="" id="form-order">
+						<input name="where-talk" placeholder="Где удобнее общаться"> <input name="data-contact"
+																																								placeholder="Данные для связи"> <input
+						class="inputHidden" name="category" placeholder="category"> <input class="inputHidden" name="gender"
+																																							 placeholder="gender"> <input
+						class="inputHidden" name="addition" placeholder="addition"> <input class="inputHidden" name="size"
+																																							 placeholder="size"> <input
+						class="inputHidden" name="height" placeholder="height"> <input class="inputHidden" name="cloth"
+																																					 placeholder="cloth"> <input
+						class="inputHidden" name="color" placeholder="color"> <input class="inputHidden" name="user-text"
+																																				 placeholder="user-text"> <input
+						class="inputHidden" name="front-text" placeholder="front-text"> <input class="inputHidden"
+																																									 name="user-text-size"
+																																									 placeholder="user-text-size"> <input
+						class="inputHidden" name="user-category-1" placeholder="user-category-1"> <input class="inputHidden"
+																																														 name="user-image-1"
+																																														 placeholder="user-image-1">
+						<input class="inputHidden" name="user-category-2" placeholder="user-category-2"> <input class="inputHidden"
+																																																		name="user-image-2"
+																																																		placeholder="user-image-2">
+						<input class="inputHidden" name="user-font" placeholder="user-font"> <input class="inputHidden"
+																																												name="user-color"
+																																												placeholder="user-color"> <input
+						class="inputHidden" name="final-price" placeholder="final-price">
+						<div class="money"><span>Расчёт стоимости: </span><span class="calc-value">4300 руб.</span></div>
+						<button style="background: rgb(176, 138, 57); color: rgb(255, 255, 255); font-weight: 600;">Оформить заказ
+						</button>
+					</form>
+				</div>
+			</div>
 		</div>
+	</section>
+</div>
 
-			<div class="popupImage popupImage1" style="display: none;">
-				<div class="close"><span>✕</span></div>
-				<div class="imageList">
-					<div loading="lazy" upperImage="url('./img/top/1.png')" style="background-image:url('./img/top/1.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/2.png')" style="background-image:url('./img/top/2.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/3.png')" style="background-image:url('./img/top/3.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/4.png')" style="background-image:url('./img/top/4.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/5.png')" style="background-image:url('./img/top/5.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/6.png')" style="background-image:url('./img/top/6.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/7.png')" style="background-image:url('./img/top/7.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/8.png')" style="background-image:url('./img/top/8.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/9.png')" style="background-image:url('./img/top/9.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/10.png')" style="background-image:url('./img/top/10.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/11.png')" style="background-image:url('./img/top/11.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/12.png')" style="background-image:url('./img/top/12.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/13.png')" style="background-image:url('./img/top/13.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/14.png')" style="background-image:url('./img/top/14.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/15.png')" style="background-image:url('./img/top/15.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/16.png')" style="background-image:url('./img/top/16.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/17.png')" style="background-image:url('./img/top/17.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/18.png')" style="background-image:url('./img/top/18.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/19.png')" style="background-image:url('./img/top/19.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/20.png')" style="background-image:url('./img/top/20.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/21.png')" style="background-image:url('./img/top/21.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/22.png')" style="background-image:url('./img/top/22.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/23.png')" style="background-image:url('./img/top/23.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/24.png')" style="background-image:url('./img/top/24.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/25.png')" style="background-image:url('./img/top/25.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/26.png')" style="background-image:url('./img/top/26.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top/27.png')" style="background-image:url('./img/top/27.png')"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/1.png')" style="background-image: url('./img/top&bottom/1.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/2.png')" style="background-image: url('./img/top&bottom/2.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/3.png')" style="background-image: url('./img/top&bottom/3.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/4.png')" style="background-image: url('./img/top&bottom/4.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/5.png')" style="background-image: url('./img/top&bottom/5.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/6.png')" style="background-image: url('./img/top&bottom/6.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/7.png')" style="background-image: url('./img/top&bottom/7.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/8.png')" style="background-image: url('./img/top&bottom/8.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/9.png')" style="background-image: url('./img/top&bottom/9.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/10.png')" style="background-image: url('./img/top&bottom/10.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/11.png')" style="background-image: url('./img/top&bottom/11.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/12.png')" style="background-image: url('./img/top&bottom/12.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/13.png')" style="background-image: url('./img/top&bottom/13.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/14.png')" style="background-image: url('./img/top&bottom/14.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/15.png')" style="background-image: url('./img/top&bottom/15.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/16.png')" style="background-image: url('./img/top&bottom/16.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/17.png')" style="background-image: url('./img/top&bottom/17.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/18.png')" style="background-image: url('./img/top&bottom/18.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/19.png')" style="background-image: url('./img/top&bottom/19.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/20.png')" style="background-image: url('./img/top&bottom/20.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/21.png')" style="background-image: url('./img/top&bottom/21.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/22.png')" style="background-image: url('./img/top&bottom/22.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/23.png')" style="background-image: url('./img/top&bottom/23.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/24.png')" style="background-image: url('./img/top&bottom/24.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/25.png')" style="background-image: url('./img/top&bottom/25.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/26.png')" style="background-image: url('./img/top&bottom/26.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/27.png')" style="background-image: url('./img/top&bottom/27.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/28.png')" style="background-image: url('./img/top&bottom/28.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/29.png')" style="background-image: url('./img/top&bottom/29.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/30.png')" style="background-image: url('./img/top&bottom/30.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/31.png')" style="background-image: url('./img/top&bottom/31.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/32.png')" style="background-image: url('./img/top&bottom/32.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/33.png')" style="background-image: url('./img/top&bottom/33.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/34.png')" style="background-image: url('./img/top&bottom/34.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/35.png')" style="background-image: url('./img/top&bottom/35.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/36.png')" style="background-image: url('./img/top&bottom/36.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/37.png')" style="background-image: url('./img/top&bottom/37.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/38.png')" style="background-image: url('./img/top&bottom/38.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/39.png')" style="background-image: url('./img/top&bottom/39.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/40.png')" style="background-image: url('./img/top&bottom/40.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/41.png')" style="background-image: url('./img/top&bottom/41.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/42.png')" style="background-image: url('./img/top&bottom/42.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/43.png')" style="background-image: url('./img/top&bottom/43.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/44.png')" style="background-image: url('./img/top&bottom/44.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/45.png')" style="background-image: url('./img/top&bottom/45.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/46.png')" style="background-image: url('./img/top&bottom/46.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/47.png')" style="background-image: url('./img/top&bottom/47.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/48.png')" style="background-image: url('./img/top&bottom/48.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/49.png')" style="background-image: url('./img/top&bottom/49.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/50.png')" style="background-image: url('./img/top&bottom/50.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/51.png')" style="background-image: url('./img/top&bottom/51.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/52.png')" style="background-image: url('./img/top&bottom/52.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/53.png')" style="background-image: url('./img/top&bottom/53.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/54.png')" style="background-image: url('./img/top&bottom/54.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/55.png')" style="background-image: url('./img/top&bottom/55.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/56.png')" style="background-image: url('./img/top&bottom/56.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/57.png')" style="background-image: url('./img/top&bottom/57.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/58.png')" style="background-image: url('./img/top&bottom/58.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/59.png')" style="background-image: url('./img/top&bottom/59.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/60.png')" style="background-image: url('./img/top&bottom/60.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/61.png')" style="background-image: url('./img/top&bottom/61.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/62.png')" style="background-image: url('./img/top&bottom/62.png');"></div>
-					<div loading="lazy" upperImage="url('./img/top&bottom/63.png')" style="background-image: url('./img/top&bottom/63.png');"></div>
-				</div>
-			</div>
-			<div class="popupImage popupImage2" style="display: none;">
-				<div class="close"><span>✕</span></div>
-				<div class="imageList">
-					<div loading="lazy" lowerImage="url('./img/bottom/1.png')" style="background-image: url('./img/bottom/1.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/bottom/2.png')" style="background-image: url('./img/bottom/2.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/bottom/3.png')" style="background-image: url('./img/bottom/3.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/bottom/4.png')" style="background-image: url('./img/bottom/4.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/bottom/5.png')" style="background-image: url('./img/bottom/5.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/bottom/6.png')" style="background-image: url('./img/bottom/6.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/1.png')" style="background-image: url('./img/top&bottom/1.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/2.png')" style="background-image: url('./img/top&bottom/2.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/3.png')" style="background-image: url('./img/top&bottom/3.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/4.png')" style="background-image: url('./img/top&bottom/4.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/5.png')" style="background-image: url('./img/top&bottom/5.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/6.png')" style="background-image: url('./img/top&bottom/6.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/7.png')" style="background-image: url('./img/top&bottom/7.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/8.png')" style="background-image: url('./img/top&bottom/8.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/9.png')" style="background-image: url('./img/top&bottom/9.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/10.png')" style="background-image: url('./img/top&bottom/10.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/11.png')" style="background-image: url('./img/top&bottom/11.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/12.png')" style="background-image: url('./img/top&bottom/12.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/13.png')" style="background-image: url('./img/top&bottom/13.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/14.png')" style="background-image: url('./img/top&bottom/14.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/15.png')" style="background-image: url('./img/top&bottom/15.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/16.png')" style="background-image: url('./img/top&bottom/16.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/17.png')" style="background-image: url('./img/top&bottom/17.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/18.png')" style="background-image: url('./img/top&bottom/18.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/19.png')" style="background-image: url('./img/top&bottom/19.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/20.png')" style="background-image: url('./img/top&bottom/20.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/21.png')" style="background-image: url('./img/top&bottom/21.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/22.png')" style="background-image: url('./img/top&bottom/22.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/23.png')" style="background-image: url('./img/top&bottom/23.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/24.png')" style="background-image: url('./img/top&bottom/24.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/25.png')" style="background-image: url('./img/top&bottom/25.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/26.png')" style="background-image: url('./img/top&bottom/26.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/27.png')" style="background-image: url('./img/top&bottom/27.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/28.png')" style="background-image: url('./img/top&bottom/28.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/29.png')" style="background-image: url('./img/top&bottom/29.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/30.png')" style="background-image: url('./img/top&bottom/30.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/31.png')" style="background-image: url('./img/top&bottom/31.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/32.png')" style="background-image: url('./img/top&bottom/32.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/33.png')" style="background-image: url('./img/top&bottom/33.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/34.png')" style="background-image: url('./img/top&bottom/34.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/35.png')" style="background-image: url('./img/top&bottom/35.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/36.png')" style="background-image: url('./img/top&bottom/36.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/37.png')" style="background-image: url('./img/top&bottom/37.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/38.png')" style="background-image: url('./img/top&bottom/38.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/39.png')" style="background-image: url('./img/top&bottom/39.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/40.png')" style="background-image: url('./img/top&bottom/40.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/41.png')" style="background-image: url('./img/top&bottom/41.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/42.png')" style="background-image: url('./img/top&bottom/42.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/43.png')" style="background-image: url('./img/top&bottom/43.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/44.png')" style="background-image: url('./img/top&bottom/44.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/45.png')" style="background-image: url('./img/top&bottom/45.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/46.png')" style="background-image: url('./img/top&bottom/46.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/47.png')" style="background-image: url('./img/top&bottom/47.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/48.png')" style="background-image: url('./img/top&bottom/48.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/49.png')" style="background-image: url('./img/top&bottom/49.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/50.png')" style="background-image: url('./img/top&bottom/50.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/51.png')" style="background-image: url('./img/top&bottom/51.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/52.png')" style="background-image: url('./img/top&bottom/52.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/53.png')" style="background-image: url('./img/top&bottom/53.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/54.png')" style="background-image: url('./img/top&bottom/54.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/55.png')" style="background-image: url('./img/top&bottom/55.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/56.png')" style="background-image: url('./img/top&bottom/56.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/57.png')" style="background-image: url('./img/top&bottom/57.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/58.png')" style="background-image: url('./img/top&bottom/58.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/59.png')" style="background-image: url('./img/top&bottom/59.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/60.png')" style="background-image: url('./img/top&bottom/60.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/61.png')" style="background-image: url('./img/top&bottom/61.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/62.png')" style="background-image: url('./img/top&bottom/62.png');"></div>
-					<div loading="lazy" lowerImage="url('./img/top&bottom/63.png')" style="background-image: url('./img/top&bottom/63.png');"></div>
-				</div>
-			</div>
-			<div class="popupImage popupImage3" style="display: none;">
-				<div class="close"><span>✕</span></div>
-				<div class="imageList">
-					<div loading="lazy" upperImage="url('./img/emblems/1.png')" style="background-image:url('./img/emblems/1.png')"><img src="" alt=""></div>
-					<div loading="lazy" upperImage="url('./img/emblems/2.png')" style="background-image:url('./img/emblems/2.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/3.png')" style="background-image:url('./img/emblems/3.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/4.png')" style="background-image:url('./img/emblems/4.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/5.png')" style="background-image:url('./img/emblems/5.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/6.png')" style="background-image:url('./img/emblems/6.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/7.png')" style="background-image:url('./img/emblems/7.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/8.png')" style="background-image:url('./img/emblems/8.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/9.png')" style="background-image:url('./img/emblems/9.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/10.png')" style="background-image:url('./img/emblems/10.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/11.png')" style="background-image:url('./img/emblems/11.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/12.png')" style="background-image:url('./img/emblems/12.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/13.png')" style="background-image:url('./img/emblems/13.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/14.png')" style="background-image:url('./img/emblems/14.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/15.png')" style="background-image:url('./img/emblems/15.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/16.png')" style="background-image:url('./img/emblems/16.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/17.png')" style="background-image:url('./img/emblems/17.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/18.png')" style="background-image:url('./img/emblems/18.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/19.png')" style="background-image:url('./img/emblems/19.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/20.png')" style="background-image:url('./img/emblems/20.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/21.png')" style="background-image:url('./img/emblems/21.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/22.png')" style="background-image:url('./img/emblems/22.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/23.png')" style="background-image:url('./img/emblems/23.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/24.png')" style="background-image:url('./img/emblems/24.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/25.png')" style="background-image:url('./img/emblems/25.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/26.png')" style="background-image:url('./img/emblems/26.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/27.png')" style="background-image:url('./img/emblems/27.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/28.png')" style="background-image:url('./img/emblems/28.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/29.png')" style="background-image:url('./img/emblems/29.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/30.png')" style="background-image:url('./img/emblems/30.png')"></div>
-					<div loading="lazy" upperImage="url('./img/emblems/31.png')" style="background-image:url('./img/emblems/31.png')"></div>
-				</div>
-			</div>
-		<script src="index.js"></script>
-  </body>
+<div class="popupImage popupImage1" style="display: none;">
+	<div class="close"><span>✕</span></div>
+	<div class="imageList">
+		<div loading="lazy" upperImage="url('./img/top/1.png')" style="background-image:url('./img/top/1.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/2.png')" style="background-image:url('./img/top/2.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/3.png')" style="background-image:url('./img/top/3.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/4.png')" style="background-image:url('./img/top/4.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/5.png')" style="background-image:url('./img/top/5.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/6.png')" style="background-image:url('./img/top/6.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/7.png')" style="background-image:url('./img/top/7.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/8.png')" style="background-image:url('./img/top/8.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/9.png')" style="background-image:url('./img/top/9.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/10.png')" style="background-image:url('./img/top/10.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/11.png')" style="background-image:url('./img/top/11.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/12.png')" style="background-image:url('./img/top/12.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/13.png')" style="background-image:url('./img/top/13.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/14.png')" style="background-image:url('./img/top/14.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/15.png')" style="background-image:url('./img/top/15.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/16.png')" style="background-image:url('./img/top/16.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/17.png')" style="background-image:url('./img/top/17.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/18.png')" style="background-image:url('./img/top/18.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/19.png')" style="background-image:url('./img/top/19.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/20.png')" style="background-image:url('./img/top/20.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/21.png')" style="background-image:url('./img/top/21.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/22.png')" style="background-image:url('./img/top/22.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/23.png')" style="background-image:url('./img/top/23.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/24.png')" style="background-image:url('./img/top/24.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/25.png')" style="background-image:url('./img/top/25.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/26.png')" style="background-image:url('./img/top/26.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top/27.png')" style="background-image:url('./img/top/27.png')"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/1.png')"
+				 style="background-image: url('./img/top&bottom/1.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/2.png')"
+				 style="background-image: url('./img/top&bottom/2.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/3.png')"
+				 style="background-image: url('./img/top&bottom/3.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/4.png')"
+				 style="background-image: url('./img/top&bottom/4.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/5.png')"
+				 style="background-image: url('./img/top&bottom/5.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/6.png')"
+				 style="background-image: url('./img/top&bottom/6.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/7.png')"
+				 style="background-image: url('./img/top&bottom/7.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/8.png')"
+				 style="background-image: url('./img/top&bottom/8.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/9.png')"
+				 style="background-image: url('./img/top&bottom/9.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/10.png')"
+				 style="background-image: url('./img/top&bottom/10.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/11.png')"
+				 style="background-image: url('./img/top&bottom/11.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/12.png')"
+				 style="background-image: url('./img/top&bottom/12.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/13.png')"
+				 style="background-image: url('./img/top&bottom/13.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/14.png')"
+				 style="background-image: url('./img/top&bottom/14.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/15.png')"
+				 style="background-image: url('./img/top&bottom/15.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/16.png')"
+				 style="background-image: url('./img/top&bottom/16.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/17.png')"
+				 style="background-image: url('./img/top&bottom/17.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/18.png')"
+				 style="background-image: url('./img/top&bottom/18.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/19.png')"
+				 style="background-image: url('./img/top&bottom/19.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/20.png')"
+				 style="background-image: url('./img/top&bottom/20.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/21.png')"
+				 style="background-image: url('./img/top&bottom/21.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/22.png')"
+				 style="background-image: url('./img/top&bottom/22.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/23.png')"
+				 style="background-image: url('./img/top&bottom/23.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/24.png')"
+				 style="background-image: url('./img/top&bottom/24.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/25.png')"
+				 style="background-image: url('./img/top&bottom/25.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/26.png')"
+				 style="background-image: url('./img/top&bottom/26.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/27.png')"
+				 style="background-image: url('./img/top&bottom/27.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/28.png')"
+				 style="background-image: url('./img/top&bottom/28.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/29.png')"
+				 style="background-image: url('./img/top&bottom/29.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/30.png')"
+				 style="background-image: url('./img/top&bottom/30.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/31.png')"
+				 style="background-image: url('./img/top&bottom/31.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/32.png')"
+				 style="background-image: url('./img/top&bottom/32.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/33.png')"
+				 style="background-image: url('./img/top&bottom/33.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/34.png')"
+				 style="background-image: url('./img/top&bottom/34.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/35.png')"
+				 style="background-image: url('./img/top&bottom/35.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/36.png')"
+				 style="background-image: url('./img/top&bottom/36.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/37.png')"
+				 style="background-image: url('./img/top&bottom/37.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/38.png')"
+				 style="background-image: url('./img/top&bottom/38.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/39.png')"
+				 style="background-image: url('./img/top&bottom/39.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/40.png')"
+				 style="background-image: url('./img/top&bottom/40.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/41.png')"
+				 style="background-image: url('./img/top&bottom/41.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/42.png')"
+				 style="background-image: url('./img/top&bottom/42.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/43.png')"
+				 style="background-image: url('./img/top&bottom/43.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/44.png')"
+				 style="background-image: url('./img/top&bottom/44.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/45.png')"
+				 style="background-image: url('./img/top&bottom/45.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/46.png')"
+				 style="background-image: url('./img/top&bottom/46.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/47.png')"
+				 style="background-image: url('./img/top&bottom/47.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/48.png')"
+				 style="background-image: url('./img/top&bottom/48.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/49.png')"
+				 style="background-image: url('./img/top&bottom/49.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/50.png')"
+				 style="background-image: url('./img/top&bottom/50.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/51.png')"
+				 style="background-image: url('./img/top&bottom/51.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/52.png')"
+				 style="background-image: url('./img/top&bottom/52.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/53.png')"
+				 style="background-image: url('./img/top&bottom/53.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/54.png')"
+				 style="background-image: url('./img/top&bottom/54.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/55.png')"
+				 style="background-image: url('./img/top&bottom/55.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/56.png')"
+				 style="background-image: url('./img/top&bottom/56.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/57.png')"
+				 style="background-image: url('./img/top&bottom/57.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/58.png')"
+				 style="background-image: url('./img/top&bottom/58.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/59.png')"
+				 style="background-image: url('./img/top&bottom/59.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/60.png')"
+				 style="background-image: url('./img/top&bottom/60.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/61.png')"
+				 style="background-image: url('./img/top&bottom/61.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/62.png')"
+				 style="background-image: url('./img/top&bottom/62.png');"></div>
+		<div loading="lazy" upperImage="url('./img/top&bottom/63.png')"
+				 style="background-image: url('./img/top&bottom/63.png');"></div>
+	</div>
+</div>
+<div class="popupImage popupImage2" style="display: none;">
+	<div class="close"><span>✕</span></div>
+	<div class="imageList">
+		<div loading="lazy" lowerImage="url('./img/bottom/1.png')"
+				 style="background-image: url('./img/bottom/1.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/bottom/2.png')"
+				 style="background-image: url('./img/bottom/2.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/bottom/3.png')"
+				 style="background-image: url('./img/bottom/3.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/bottom/4.png')"
+				 style="background-image: url('./img/bottom/4.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/bottom/5.png')"
+				 style="background-image: url('./img/bottom/5.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/bottom/6.png')"
+				 style="background-image: url('./img/bottom/6.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/1.png')"
+				 style="background-image: url('./img/top&bottom/1.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/2.png')"
+				 style="background-image: url('./img/top&bottom/2.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/3.png')"
+				 style="background-image: url('./img/top&bottom/3.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/4.png')"
+				 style="background-image: url('./img/top&bottom/4.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/5.png')"
+				 style="background-image: url('./img/top&bottom/5.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/6.png')"
+				 style="background-image: url('./img/top&bottom/6.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/7.png')"
+				 style="background-image: url('./img/top&bottom/7.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/8.png')"
+				 style="background-image: url('./img/top&bottom/8.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/9.png')"
+				 style="background-image: url('./img/top&bottom/9.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/10.png')"
+				 style="background-image: url('./img/top&bottom/10.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/11.png')"
+				 style="background-image: url('./img/top&bottom/11.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/12.png')"
+				 style="background-image: url('./img/top&bottom/12.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/13.png')"
+				 style="background-image: url('./img/top&bottom/13.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/14.png')"
+				 style="background-image: url('./img/top&bottom/14.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/15.png')"
+				 style="background-image: url('./img/top&bottom/15.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/16.png')"
+				 style="background-image: url('./img/top&bottom/16.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/17.png')"
+				 style="background-image: url('./img/top&bottom/17.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/18.png')"
+				 style="background-image: url('./img/top&bottom/18.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/19.png')"
+				 style="background-image: url('./img/top&bottom/19.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/20.png')"
+				 style="background-image: url('./img/top&bottom/20.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/21.png')"
+				 style="background-image: url('./img/top&bottom/21.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/22.png')"
+				 style="background-image: url('./img/top&bottom/22.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/23.png')"
+				 style="background-image: url('./img/top&bottom/23.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/24.png')"
+				 style="background-image: url('./img/top&bottom/24.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/25.png')"
+				 style="background-image: url('./img/top&bottom/25.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/26.png')"
+				 style="background-image: url('./img/top&bottom/26.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/27.png')"
+				 style="background-image: url('./img/top&bottom/27.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/28.png')"
+				 style="background-image: url('./img/top&bottom/28.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/29.png')"
+				 style="background-image: url('./img/top&bottom/29.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/30.png')"
+				 style="background-image: url('./img/top&bottom/30.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/31.png')"
+				 style="background-image: url('./img/top&bottom/31.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/32.png')"
+				 style="background-image: url('./img/top&bottom/32.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/33.png')"
+				 style="background-image: url('./img/top&bottom/33.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/34.png')"
+				 style="background-image: url('./img/top&bottom/34.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/35.png')"
+				 style="background-image: url('./img/top&bottom/35.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/36.png')"
+				 style="background-image: url('./img/top&bottom/36.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/37.png')"
+				 style="background-image: url('./img/top&bottom/37.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/38.png')"
+				 style="background-image: url('./img/top&bottom/38.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/39.png')"
+				 style="background-image: url('./img/top&bottom/39.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/40.png')"
+				 style="background-image: url('./img/top&bottom/40.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/41.png')"
+				 style="background-image: url('./img/top&bottom/41.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/42.png')"
+				 style="background-image: url('./img/top&bottom/42.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/43.png')"
+				 style="background-image: url('./img/top&bottom/43.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/44.png')"
+				 style="background-image: url('./img/top&bottom/44.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/45.png')"
+				 style="background-image: url('./img/top&bottom/45.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/46.png')"
+				 style="background-image: url('./img/top&bottom/46.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/47.png')"
+				 style="background-image: url('./img/top&bottom/47.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/48.png')"
+				 style="background-image: url('./img/top&bottom/48.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/49.png')"
+				 style="background-image: url('./img/top&bottom/49.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/50.png')"
+				 style="background-image: url('./img/top&bottom/50.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/51.png')"
+				 style="background-image: url('./img/top&bottom/51.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/52.png')"
+				 style="background-image: url('./img/top&bottom/52.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/53.png')"
+				 style="background-image: url('./img/top&bottom/53.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/54.png')"
+				 style="background-image: url('./img/top&bottom/54.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/55.png')"
+				 style="background-image: url('./img/top&bottom/55.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/56.png')"
+				 style="background-image: url('./img/top&bottom/56.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/57.png')"
+				 style="background-image: url('./img/top&bottom/57.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/58.png')"
+				 style="background-image: url('./img/top&bottom/58.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/59.png')"
+				 style="background-image: url('./img/top&bottom/59.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/60.png')"
+				 style="background-image: url('./img/top&bottom/60.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/61.png')"
+				 style="background-image: url('./img/top&bottom/61.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/62.png')"
+				 style="background-image: url('./img/top&bottom/62.png');"></div>
+		<div loading="lazy" lowerImage="url('./img/top&bottom/63.png')"
+				 style="background-image: url('./img/top&bottom/63.png');"></div>
+	</div>
+</div>
+<div class="popupImage popupImage3" style="display: none;">
+	<div class="close"><span>✕</span></div>
+	<div class="imageList">
+		<div loading="lazy" upperImage="url('./img/emblems/1.png')" style="background-image:url('./img/emblems/1.png')"><img
+			src="" alt=""></div>
+		<div loading="lazy" upperImage="url('./img/emblems/2.png')"
+				 style="background-image:url('./img/emblems/2.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/3.png')"
+				 style="background-image:url('./img/emblems/3.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/4.png')"
+				 style="background-image:url('./img/emblems/4.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/5.png')"
+				 style="background-image:url('./img/emblems/5.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/6.png')"
+				 style="background-image:url('./img/emblems/6.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/7.png')"
+				 style="background-image:url('./img/emblems/7.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/8.png')"
+				 style="background-image:url('./img/emblems/8.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/9.png')"
+				 style="background-image:url('./img/emblems/9.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/10.png')"
+				 style="background-image:url('./img/emblems/10.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/11.png')"
+				 style="background-image:url('./img/emblems/11.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/12.png')"
+				 style="background-image:url('./img/emblems/12.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/13.png')"
+				 style="background-image:url('./img/emblems/13.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/14.png')"
+				 style="background-image:url('./img/emblems/14.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/15.png')"
+				 style="background-image:url('./img/emblems/15.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/16.png')"
+				 style="background-image:url('./img/emblems/16.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/17.png')"
+				 style="background-image:url('./img/emblems/17.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/18.png')"
+				 style="background-image:url('./img/emblems/18.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/19.png')"
+				 style="background-image:url('./img/emblems/19.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/20.png')"
+				 style="background-image:url('./img/emblems/20.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/21.png')"
+				 style="background-image:url('./img/emblems/21.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/22.png')"
+				 style="background-image:url('./img/emblems/22.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/23.png')"
+				 style="background-image:url('./img/emblems/23.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/24.png')"
+				 style="background-image:url('./img/emblems/24.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/25.png')"
+				 style="background-image:url('./img/emblems/25.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/26.png')"
+				 style="background-image:url('./img/emblems/26.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/27.png')"
+				 style="background-image:url('./img/emblems/27.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/28.png')"
+				 style="background-image:url('./img/emblems/28.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/29.png')"
+				 style="background-image:url('./img/emblems/29.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/30.png')"
+				 style="background-image:url('./img/emblems/30.png')"></div>
+		<div loading="lazy" upperImage="url('./img/emblems/31.png')"
+				 style="background-image:url('./img/emblems/31.png')"></div>
+	</div>
+</div>
+<script src="index.js"></script>
+</body>
 </html>
