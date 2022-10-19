@@ -227,6 +227,7 @@ section p {
 	font-size: 32px;
 	line-height: 1.2em;
 	white-space: break-spaces
+	transform: translateY(-18px);
 }
 
 .rightSide .imageBox {
@@ -640,7 +641,7 @@ textarea {
 	z-index: 105;
 	position: absolute;
 	background-size: contain;
-	top: 176px
+	top: 175px;
 }
 
 .userImage2 {
@@ -651,7 +652,7 @@ textarea {
 	z-index: 105;
 	position: absolute;
 	background-size: contain;
-	top: 391px;
+	top: 395px;
 }
 
 .money {
