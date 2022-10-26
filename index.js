@@ -74,12 +74,12 @@ let order = {
 	category: 'bathrobe',
 	addition: 'noHood',
 	cloth: 'Махровый',
-	color: "Черный; black",
+	color: "Синий; blue",
 	frontText: '',
 	size: '42-44(S)',
 	text: 'Мой текст',
 	userFont: 'Alexander',
-	colorOfFont: 'Белый; white',
+	colorOfFont: 'Золотой; gold',
 	lowerImage: '',
 	upperImage: '',
 }
@@ -115,7 +115,7 @@ const setKeyOrder = category => {
 		order = {
 			category: 'bathrobe',
 			addition: 'noHood',
-			cloth: 'terry',
+			cloth: 'Махровый',
 			color: "Синий; blue",
 			frontText: '',
 			size: '42-44(S)',
@@ -149,7 +149,7 @@ const setKeyOrder = category => {
 			color: "Black; black",
 			text: 'Мой текст',
 			userFont: 'Alexander',
-			colorOfFont: 'Белый; white',
+			colorOfFont: 'Золотой; gold',
 			upperImage: '',
 		}
 	}

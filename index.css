@@ -297,33 +297,33 @@ section p {
 	flex-direction: row;
 	flex-wrap: wrap;
 	border-bottom: 1px solid #e3e3e3;
-	padding-bottom: 10px
+	padding-bottom: 10px;
+	justify-content: space-between;
 }
 
-.gender div,
-.gender span,
 .cloth span,
-.hood div,
 .hood span,
-.size-text-field div,
 .size-text-field span,
-.front-text div,
 .front-text span,
-.userFont div,
 .userFont span {
 	display: flex;
 	padding: 5px;
 	position: relative;
 	box-sizing: border-box;
-	width: 33%;
+	flex-basis: 10%;
 	align-items: center;
 	padding-left: 30px;
 	cursor: pointer
 }
 
 .userFont span {
-	width: 100%;
+	flex-basis: 100%;
 	height: 40px;
+}
+
+.front-text span,
+.hood span {
+	flex-basis: 50%;
 }
 
 .gender div::before,
@@ -976,7 +976,7 @@ span[plus=silver]::before {
 
 .rightSide .userText-pillow {
 	left: 48%;
-	top: 334px;
+	top: 330px;
 	width: 170px;
 }
 
@@ -1071,15 +1071,17 @@ span[plus=silver]::before {
 }
 
 .cloth-type-img {
-	width: 100px;
+	width: 170px;
 	height: 80px;
 	margin-left: 10px;
 
-	border-radius: 10%;
+	border-radius: 15px;
 }
 
 .cloth-type.active .cloth-type-img{
 	border: 3px solid #b08a39;
+	width: 167px;
+	height: 77px;
 }
 
 .imageBox {
