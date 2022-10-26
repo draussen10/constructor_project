@@ -226,7 +226,7 @@ section p {
 	font-family: Arial;
 	font-size: 32px;
 	line-height: 1.2em;
-	white-space: break-spaces
+	white-space: break-spaces;
 	transform: translateY(-18px);
 }
 
@@ -960,7 +960,7 @@ span[plus=silver]::before {
 }
 
 .userText-pillow {
-	transform: translateX(-26px) translateY(-45px)
+	transform: translateX(-26px) translateY(-45px) !important;
 }
 
 .userPillowText{
@@ -1042,4 +1042,31 @@ span[plus=silver]::before {
 .userFont {
 	font-family: 'for-constructor';
 	font-size: 20px;
+}
+
+.userImage1-pillow {
+	width: 100px;
+	height: 100px;
+	top: 200px;
+}
+
+.cloth-type {
+	position: relative;
+}
+
+.cloth-type-img {
+	height: 100px;
+	width: 100px;
+	margin-left: 10px;
+	position: absolute;
+	top: 30px;
+	left: 15px;
+	opacity: 0;
+	transition: opacity .2s ease-in;
+	z-index: 100;
+	border: 1px solid #fff;
+}
+
+.cloth-type:hover img {
+	opacity: 1;
 }

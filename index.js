@@ -65,7 +65,7 @@ const userPillowText = document.querySelector(".userPillowText")
 
 const bathrobeDivs = [mainCategoryDiv, mainAdditionDiv, mainSizeDiv, mainBathrobeClothDiv, mainBathrobeColorDiv, mainColorOfFontDiv, mainFrontTextDiv, mainTextDiv, mainImageBathobeDiv]
 const autonakidkaDivs = [mainCategoryDiv, mainAutonakidkaColorDiv, mainAutonakidkaClothDiv, mainImageOtherDiv]
-const pillowDivs = [mainCategoryDiv, mainPillowClothDiv, mainPillowColorDiv, mainPillowColorOfFontDiv, mainTextDiv]
+const pillowDivs = [mainCategoryDiv, mainPillowClothDiv, mainPillowColorDiv, mainPillowColorOfFontDiv, mainTextDiv, mainImageOtherDiv]
 const capDivs = [mainCategoryDiv, mainCapClothDiv, mainCapColorDiv, mainColorOfFontDiv, mainTextDiv, mainImageOtherDiv]
 
 let activeDivs = bathrobeDivs
@@ -140,6 +140,7 @@ const setKeyOrder = category => {
 			text: 'Госномер\n01',
 			userFont: 'Alexander',
 			colorOfFont: 'Белый; white',
+			upperImage: '',
 		}
 	} else {
 		order = {
@@ -167,9 +168,13 @@ const viewDivs = () => {
 	}
 
 	if(order.category === 'pillow'){
+
+		userImage1.classList.add('userImage1-pillow')
 		userText.classList.add('userText-pillow')
+
 	} else {
 		userText.classList.remove('userText-pillow')
+		userImage1.classList.remove('userImage1-pillow')
 	}
 
 	if(order.category === 'cap') {
