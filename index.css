@@ -215,10 +215,7 @@ section p {
 
 .rightSide .userText {
 	position: absolute;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: auto;
+	height: 40px;
 	top: 67%;
 	margin-left: -100px;
 	left: 50%;
@@ -228,9 +225,7 @@ section p {
 	text-align: center;
 	font-family: Arial;
 	font-size: 32px;
-	line-height: 1.2em;
 	white-space: break-spaces;
-	transform: translateY(-18px);
 }
 
 .rightSide .imageBox {
@@ -238,10 +233,10 @@ section p {
 	height: 555px;
 	background-size: contain;
 	background-repeat: no-repeat;
-	z-index: -1;
+	z-index: 1;
 	position: relative;
 	top: 2px;
-	right: 0
+	right: 0;
 }
 
 .category {

@@ -70,6 +70,37 @@ const capDivs = [mainCategoryDiv, mainCapClothDiv, mainCapColorDiv, mainColorOfF
 
 let activeDivs = bathrobeDivs
 
+function getOffset(el) {
+	const rect = el.getBoundingClientRect();
+	return {
+		left: rect.left + window.scrollX,
+		top: rect.top + window.scrollY
+	};
+}
+//DragAndDrop
+
+function dragAndDrop(el) {
+		let coordsY
+
+		el.addEventListener('dragstart', e => {
+			e.dataTransfer.setData('text/html', 'dragstart')
+			el.style.zIndex = '1000'
+			coordsY = e.offsetY
+		})
+
+		el.addEventListener('dragend', e => {
+			el.style.top = e.pageY - coordsY - getOffset(imageBox).top + 'px'
+			el.style.left = e.pageX  - getOffset(imageBox).left + 'px'
+		})
+}
+
+dragAndDrop(userImage1)
+dragAndDrop(userImage2)
+dragAndDrop(userText)
+dragAndDrop(userPillowText)
+
+
+
 let order = {
 	category: 'bathrobe',
 	addition: 'noHood',
@@ -82,6 +113,53 @@ let order = {
 	colorOfFont: 'Золотой; gold',
 	lowerImage: '',
 	upperImage: '',
+}
+
+const original_coords = {
+	bathrobe: {
+		userImage1: {
+			top: '175px',
+			left: '50%'
+		},
+		userText: {
+			top: '67%',
+			left: '50%'
+		},
+		userImage2: {
+			top: '395px',
+			left: '50%'
+		}
+	},
+	autonakidka: {
+		userImage1: {
+			top: '130px',
+			left: '50%'
+		}
+	},
+	pillow: {
+		userImage1: {
+			top: '200px',
+			left: '50%'
+		},
+		userText: {
+			top: '330px',
+			left: '48%'
+		},
+		userPillowText: {
+			top: '313px',
+			left: '67%'
+		}
+	},
+	cap: {
+		userImage1: {
+			top: '280px',
+			left: '50%'
+		},
+		userText: {
+			top: '67%',
+			left: '50%'
+		}
+	}
 }
 
 const colors = ['darkblue', 'blue', '474a51', 'purple', 'green', 'brown', 'red', 'silver', 'black', 'white', 'gold']
@@ -212,6 +290,37 @@ const setOriginSettings = () => {
 			el.classList.remove(`img-${color}`)
 		}
 	})
+
+	if(order.category === 'bathrobe') {
+		userImage1.style.left = original_coords.bathrobe.userImage1.left
+		userImage2.style.left = original_coords.bathrobe.userImage2.left
+			userText.style.left = original_coords.bathrobe.userText.left
+
+		userImage1.style.top = original_coords.bathrobe.userImage1.top
+		userImage2.style.top = original_coords.bathrobe.userImage2.top
+			userText.style.top = original_coords.bathrobe.userText.top
+
+	} else if(order.category === 'autonakidka') {
+		userImage1.style.left = original_coords.autonakidka.userImage1.left
+		userImage1.style.top = original_coords.autonakidka.userImage1.top
+	} else if(order.category === 'pillow') {
+
+		userImage1.style.left = original_coords.pillow.userImage1.left
+		userText.style.left = original_coords.pillow.userText.left
+		userPillowText.style.left = original_coords.pillow.userPillowText.left
+
+		userImage1.style.top = original_coords.pillow.userImage1.top
+		userText.style.top = original_coords.pillow.userText.top
+		userPillowText.style.top = original_coords.pillow.userPillowText.top
+
+	} else if(order.category === 'cap') {
+
+		userImage1.style.left = original_coords.cap.userImage1.left
+		userText.style.left = original_coords.cap.userText.left
+
+		userImage1.style.top = original_coords.cap.userImage1.top
+		userText.style.top = original_coords.cap.userText.top
+	}
 }
 
 //Обновление вида и полей объекта order
@@ -287,6 +396,7 @@ const updateView = () => {
 			}
 		})
 	}
+
 
 }
 
