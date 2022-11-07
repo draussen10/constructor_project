@@ -491,4 +491,4 @@ if( window.innerWidth >= 600 ){
 	touchAndDrop(userPillowText)
 }
 
-setTimeout(() => body.innerHTML += window.innerWidth, 5000)
+setTimeout(() => document.querySelector('body').innerHTML += window.innerWidth, 5000)
