@@ -346,11 +346,11 @@ section p {
 }
 
 .userFont span::before{
-	top: 10px;
+	top: 20px;
 }
 
 .userFont > span:nth-child(6):before {
-	top: 15px;
+	top: 23px;
 }
 
 .gender .active::before,
@@ -1069,8 +1069,8 @@ span[plus=silver]::before {
 	width: 170px;
 	height: 80px;
 	margin-left: 10px;
-
 	border-radius: 15px;
+	pointer-events: none;
 }
 
 .cloth-type.active .cloth-type-img{

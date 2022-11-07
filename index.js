@@ -511,3 +511,56 @@ for (let i = 1; i <= 3; i++) {
 		document.querySelector(`.popupImage${i}`).style.display = 'block'
 	}
 }
+
+
+
+//DRAG&DROP
+
+const wrapper = imageBox
+const drag    = userText
+
+const offsetTouch = {
+	x: null,
+	y: null
+}
+
+const touchStart = (event) => {
+	const touch = event.targetTouches[0]
+	offsetTouch.x = touch.pageX - drag.getBoundingClientRect().left
+	offsetTouch.y = touch.pageY - drag.getBoundingClientRect().top
+
+	drag.classList.add('drag-start')
+}
+
+const touchMove = (event) => {
+	const touch = event.targetTouches[0]
+	drag.style.top  = `${ touch.pageY - (wrapper.offsetTop)  - (offsetTouch.y) }px`
+	drag.style.left = `${ touch.pageX - (wrapper.offsetLeft) - (offsetTouch.x) }px`
+
+	if (drag.getBoundingClientRect().top <= wrapper.getBoundingClientRect().top) {
+		drag.style.top = `${ 0 }px`
+	}
+	if (drag.getBoundingClientRect().right >= wrapper.getBoundingClientRect().right) {
+		drag.style.right = `${ 0 }px`
+		drag.style.left  = `unset`
+	}
+	if (drag.getBoundingClientRect().bottom >= wrapper.getBoundingClientRect().bottom) {
+		drag.style.top = `unset`
+		drag.style.bottom = `${ 0 }px`
+	}
+	if (drag.getBoundingClientRect().left <= wrapper.getBoundingClientRect().left) {
+		drag.style.left = `${ 0 }px`
+	}
+}
+
+const touchEnd = () => {
+	drag.classList.remove('drag-start')
+}
+
+const init = () => {
+	drag.addEventListener('touchstart', touchStart)
+	drag.addEventListener('touchmove', touchMove)
+	drag.addEventListener('touchend', touchEnd)
+}
+
+init()
