@@ -125,6 +125,12 @@ section p {
 	}
 }
 
+@media(max-width: 450px) {
+	.category span {
+		flex-basis: 100%;
+	}
+}
+
 .leftSide {
 	display: flex;
 	flex-direction: column;
