@@ -391,7 +391,7 @@ function touchAndDrop(drag) {
 
 		drag.classList.add('drag-start')
 
-		document.querySelector('body').style.overflow = 'hidden'
+		document.querySelector('*').style.overflow = 'hidden'
 	}
 
 	const touchMove = (event) => {
