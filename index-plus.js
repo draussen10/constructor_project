@@ -377,7 +377,6 @@ for (let i = 1; i <= 3; i++) {
 //DRAG&DROP
 
 const wrapper = imageBox
-touchAndDrop(userText)
 
 function touchAndDrop(drag) {
 	const offsetTouch = {
@@ -430,12 +429,6 @@ function touchAndDrop(drag) {
 	init()
 }
 
-
-dragAndDrop(userText)
-dragAndDrop(userImage1)
-dragAndDrop(userImage2)
-dragAndDrop(userPillowText)
-
 function dragAndDrop(item) {
 	const offsetDrag = {
 		x: null,
@@ -483,4 +476,16 @@ function dragAndDrop(item) {
 		item.style.left = `${ e.clientX - (wrapper.getBoundingClientRect().left) - (offsetDrag.x) }px`
 
 	}
+}
+
+if( window.innerWidth >= 600 ){
+	dragAndDrop(userText)
+	dragAndDrop(userImage1)
+	dragAndDrop(userImage2)
+	dragAndDrop(userPillowText)
+} else {
+	touchAndDrop(userText)
+	touchAndDrop(userImage1)
+	touchAndDrop(userImage2)
+	touchAndDrop(userPillowText)
 }
