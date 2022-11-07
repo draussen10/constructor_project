@@ -377,92 +377,90 @@ for (let i = 1; i <= 3; i++) {
 //DRAG&DROP
 
 const wrapper = imageBox
-// const drag    = userText
-//
-// const offsetTouch = {
-// 	x: null,
-// 	y: null
-// }
-//
-// const touchStart = (event) => {
-// 	const touch = event.targetTouches[0]
-// 	offsetTouch.x = touch.pageX - drag.getBoundingClientRect().left
-// 	offsetTouch.y = touch.pageY - drag.getBoundingClientRect().top
-//
-// 	drag.classList.add('drag-start')
-// }
-//
-// const touchMove = (event) => {
-// 	const touch = event.targetTouches[0]
-// 	drag.style.top  = `${ touch.pageY - (wrapper.offsetTop)  - (offsetTouch.y) }px`
-// 	drag.style.left = `${ touch.pageX - (wrapper.offsetLeft) - (offsetTouch.x) }px`
-//
-// 	if (drag.getBoundingClientRect().top <= wrapper.getBoundingClientRect().top) {
-// 		drag.style.top = `${ 0 }px`
-// 	}
-// 	if (drag.getBoundingClientRect().right >= wrapper.getBoundingClientRect().right) {
-// 		drag.style.right = `${ 0 }px`
-// 		drag.style.left  = `unset`
-// 	}
-// 	if (drag.getBoundingClientRect().bottom >= wrapper.getBoundingClientRect().bottom) {
-// 		drag.style.top = `unset`
-// 		drag.style.bottom = `${ 0 }px`
-// 	}
-// 	if (drag.getBoundingClientRect().left <= wrapper.getBoundingClientRect().left) {
-// 		drag.style.left = `${ 0 }px`
-// 	}
-// }
-//
-// const touchEnd = () => {
-// 	drag.classList.remove('drag-start')
-// }
-//
-// const init = () => {
-// 	drag.addEventListener('touchstart', touchStart)
-// 	drag.addEventListener('touchmove', touchMove)
-// 	drag.addEventListener('touchend', touchEnd)
-// }
-//
-// init()
+const drag    = userText
 
+const offsetTouch = {
+	x: null,
+	y: null
+}
 
-///
+const touchStart = (event) => {
+	const touch = event.targetTouches[0]
+	offsetTouch.x = touch.pageX - drag.getBoundingClientRect().left
+	offsetTouch.y = touch.pageY - drag.getBoundingClientRect().top
 
-dragAndDrop(userText)
-dragAndDrop(userImage1)
-dragAndDrop(userImage2)
-dragAndDrop(userPillowText)
+	drag.classList.add('drag-start')
+}
 
-function dragAndDrop(item) {
-	const offsetDrag = {
-		x: null,
-		y: null
+const touchMove = (event) => {
+	const touch = event.targetTouches[0]
+	drag.style.top  = `${ touch.pageY - (wrapper.offsetTop)  - (offsetTouch.y) }px`
+	drag.style.left = `${ touch.pageX - (wrapper.offsetLeft) - (offsetTouch.x) }px`
+
+	if (drag.getBoundingClientRect().top <= wrapper.getBoundingClientRect().top) {
+		drag.style.top = `${ 0 }px`
 	}
-
-	item.addEventListener('dragstart', dragstart)
-	item.addEventListener('dragend', dragend)
-
-
-	function dragstart(e) {
-		// setTimeout(()=> item.style.display = 'none', 0)
-
-		item.style.zIndex = '1000'
-		offsetDrag.x = e.clientX - item.getBoundingClientRect().left
-		offsetDrag.y = e.clientY - item.getBoundingClientRect().top
-
+	if (drag.getBoundingClientRect().right >= wrapper.getBoundingClientRect().right) {
+		drag.style.right = `${ 0 }px`
+		drag.style.left  = `unset`
 	}
-
-	function dragend(e) {
-		item.style.display = 'block'
-		if(!item.innerHTML.length && item.style.backgroundImage == ''){
-			return
-		}
-
-
-		console.log(wrapper.getBoundingClientRect())
-
-		item.style.top  = `${ e.clientY - (wrapper.getBoundingClientRect().top)  - (offsetDrag.y) }px`
-		item.style.left = `${ e.clientX - (wrapper.getBoundingClientRect().left) - (offsetDrag.x) }px`
-
+	if (drag.getBoundingClientRect().bottom >= wrapper.getBoundingClientRect().bottom) {
+		drag.style.top = `unset`
+		drag.style.bottom = `${ 0 }px`
+	}
+	if (drag.getBoundingClientRect().left <= wrapper.getBoundingClientRect().left) {
+		drag.style.left = `${ 0 }px`
 	}
 }
+
+const touchEnd = () => {
+	drag.classList.remove('drag-start')
+}
+
+const init = () => {
+	drag.addEventListener('touchstart', touchStart)
+	drag.addEventListener('touchmove', touchMove)
+	drag.addEventListener('touchend', touchEnd)
+}
+
+init()
+
+
+// dragAndDrop(userText)
+// dragAndDrop(userImage1)
+// dragAndDrop(userImage2)
+// dragAndDrop(userPillowText)
+//
+// function dragAndDrop(item) {
+// 	const offsetDrag = {
+// 		x: null,
+// 		y: null
+// 	}
+//
+// 	item.addEventListener('dragstart', dragstart)
+// 	item.addEventListener('dragend', dragend)
+//
+//
+// 	function dragstart(e) {
+// 		// setTimeout(()=> item.style.display = 'none', 0)
+//
+// 		item.style.zIndex = '1000'
+// 		offsetDrag.x = e.clientX - item.getBoundingClientRect().left
+// 		offsetDrag.y = e.clientY - item.getBoundingClientRect().top
+//
+// 	}
+//
+// 	function dragend(e) {
+// 		item.style.display = 'block'
+// 		if(!item.innerHTML.length && item.style.backgroundImage == ''){
+// 			return
+// 		}
+//
+//
+// 		console.log(wrapper.getBoundingClientRect())
+//
+// 		item.style.top  = `${ e.clientY - (wrapper.getBoundingClientRect().top)  - (offsetDrag.y) }px`
+// 		item.style.left = `${ e.clientX - (wrapper.getBoundingClientRect().left) - (offsetDrag.x) }px`
+//
+// 	}
+// }
