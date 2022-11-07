@@ -55,6 +55,52 @@ let order = {
 	lowerImage: '',
 	upperImage: ''
 }
+const original_coords = {
+	bathrobe: {
+		userImage1: {
+			top: '175px',
+			left: '115px'
+		},
+		userText: {
+			top: '342.85px',
+			left: '84px'
+		},
+		userImage2: {
+			top: '395px',
+			left: '102px'
+		}
+	},
+	autonakidka: {
+		userImage1: {
+			top: '130px',
+			left: '115px'
+		}
+	},
+	pillow: {
+		userImage1: {
+			top: '150px',
+			left: '120px'
+		},
+		userText: {
+			top: '310.85px',
+			left: '62.85px'
+		},
+		userPillowText: {
+			top: '313px',
+			left: '67%'
+		}
+	},
+	cap: {
+		userImage1: {
+			top: '234px',
+			left: '115px'
+		},
+		userText: {
+			top: '67%',
+			left: '84px'
+		}
+	}
+}
 
 //Utility Function
 const toColorEng = str => str.split('; ')[1]
@@ -135,6 +181,36 @@ function setOrderOriginSettings() {
 			upperImage: '',
 		}
 	}
+
+	if(order.category === 'bathrobe') {
+		userImage1.style.left = original_coords.bathrobe.userImage1.left
+		userImage2.style.left = original_coords.bathrobe.userImage2.left
+		userText.style.left = original_coords.bathrobe.userText.left
+
+		userImage1.style.top = original_coords.bathrobe.userImage1.top
+		userImage2.style.top = original_coords.bathrobe.userImage2.top
+		userText.style.top = original_coords.bathrobe.userText.top
+
+	} else if(order.category === 'autonakidka') {
+		userImage1.style.left = original_coords.autonakidka.userImage1.left
+		userImage1.style.top = original_coords.autonakidka.userImage1.top
+
+	} else if(order.category === 'pillow') {
+		userImage1.style.left = original_coords.pillow.userImage1.left
+		userText.style.left = original_coords.pillow.userText.left
+		userPillowText.style.left = original_coords.pillow.userPillowText.left
+
+		userImage1.style.top = original_coords.pillow.userImage1.top
+		userText.style.top = original_coords.pillow.userText.top
+		userPillowText.style.top = original_coords.pillow.userPillowText.top
+
+	} else if(order.category === 'cap') {
+		userImage1.style.left = original_coords.cap.userImage1.left
+		userText.style.left = original_coords.cap.userText.left
+
+		userImage1.style.top = original_coords.cap.userImage1.top
+		userText.style.top = original_coords.cap.userText.top
+	}
 }
 
 const clearImage = (event, number) => {
@@ -177,8 +253,14 @@ function updateView() {
 	//text
 	if(order.text !== undefined){
 		const fontWeight = document.querySelector('[userFont].active').style.fontWeight
-		userText.style = `font-family: 'for-constructor'; font-weight: ${fontWeight}; color: ${toColorEng(order.colorOfFont)}`
-		userPillowText.style = `font-family: 'for-constructor'; font-weight: ${fontWeight}; color: ${toColorEng(order.colorOfFont)}`
+		userText.style.fontFamily = 'for-constructor'
+		userText.style.fontWeight = fontWeight
+		userText.style.color = toColorEng(order.colorOfFont)
+
+		userText.style.fontFamily = 'for-constructor'
+		userText.style.fontWeight = fontWeight
+		userText.style.color = toColorEng(order.colorOfFont)
+
 		if(order.category === 'pillow'){
 			userText.innerHTML = order.text.split('\n')[0]
 			userPillowText.innerHTML = order.text.split('\n')[1]
@@ -195,9 +277,11 @@ function updateView() {
 	//upperImage
 	if(order.upperImage && order.upperImage !== '') {
 		userImage1.style.backgroundImage = order.upperImage
+		userImage1.style.pointerEvents = 'auto'
 		order.category === 'bathrobe' ? document.querySelector(".delImage1").style.display = 'flex' : document.querySelector(".delImage3").style.display = 'flex'
 	} else {
 		userImage1.style.backgroundImage = ''
+		userImage1.style.pointerEvents = 'none'
 		document.querySelector(".delImage1").style.display = document.querySelector(".delImage3").style.display = 'none'
 		document.querySelector(`.active[upperimage]`) && document.querySelector(`.active[upperimage]`).classList.remove("active")
 	}
@@ -205,9 +289,11 @@ function updateView() {
 	//lowerImage
 	if(order.lowerImage && order.lowerImage !== '') {
 		userImage2.style.backgroundImage = order.lowerImage
+		userImage2.style.pointerEvents = 'auto'
 		document.querySelector(".delImage2").style.display = 'flex'
 	} else {
 		userImage2.style.backgroundImage = ''
+		userImage2.style.pointerEvents = 'none'
 		document.querySelector(".delImage2").style.display = 'none'
 		document.querySelector(`.active[lowerImage]`) && document.querySelector(`.active[lowerImage]`).classList.remove("active")
 	}
@@ -291,50 +377,93 @@ for (let i = 1; i <= 3; i++) {
 //DRAG&DROP
 
 const wrapper = imageBox
-const drag    = userText
+// const drag    = userText
+//
+// const offsetTouch = {
+// 	x: null,
+// 	y: null
+// }
+//
+// const touchStart = (event) => {
+// 	const touch = event.targetTouches[0]
+// 	offsetTouch.x = touch.pageX - drag.getBoundingClientRect().left
+// 	offsetTouch.y = touch.pageY - drag.getBoundingClientRect().top
+//
+// 	drag.classList.add('drag-start')
+// }
+//
+// const touchMove = (event) => {
+// 	const touch = event.targetTouches[0]
+// 	drag.style.top  = `${ touch.pageY - (wrapper.offsetTop)  - (offsetTouch.y) }px`
+// 	drag.style.left = `${ touch.pageX - (wrapper.offsetLeft) - (offsetTouch.x) }px`
+//
+// 	if (drag.getBoundingClientRect().top <= wrapper.getBoundingClientRect().top) {
+// 		drag.style.top = `${ 0 }px`
+// 	}
+// 	if (drag.getBoundingClientRect().right >= wrapper.getBoundingClientRect().right) {
+// 		drag.style.right = `${ 0 }px`
+// 		drag.style.left  = `unset`
+// 	}
+// 	if (drag.getBoundingClientRect().bottom >= wrapper.getBoundingClientRect().bottom) {
+// 		drag.style.top = `unset`
+// 		drag.style.bottom = `${ 0 }px`
+// 	}
+// 	if (drag.getBoundingClientRect().left <= wrapper.getBoundingClientRect().left) {
+// 		drag.style.left = `${ 0 }px`
+// 	}
+// }
+//
+// const touchEnd = () => {
+// 	drag.classList.remove('drag-start')
+// }
+//
+// const init = () => {
+// 	drag.addEventListener('touchstart', touchStart)
+// 	drag.addEventListener('touchmove', touchMove)
+// 	drag.addEventListener('touchend', touchEnd)
+// }
+//
+// init()
 
-const offsetTouch = {
-	x: null,
-	y: null
-}
 
-const touchStart = (event) => {
-	const touch = event.targetTouches[0]
-	offsetTouch.x = touch.pageX - drag.getBoundingClientRect().left
-	offsetTouch.y = touch.pageY - drag.getBoundingClientRect().top
+///
 
-	drag.classList.add('drag-start')
-}
+dragAndDrop(userText)
+dragAndDrop(userImage1)
+dragAndDrop(userImage2)
+dragAndDrop(userPillowText)
 
-const touchMove = (event) => {
-	const touch = event.targetTouches[0]
-	drag.style.top  = `${ touch.pageY - (wrapper.offsetTop)  - (offsetTouch.y) }px`
-	drag.style.left = `${ touch.pageX - (wrapper.offsetLeft) - (offsetTouch.x) }px`
-
-	if (drag.getBoundingClientRect().top <= wrapper.getBoundingClientRect().top) {
-		drag.style.top = `${ 0 }px`
+function dragAndDrop(item) {
+	const offsetDrag = {
+		x: null,
+		y: null
 	}
-	if (drag.getBoundingClientRect().right >= wrapper.getBoundingClientRect().right) {
-		drag.style.right = `${ 0 }px`
-		drag.style.left  = `unset`
+
+	item.addEventListener('dragstart', dragstart)
+	item.addEventListener('dragend', dragend)
+
+
+	function dragstart(e) {
+		setTimeout(()=> item.style.display = 'none', 0)
+
+		item.style.zIndex = '1000'
+		offsetDrag.x = e.clientX - item.getBoundingClientRect().left
+		offsetDrag.y = e.clientY - item.getBoundingClientRect().top
+
 	}
-	if (drag.getBoundingClientRect().bottom >= wrapper.getBoundingClientRect().bottom) {
-		drag.style.top = `unset`
-		drag.style.bottom = `${ 0 }px`
-	}
-	if (drag.getBoundingClientRect().left <= wrapper.getBoundingClientRect().left) {
-		drag.style.left = `${ 0 }px`
+
+	function dragend(e) {
+		item.style.display = 'block'
+		if(!item.innerHTML.length && item.style.backgroundImage == ''){
+			return
+		}
+
+
+		console.log(wrapper.getBoundingClientRect())
+
+		item.style.top  = `${ e.clientY - (wrapper.getBoundingClientRect().top)  - (offsetDrag.y) }px`
+		item.style.left = `${ e.clientX - (wrapper.getBoundingClientRect().left) - (offsetDrag.x) }px`
+
 	}
 }
 
-const touchEnd = () => {
-	drag.classList.remove('drag-start')
-}
-
-const init = () => {
-	drag.addEventListener('touchstart', touchStart)
-	drag.addEventListener('touchmove', touchMove)
-	drag.addEventListener('touchend', touchEnd)
-}
-
-init()

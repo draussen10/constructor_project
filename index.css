@@ -113,13 +113,15 @@ section p {
 .constructor {
 	display: flex;
 	flex-direction: row;
+
 	width: 100%;
 	justify-content: space-between
 }
 
 @media(max-width: 768px) {
 	.constructor {
-		flex-direction: column
+		flex-direction: column;
+		flex-wrap: wrap;
 	}
 }
 
@@ -138,7 +140,7 @@ section p {
 
 @media(max-width: 778px) {
 	.rightSide {
-		width: 100%
+		width: 100%;
 	}
 }
 
@@ -217,8 +219,7 @@ section p {
 	position: absolute;
 	height: 40px;
 	top: 67%;
-	margin-left: -100px;
-	left: 50%;
+	left: 84px;
 	width: 200px;
 	align-content: center;
 	z-index: 20;
@@ -631,8 +632,7 @@ textarea {
 .userImage1 {
 	position: absolute;
 	top: 175px;
-	left: 50%;
-	margin-left: -75px;
+	left: 115px;
 	width: 150px;
 	height: 182px;
 	background-position: center;
@@ -658,8 +658,7 @@ textarea {
 	background-repeat: no-repeat;
 	z-index: 105;
 	position: absolute;
-	left: 50%;
-	margin-left: -87px;
+	left: 102px;
 	background-size: contain;
 	top: 395px;
 }
@@ -1089,4 +1088,8 @@ span[plus=silver]::before {
 	position: relative;
 	top: 2px;
 	right: 0;
+}
+
+.item:active {
+	cursor: grabbing;
 }
