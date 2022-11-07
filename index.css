@@ -131,6 +131,13 @@ section p {
 	}
 }
 
+@media(max-width: 610px) {
+	.cloth span {
+		flex-basis: 100%;
+		justify-content: center;
+	}
+}
+
 .leftSide {
 	display: flex;
 	flex-direction: column;

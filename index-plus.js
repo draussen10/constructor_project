@@ -444,7 +444,7 @@ function dragAndDrop(item) {
 
 
 	function dragstart(e) {
-		setTimeout(()=> item.style.display = 'none', 0)
+		// setTimeout(()=> item.style.display = 'none', 0)
 
 		item.style.zIndex = '1000'
 		offsetDrag.x = e.clientX - item.getBoundingClientRect().left
@@ -466,4 +466,3 @@ function dragAndDrop(item) {
 
 	}
 }
-
