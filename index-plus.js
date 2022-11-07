@@ -390,6 +390,8 @@ const touchStart = (event) => {
 	offsetTouch.y = touch.pageY - drag.getBoundingClientRect().top
 
 	drag.classList.add('drag-start')
+
+	document.querySelector('body').style.position = 'fixed'
 }
 
 const touchMove = (event) => {
@@ -414,6 +416,7 @@ const touchMove = (event) => {
 }
 
 const touchEnd = () => {
+	document.querySelector('body').style.position = 'static'
 	drag.classList.remove('drag-start')
 }
 
@@ -426,41 +429,41 @@ const init = () => {
 init()
 
 
-// dragAndDrop(userText)
-// dragAndDrop(userImage1)
-// dragAndDrop(userImage2)
-// dragAndDrop(userPillowText)
-//
-// function dragAndDrop(item) {
-// 	const offsetDrag = {
-// 		x: null,
-// 		y: null
-// 	}
-//
-// 	item.addEventListener('dragstart', dragstart)
-// 	item.addEventListener('dragend', dragend)
-//
-//
-// 	function dragstart(e) {
-// 		// setTimeout(()=> item.style.display = 'none', 0)
-//
-// 		item.style.zIndex = '1000'
-// 		offsetDrag.x = e.clientX - item.getBoundingClientRect().left
-// 		offsetDrag.y = e.clientY - item.getBoundingClientRect().top
-//
-// 	}
-//
-// 	function dragend(e) {
-// 		item.style.display = 'block'
-// 		if(!item.innerHTML.length && item.style.backgroundImage == ''){
-// 			return
-// 		}
-//
-//
-// 		console.log(wrapper.getBoundingClientRect())
-//
-// 		item.style.top  = `${ e.clientY - (wrapper.getBoundingClientRect().top)  - (offsetDrag.y) }px`
-// 		item.style.left = `${ e.clientX - (wrapper.getBoundingClientRect().left) - (offsetDrag.x) }px`
-//
-// 	}
-// }
+dragAndDrop(userText)
+dragAndDrop(userImage1)
+dragAndDrop(userImage2)
+dragAndDrop(userPillowText)
+
+function dragAndDrop(item) {
+	const offsetDrag = {
+		x: null,
+		y: null
+	}
+
+	item.addEventListener('dragstart', dragstart)
+	item.addEventListener('dragend', dragend)
+
+
+	function dragstart(e) {
+		// setTimeout(()=> item.style.display = 'none', 0)
+
+		item.style.zIndex = '1000'
+		offsetDrag.x = e.clientX - item.getBoundingClientRect().left
+		offsetDrag.y = e.clientY - item.getBoundingClientRect().top
+
+	}
+
+	function dragend(e) {
+		item.style.display = 'block'
+		if(!item.innerHTML.length && item.style.backgroundImage == ''){
+			return
+		}
+
+
+		console.log(wrapper.getBoundingClientRect())
+
+		item.style.top  = `${ e.clientY - (wrapper.getBoundingClientRect().top)  - (offsetDrag.y) }px`
+		item.style.left = `${ e.clientX - (wrapper.getBoundingClientRect().left) - (offsetDrag.x) }px`
+
+	}
+}
