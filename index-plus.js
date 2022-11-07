@@ -389,8 +389,6 @@ function touchAndDrop(drag) {
 		offsetTouch.x = touch.pageX - drag.getBoundingClientRect().left
 		offsetTouch.y = touch.pageY - drag.getBoundingClientRect().top
 
-		drag.classList.add('drag-start')
-
 		document.querySelector('body').style.overflow = 'hidden'
 	}
 
@@ -417,7 +415,6 @@ function touchAndDrop(drag) {
 
 	const touchEnd = () => {
 		document.querySelector('body').style.overflow = 'auto'
-		drag.classList.remove('drag-start')
 	}
 
 	const init = () => {
