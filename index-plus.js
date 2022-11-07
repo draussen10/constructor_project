@@ -441,29 +441,13 @@ function dragAndDrop(item) {
 
 
 	function dragstart(e) {
-		// setTimeout(()=> item.style.display = 'none', 0)
+		setTimeout(()=> item.style.display = 'none', 0)
 
 		item.style.zIndex = '1000'
 		offsetDrag.x = e.clientX - item.getBoundingClientRect().left
 		offsetDrag.y = e.clientY - item.getBoundingClientRect().top
 
-	}
 
-	function onmousemove(e) {
-		if (item.getBoundingClientRect().top <= wrapper.getBoundingClientRect().top) {
-			item.style.top = `${ 0 }px`
-		}
-		if (item.getBoundingClientRect().right >= wrapper.getBoundingClientRect().right) {
-			item.style.right = `${ 0 }px`
-			item.style.left  = `unset`
-		}
-		if (item.getBoundingClientRect().bottom >= wrapper.getBoundingClientRect().bottom) {
-			item.style.top = `unset`
-			item.style.bottom = `${ 0 }px`
-		}
-		if (item.getBoundingClientRect().left <= wrapper.getBoundingClientRect().left) {
-			item.style.left = `${ 0 }px`
-		}
 	}
 
 	function dragend(e) {
@@ -474,6 +458,23 @@ function dragAndDrop(item) {
 
 		item.style.top  = `${ e.clientY - (wrapper.getBoundingClientRect().top)  - (offsetDrag.y) }px`
 		item.style.left = `${ e.clientX - (wrapper.getBoundingClientRect().left) - (offsetDrag.x) }px`
+
+		if (item.getBoundingClientRect().top <= wrapper.getBoundingClientRect().top) {
+			item.style.top = `${ 0 }px`
+		}
+		else if (item.getBoundingClientRect().right >= wrapper.getBoundingClientRect().right) {
+			item.style.right = `${ 0 }px`
+			item.style.left  = `unset`
+		}
+		else if (item.getBoundingClientRect().bottom >= wrapper.getBoundingClientRect().bottom) {
+			item.style.top = `unset`
+			item.style.bottom = `${ 0 }px`
+		}
+		else if (item.getBoundingClientRect().left <= wrapper.getBoundingClientRect().left) {
+			item.style.left = `${ 0 }px`
+		}
+
+
 
 	}
 }

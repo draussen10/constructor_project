@@ -240,6 +240,7 @@ section p {
 	font-family: Arial;
 	font-size: 32px;
 	white-space: break-spaces;
+	pointer-events: auto;
 }
 
 .rightSide .imageBox {
@@ -1103,6 +1104,14 @@ span[plus=silver]::before {
 	right: 0;
 }
 
+.item {
+	pointer-events: none;
+}
+
 .item:active {
 	cursor: grabbing;
+}
+
+.item:hover {
+	border: 1px dashed red;
 }
