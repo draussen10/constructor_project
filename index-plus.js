@@ -377,56 +377,58 @@ for (let i = 1; i <= 3; i++) {
 //DRAG&DROP
 
 const wrapper = imageBox
-const drag    = userText
+touchAndDrop(userText)
 
-const offsetTouch = {
-	x: null,
-	y: null
-}
-
-const touchStart = (event) => {
-	const touch = event.targetTouches[0]
-	offsetTouch.x = touch.pageX - drag.getBoundingClientRect().left
-	offsetTouch.y = touch.pageY - drag.getBoundingClientRect().top
-
-	drag.classList.add('drag-start')
-
-	document.querySelector('body').style.overflow = 'hidden'
-}
-
-const touchMove = (event) => {
-	const touch = event.targetTouches[0]
-	drag.style.top  = `${ touch.pageY - (wrapper.getBoundingClientRect().top)  - (offsetTouch.y) }px`
-	drag.style.left = `${ touch.pageX - (wrapper.getBoundingClientRect().left) - (offsetTouch.x) }px`
-
-	if (drag.getBoundingClientRect().top <= wrapper.getBoundingClientRect().top) {
-		drag.style.top = `${ 0 }px`
+function touchAndDrop(drag) {
+	const offsetTouch = {
+		x: null,
+		y: null
 	}
-	if (drag.getBoundingClientRect().right >= wrapper.getBoundingClientRect().right) {
-		drag.style.right = `${ 0 }px`
-		drag.style.left  = `unset`
-	}
-	if (drag.getBoundingClientRect().bottom >= wrapper.getBoundingClientRect().bottom) {
-		drag.style.top = `unset`
-		drag.style.bottom = `${ 0 }px`
-	}
-	if (drag.getBoundingClientRect().left <= wrapper.getBoundingClientRect().left) {
-		drag.style.left = `${ 0 }px`
-	}
-}
 
-const touchEnd = () => {
-	document.querySelector('body').style.overflow = 'auto'
-	drag.classList.remove('drag-start')
-}
+	const touchStart = (event) => {
+		const touch = event.targetTouches[0]
+		offsetTouch.x = touch.pageX - drag.getBoundingClientRect().left
+		offsetTouch.y = touch.pageY - drag.getBoundingClientRect().top
 
-const init = () => {
-	drag.addEventListener('touchstart', touchStart)
-	drag.addEventListener('touchmove', touchMove)
-	drag.addEventListener('touchend', touchEnd)
-}
+		drag.classList.add('drag-start')
 
-init()
+		document.querySelector('body').style.overflow = 'hidden'
+	}
+
+	const touchMove = (event) => {
+		const touch = event.targetTouches[0]
+		drag.style.top  = `${ touch.pageY - (wrapper.getBoundingClientRect().top)  - (offsetTouch.y) }px`
+		drag.style.left = `${ touch.pageX - (wrapper.getBoundingClientRect().left) - (offsetTouch.x) }px`
+
+		if (drag.getBoundingClientRect().top <= wrapper.getBoundingClientRect().top) {
+			drag.style.top = `${ 0 }px`
+		}
+		if (drag.getBoundingClientRect().right >= wrapper.getBoundingClientRect().right) {
+			drag.style.right = `${ 0 }px`
+			drag.style.left  = `unset`
+		}
+		if (drag.getBoundingClientRect().bottom >= wrapper.getBoundingClientRect().bottom) {
+			drag.style.top = `unset`
+			drag.style.bottom = `${ 0 }px`
+		}
+		if (drag.getBoundingClientRect().left <= wrapper.getBoundingClientRect().left) {
+			drag.style.left = `${ 0 }px`
+		}
+	}
+
+	const touchEnd = () => {
+		document.querySelector('body').style.overflow = 'auto'
+		drag.classList.remove('drag-start')
+	}
+
+	const init = () => {
+		drag.addEventListener('touchstart', touchStart)
+		drag.addEventListener('touchmove', touchMove)
+		drag.addEventListener('touchend', touchEnd)
+	}
+
+	init()
+}
 
 
 dragAndDrop(userText)
@@ -441,6 +443,7 @@ function dragAndDrop(item) {
 	}
 
 	item.addEventListener('dragstart', dragstart)
+	item.addEventListener('mousemove', onmousemove)
 	item.addEventListener('dragend', dragend)
 
 
@@ -453,14 +456,28 @@ function dragAndDrop(item) {
 
 	}
 
+	function onmousemove(e) {
+		if (item.getBoundingClientRect().top <= wrapper.getBoundingClientRect().top) {
+			item.style.top = `${ 0 }px`
+		}
+		if (item.getBoundingClientRect().right >= wrapper.getBoundingClientRect().right) {
+			item.style.right = `${ 0 }px`
+			item.style.left  = `unset`
+		}
+		if (item.getBoundingClientRect().bottom >= wrapper.getBoundingClientRect().bottom) {
+			item.style.top = `unset`
+			item.style.bottom = `${ 0 }px`
+		}
+		if (item.getBoundingClientRect().left <= wrapper.getBoundingClientRect().left) {
+			item.style.left = `${ 0 }px`
+		}
+	}
+
 	function dragend(e) {
 		item.style.display = 'block'
 		if(!item.innerHTML.length && item.style.backgroundImage == ''){
 			return
 		}
-
-
-		console.log(wrapper.getBoundingClientRect())
 
 		item.style.top  = `${ e.clientY - (wrapper.getBoundingClientRect().top)  - (offsetDrag.y) }px`
 		item.style.left = `${ e.clientX - (wrapper.getBoundingClientRect().left) - (offsetDrag.x) }px`
