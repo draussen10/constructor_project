@@ -491,8 +491,4 @@ if( window.innerWidth >= 600 ){
 	touchAndDrop(userPillowText)
 }
 
-const size = [window.width, window.height]
-
-window.addEventListener('resize', (e) => {
-	window.resizeTo(size[0],size[1]);
-})
+setTimeout(() => body.innerHTML += window.innerWidth, 5000)
