@@ -3,6 +3,10 @@
 	margin: 0;
 }
 
+@viewport {
+	user-zoom: fixed;
+}
+
 a {
 	color: gray
 }
