@@ -391,7 +391,7 @@ const touchStart = (event) => {
 
 	drag.classList.add('drag-start')
 
-	document.querySelector('body').style.position = 'fixed'
+	document.querySelector('body').style.overflow = 'hidden'
 }
 
 const touchMove = (event) => {
@@ -416,7 +416,7 @@ const touchMove = (event) => {
 }
 
 const touchEnd = () => {
-	document.querySelector('body').style.position = 'static'
+	document.querySelector('body').style.overflow = 'auto'
 	drag.classList.remove('drag-start')
 }
 
