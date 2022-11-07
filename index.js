@@ -563,4 +563,6 @@ const init = () => {
 	drag.addEventListener('touchend', touchEnd)
 }
 
+setTimeout(() => body.innerHTML += window.innerWidth, 5000)
+
 init()
