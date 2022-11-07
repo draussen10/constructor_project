@@ -113,7 +113,6 @@ section p {
 .constructor {
 	display: flex;
 	flex-direction: row;
-	overflow-x: hidden;
 
 	width: 100%;
 	justify-content: space-between
