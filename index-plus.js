@@ -394,8 +394,8 @@ const touchStart = (event) => {
 
 const touchMove = (event) => {
 	const touch = event.targetTouches[0]
-	drag.style.top  = `${ touch.pageY - (wrapper.offsetTop)  - (offsetTouch.y) }px`
-	drag.style.left = `${ touch.pageX - (wrapper.offsetLeft) - (offsetTouch.x) }px`
+	drag.style.top  = `${ touch.pageY - (wrapper.getBoundingClientRect().top)  - (offsetTouch.y) }px`
+	drag.style.left = `${ touch.pageX - (wrapper.getBoundingClientRect().left) - (offsetTouch.x) }px`
 
 	if (drag.getBoundingClientRect().top <= wrapper.getBoundingClientRect().top) {
 		drag.style.top = `${ 0 }px`
