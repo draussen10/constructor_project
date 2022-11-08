@@ -232,6 +232,15 @@ function toolbar(item) {
 	})
 }
 
+function checkAndChangeScaleInput() {
+	if(scaleInput.value > 2) {
+		scaleInput.value = 2
+	} else if (scaleInput.value < 0) {
+		scaleInput.value = 0
+	}
+	activeItem.style.transform = `scale(${scaleInput.value})`
+}
+
 //Main Function
 function viewDivs() {
 	for(el of activeDivs) {
@@ -514,12 +523,16 @@ for (let i = 1; i <= 3; i++) {
 }
 
 scaleInput.addEventListener('input', () => {
-	console.log(activeItem)
-	if(scaleInput.value > 2) {
-		scaleInput.value = 2
-	} else if (scaleInput.value < 0) {
-		scaleInput.value = 0
-	}
-	activeItem.style.transform = `scale(${scaleInput.value})`
+	checkAndChangeScaleInput()
 })
 scaleInput.addEventListener('keydown', (e) => {if (e.keyCode === 13) {e.preventDefault()}})
+
+document.querySelector('.toolbar-input-minus').addEventListener('click', () => {
+	scaleInput.value = String((parseFloat(scaleInput.value)  - 0.1).toFixed(1))
+	checkAndChangeScaleInput()
+})
+
+document.querySelector('.toolbar-input-plus').addEventListener('click', () => {
+	scaleInput.value = String((parseFloat(scaleInput.value)  + 0.1).toFixed(1))
+	checkAndChangeScaleInput()
+})
