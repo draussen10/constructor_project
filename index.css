@@ -1127,7 +1127,7 @@ span[plus=silver]::before {
 	border: 2px solid black;
 	z-index: 2000;
 	font-family: Arial, sans-serif;
-	/*display: none;*/
+	display: none;
 }
 .toolbar-form {
 	margin: 20px;
