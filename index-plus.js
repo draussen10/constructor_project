@@ -35,10 +35,12 @@ const userImage1 = document.querySelector(".userImage1")
 const userImage2 = document.querySelector(".userImage2")
 const userText = document.querySelector(".userText")
 const userPillowText = document.querySelector(".userPillowText")
+const toolbarMenu = document.querySelector('.toolbar-menu')
 
 //SwitchDivs
 const sizeInput = document.querySelector('input[name = "size60-height"]')
 const textarea = document.querySelector("#userText")
+const scaleInput =  document.querySelector('input[name = "scale"]')
 
 //OriginSettings
 let activeDivs = bathrobeDivs
@@ -102,9 +104,124 @@ const original_coords = {
 	}
 }
 
+let activeItem = null
+
 //Utility Function
 const toColorEng = str => str.split('; ')[1]
 const toColorRu = str => str.split('; ')[0]
+
+//DRAG&DROP
+function touchAndDrop(drag) {
+	const offsetTouch = {
+		x: null,
+		y: null
+	}
+
+	const touchStart = (event) => {
+		const touch = event.targetTouches[0]
+		offsetTouch.x = touch.pageX - drag.getBoundingClientRect().left
+		offsetTouch.y = touch.pageY - drag.getBoundingClientRect().top
+
+		document.querySelector('body').style.overflow = 'hidden'
+	}
+
+	const touchMove = (event) => {
+		const touch = event.targetTouches[0]
+		drag.style.top  = `${ touch.pageY - (imageBox.getBoundingClientRect().top)  - (offsetTouch.y) }px`
+		drag.style.left = `${ touch.pageX - (imageBox.getBoundingClientRect().left) - (offsetTouch.x) }px`
+
+		if (drag.getBoundingClientRect().top <= imageBox.getBoundingClientRect().top) {
+			drag.style.top = `${ 0 }px`
+		}
+		if (drag.getBoundingClientRect().right >= imageBox.getBoundingClientRect().right) {
+			drag.style.right = `${ 0 }px`
+			drag.style.left  = `unset`
+		}
+		if (drag.getBoundingClientRect().bottom >= imageBox.getBoundingClientRect().bottom) {
+			drag.style.top = `unset`
+			drag.style.bottom = `${ 0 }px`
+		}
+		if (drag.getBoundingClientRect().left <= imageBox.getBoundingClientRect().left) {
+			drag.style.left = `${ 0 }px`
+		}
+	}
+
+	const touchEnd = () => {
+		document.querySelector('body').style.overflow = 'auto'
+	}
+
+	const init = () => {
+		drag.addEventListener('touchstart', touchStart)
+		drag.addEventListener('touchmove', touchMove)
+		drag.addEventListener('touchend', touchEnd)
+	}
+
+	init()
+}
+
+function dragAndDrop(item) {
+	const offsetDrag = {
+		x: null,
+		y: null
+	}
+
+	item.addEventListener('dragstart', dragstart)
+	item.addEventListener('mousemove', onmousemove)
+	item.addEventListener('dragend', dragend)
+
+
+	function dragstart(e) {
+		setTimeout(()=> item.style.display = 'none', 0)
+
+		item.style.zIndex = '1000'
+		offsetDrag.x = e.clientX - item.getBoundingClientRect().left
+		offsetDrag.y = e.clientY - item.getBoundingClientRect().top
+
+
+	}
+
+	function dragend(e) {
+		item.style.display = 'block'
+		if(!item.innerHTML.length && item.style.backgroundImage == ''){
+			return
+		}
+
+		item.style.top  = `${ e.clientY - (imageBox.getBoundingClientRect().top)  - (offsetDrag.y) }px`
+		item.style.left = `${ e.clientX - (imageBox.getBoundingClientRect().left) - (offsetDrag.x) }px`
+
+		if (item.getBoundingClientRect().top <= imageBox.getBoundingClientRect().top) {
+			item.style.top = `${ 0 }px`
+		}
+		else if (item.getBoundingClientRect().right >= imageBox.getBoundingClientRect().right) {
+			item.style.right = `${ 0 }px`
+			item.style.left  = `unset`
+		}
+		else if (item.getBoundingClientRect().bottom >= imageBox.getBoundingClientRect().bottom) {
+			item.style.top = `unset`
+			item.style.bottom = `${ 0 }px`
+		}
+		else if (item.getBoundingClientRect().left <= imageBox.getBoundingClientRect().left) {
+			item.style.left = `${ 0 }px`
+		}
+
+	}
+}
+
+//Open Toolbar
+function toolbar(item) {
+	item.addEventListener('click', () => {
+		activeItem = item
+		if(!item.style.transform) {
+			item.style.transform = 'scale(1)'
+		}
+		const scale = +item.style.transform.split(" ")[0].replace("scale(", "").replace(")", "")
+		document.querySelector('input[name = "scale"]').value = scale
+		toolbarMenu.style.display = 'block'
+	})
+}
+
+toolbar(userText)
+
 
 //Main Function
 function viewDivs() {
@@ -329,6 +446,18 @@ document.addEventListener('click', e => {
 			return true
 		}
 	}
+	// Появление и исчезновение меню с параметрами/
+	if(e.target.hasAttribute('draggable')) {
+		toolbar(e.target)
+	} else {
+		if(e.target == toolbarMenu || toolbarMenu.contains(e.target)) {
+			return true
+		}
+
+		if(toolbarMenu.style.display == 'block') {
+			toolbarMenu.style.display = 'none'
+		}
+	}
 })
 
 
@@ -374,107 +503,16 @@ for (let i = 1; i <= 3; i++) {
 	}
 }
 
-//DRAG&DROP
-
-const wrapper = imageBox
-
-function touchAndDrop(drag) {
-	const offsetTouch = {
-		x: null,
-		y: null
+scaleInput.addEventListener('input', () => {
+	console.log(activeItem)
+	if(scaleInput.value > 2) {
+		scaleInput.value = 2
+	} else if (scaleInput.value < 0) {
+		scaleInput.value = 0
 	}
-
-	const touchStart = (event) => {
-		const touch = event.targetTouches[0]
-		offsetTouch.x = touch.pageX - drag.getBoundingClientRect().left
-		offsetTouch.y = touch.pageY - drag.getBoundingClientRect().top
-
-		document.querySelector('body').style.overflow = 'hidden'
-	}
-
-	const touchMove = (event) => {
-		const touch = event.targetTouches[0]
-		drag.style.top  = `${ touch.pageY - (wrapper.getBoundingClientRect().top)  - (offsetTouch.y) }px`
-		drag.style.left = `${ touch.pageX - (wrapper.getBoundingClientRect().left) - (offsetTouch.x) }px`
-
-		if (drag.getBoundingClientRect().top <= wrapper.getBoundingClientRect().top) {
-			drag.style.top = `${ 0 }px`
-		}
-		if (drag.getBoundingClientRect().right >= wrapper.getBoundingClientRect().right) {
-			drag.style.right = `${ 0 }px`
-			drag.style.left  = `unset`
-		}
-		if (drag.getBoundingClientRect().bottom >= wrapper.getBoundingClientRect().bottom) {
-			drag.style.top = `unset`
-			drag.style.bottom = `${ 0 }px`
-		}
-		if (drag.getBoundingClientRect().left <= wrapper.getBoundingClientRect().left) {
-			drag.style.left = `${ 0 }px`
-		}
-	}
-
-	const touchEnd = () => {
-		document.querySelector('body').style.overflow = 'auto'
-	}
-
-	const init = () => {
-		drag.addEventListener('touchstart', touchStart)
-		drag.addEventListener('touchmove', touchMove)
-		drag.addEventListener('touchend', touchEnd)
-	}
-
-	init()
-}
-
-function dragAndDrop(item) {
-	const offsetDrag = {
-		x: null,
-		y: null
-	}
-
-	item.addEventListener('dragstart', dragstart)
-	item.addEventListener('mousemove', onmousemove)
-	item.addEventListener('dragend', dragend)
-
-
-	function dragstart(e) {
-		setTimeout(()=> item.style.display = 'none', 0)
-
-		item.style.zIndex = '1000'
-		offsetDrag.x = e.clientX - item.getBoundingClientRect().left
-		offsetDrag.y = e.clientY - item.getBoundingClientRect().top
-
-
-	}
-
-	function dragend(e) {
-		item.style.display = 'block'
-		if(!item.innerHTML.length && item.style.backgroundImage == ''){
-			return
-		}
-
-		item.style.top  = `${ e.clientY - (wrapper.getBoundingClientRect().top)  - (offsetDrag.y) }px`
-		item.style.left = `${ e.clientX - (wrapper.getBoundingClientRect().left) - (offsetDrag.x) }px`
-
-		if (item.getBoundingClientRect().top <= wrapper.getBoundingClientRect().top) {
-			item.style.top = `${ 0 }px`
-		}
-		else if (item.getBoundingClientRect().right >= wrapper.getBoundingClientRect().right) {
-			item.style.right = `${ 0 }px`
-			item.style.left  = `unset`
-		}
-		else if (item.getBoundingClientRect().bottom >= wrapper.getBoundingClientRect().bottom) {
-			item.style.top = `unset`
-			item.style.bottom = `${ 0 }px`
-		}
-		else if (item.getBoundingClientRect().left <= wrapper.getBoundingClientRect().left) {
-			item.style.left = `${ 0 }px`
-		}
-
-
-
-	}
-}
+	activeItem.style.transform = `scale(${scaleInput.value})`
+})
+scaleInput.addEventListener('keydown', (e) => {if (e.keyCode === 13) {e.preventDefault()}})
 
 if( window.innerWidth >= 600 ){
 	dragAndDrop(userText)

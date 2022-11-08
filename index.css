@@ -241,6 +241,7 @@ section p {
 	font-size: 32px;
 	white-space: break-spaces;
 	pointer-events: auto;
+	transform: scale(1) rotate(0);
 }
 
 .rightSide .imageBox {
@@ -1114,4 +1115,41 @@ span[plus=silver]::before {
 
 .item:hover {
 	border: 1px dashed red;
+}
+
+.toolbar-menu {
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	background-color: white;
+	border-radius: 10px;
+	border: 2px solid black;
+	z-index: 2000;
+	font-family: Arial, sans-serif;
+	display: none;
+}
+.toolbar-form {
+	margin: 15px;
+}
+
+.toolbar-form h3 {
+	text-align: center;
+}
+
+.toolbar-item {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 10px 0;
+}
+
+.toolbar-input{
+	flex-basis: 40%;
+	padding: 5px;
+}
+
+.toolbar-input-label{
+	margin-right: 10px;
+	flex-basis: 50%;
+	font-weight: 500;
 }

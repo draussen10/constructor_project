@@ -563,6 +563,4 @@ const init = () => {
 	drag.addEventListener('touchend', touchEnd)
 }
 
-
-
 init()
