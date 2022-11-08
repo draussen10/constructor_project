@@ -207,6 +207,18 @@ function dragAndDrop(item) {
 	}
 }
 
+if( window.innerWidth >= 600 ){
+	dragAndDrop(userText)
+	dragAndDrop(userImage1)
+	dragAndDrop(userImage2)
+	dragAndDrop(userPillowText)
+} else {
+	touchAndDrop(userText)
+	touchAndDrop(userImage1)
+	touchAndDrop(userImage2)
+	touchAndDrop(userPillowText)
+}
+
 //Open Toolbar
 function toolbar(item) {
 	item.addEventListener('click', () => {
@@ -219,9 +231,6 @@ function toolbar(item) {
 		toolbarMenu.style.display = 'block'
 	})
 }
-
-toolbar(userText)
-
 
 //Main Function
 function viewDivs() {
@@ -446,6 +455,7 @@ document.addEventListener('click', e => {
 			return true
 		}
 	}
+
 	// Появление и исчезновение меню с параметрами/
 	if(e.target.hasAttribute('draggable')) {
 		toolbar(e.target)
@@ -513,15 +523,3 @@ scaleInput.addEventListener('input', () => {
 	activeItem.style.transform = `scale(${scaleInput.value})`
 })
 scaleInput.addEventListener('keydown', (e) => {if (e.keyCode === 13) {e.preventDefault()}})
-
-if( window.innerWidth >= 600 ){
-	dragAndDrop(userText)
-	dragAndDrop(userImage1)
-	dragAndDrop(userImage2)
-	dragAndDrop(userPillowText)
-} else {
-	touchAndDrop(userText)
-	touchAndDrop(userImage1)
-	touchAndDrop(userImage2)
-	touchAndDrop(userPillowText)
-}

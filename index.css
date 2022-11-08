@@ -1107,6 +1107,7 @@ span[plus=silver]::before {
 
 .item {
 	pointer-events: none;
+	transition: transform 0.5s ease-in;
 }
 
 .item:active {
