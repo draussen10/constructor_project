@@ -281,7 +281,7 @@ function setOrderOriginSettings() {
 			category: 'bathrobe',
 			addition: 'noHood',
 			cloth: 'terry',
-			color: "Синий; blue",
+			color: "Тёмносиний; darkblue",
 			frontText: 'no',
 			size: '42-44(S)',
 			text: 'Мой текст',
