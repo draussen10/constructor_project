@@ -1080,17 +1080,17 @@ span[plus=silver]::before {
 }
 
 .cloth-type-img {
-	width: 170px;
-	height: 80px;
+	width: 60px;
+	height: 60px;
 	margin-left: 10px;
-	border-radius: 15px;
+	border-radius: 50%;
 	pointer-events: none;
 }
 
 .cloth-type.active .cloth-type-img{
-	border: 3px solid #b08a39;
-	width: 167px;
-	height: 77px;
+	border: 2px solid #b08a39;
+	width: 58px;
+	height: 58px;
 }
 
 .imageBox {

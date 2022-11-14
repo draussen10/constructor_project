@@ -48,7 +48,7 @@ let order = {
 	category: 'bathrobe',
 	addition: 'noHood',
 	cloth: 'terry',
-	color: "Синий; blue",
+	color: "Тёмносиний; darkblue",
 	frontText: 'no',
 	size: '42-44(S)',
 	text: 'Мой текст',
@@ -109,6 +109,8 @@ let activeItem = null
 //Utility Function
 const toColorEng = str => str.split('; ')[1]
 const toColorRu = str => str.split('; ')[0]
+
+const sumStringAndFloat = (str, reduce) => String((parseFloat(str)  + reduce).toFixed(1))
 
 //DRAG&DROP
 function touchAndDrop(drag) {
@@ -357,7 +359,6 @@ const clearImage = (event, number) => {
 		order.upperImage = ''
 	}
 
-	console.log(order)
 	updateView()
 }
 
@@ -367,6 +368,8 @@ function setOriginSettings() {
 }
 
 function updateView() {
+	console.log(order)
+
 
 	//category
 	if(order.category === 'autonakidka') {
@@ -410,10 +413,16 @@ function updateView() {
 	}
 
 	//upperImage
+	userImage1.className = "userImage1 item";
 	if(order.upperImage && order.upperImage !== '') {
 		userImage1.style.backgroundImage = order.upperImage
 		userImage1.style.pointerEvents = 'auto'
 		order.category === 'bathrobe' ? document.querySelector(".delImage1").style.display = 'flex' : document.querySelector(".delImage3").style.display = 'flex'
+		if(toColorEng(order.colorOfFont) === 'rgb(71, 74, 81)'){
+			userImage1.classList.add(`img-474a51`)
+		} else {
+			userImage1.classList.add(`img-${toColorEng(order.colorOfFont)}`)
+		}
 	} else {
 		userImage1.style.backgroundImage = ''
 		userImage1.style.pointerEvents = 'none'
@@ -422,17 +431,22 @@ function updateView() {
 	}
 
 	//lowerImage
+	userImage2.className = "userImage2 item";
 	if(order.lowerImage && order.lowerImage !== '') {
 		userImage2.style.backgroundImage = order.lowerImage
 		userImage2.style.pointerEvents = 'auto'
 		document.querySelector(".delImage2").style.display = 'flex'
+		if(toColorEng(order.colorOfFont) === 'rgb(71, 74, 81)'){
+			userImage2.classList.add(`img-474a51`)
+		} else {
+			userImage2.classList.add(`img-${toColorEng(order.colorOfFont)}`)
+		}
 	} else {
 		userImage2.style.backgroundImage = ''
 		userImage2.style.pointerEvents = 'none'
 		document.querySelector(".delImage2").style.display = 'none'
 		document.querySelector(`.active[lowerImage]`) && document.querySelector(`.active[lowerImage]`).classList.remove("active")
 	}
-
 }
 
 document.addEventListener('click', e => {
@@ -460,7 +474,6 @@ document.addEventListener('click', e => {
 			}
 
 			updateView()
-			console.log(order)
 			return true
 		}
 	}
@@ -489,7 +502,6 @@ sizeInput.addEventListener('input', () => {
 			activeSizeDiv.classList.remove("active")
 		}
 		order.size = sizeInput.value
-		console.log(order)
 	} else {
 		const firstSize = document.querySelector('[size]:nth-child(1)')
 		firstSize.classList.add('active')
@@ -503,7 +515,6 @@ textarea.addEventListener('input', () => {
 	}
 	order.text = textarea.value
 
-	console.log(order)
 	updateView()
 })
 
@@ -528,11 +539,11 @@ scaleInput.addEventListener('input', () => {
 scaleInput.addEventListener('keydown', (e) => {if (e.keyCode === 13) {e.preventDefault()}})
 
 document.querySelector('.toolbar-input-minus').addEventListener('click', () => {
-	scaleInput.value = String((parseFloat(scaleInput.value)  - 0.1).toFixed(1))
+	scaleInput.value = sumStringAndFloat(scaleInput.value, -0.1)
 	checkAndChangeScaleInput()
 })
 
 document.querySelector('.toolbar-input-plus').addEventListener('click', () => {
-	scaleInput.value = String((parseFloat(scaleInput.value)  + 0.1).toFixed(1))
+	scaleInput.value = sumStringAndFloat(scaleInput.value, 0.1)
 	checkAndChangeScaleInput()
 })
