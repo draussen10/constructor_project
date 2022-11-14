@@ -371,6 +371,8 @@ function updateView() {
 	console.log(order)
 
 
+
+
 	//category
 	if(order.category === 'autonakidka') {
 		imageBox.style.backgroundImage = `url(./img/${order.category}/${order.cloth}.png)`
