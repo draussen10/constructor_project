@@ -420,10 +420,12 @@ function updateView() {
 		userImage1.style.backgroundImage = order.upperImage
 		userImage1.style.pointerEvents = 'auto'
 		order.category === 'bathrobe' ? document.querySelector(".delImage1").style.display = 'flex' : document.querySelector(".delImage3").style.display = 'flex'
-		if(toColorEng(order.colorOfFont) === 'rgb(71, 74, 81)'){
-			userImage1.classList.add(`img-474a51`)
-		} else {
-			userImage1.classList.add(`img-${toColorEng(order.colorOfFont)}`)
+		if(order.category === 'bathrobe') {
+			if(toColorEng(order.colorOfFont) === 'rgb(71, 74, 81)'){
+				userImage1.classList.add(`img-474a51`)
+			} else {
+				userImage1.classList.add(`img-${toColorEng(order.colorOfFont)}`)
+			}
 		}
 	} else {
 		userImage1.style.backgroundImage = ''
@@ -438,10 +440,12 @@ function updateView() {
 		userImage2.style.backgroundImage = order.lowerImage
 		userImage2.style.pointerEvents = 'auto'
 		document.querySelector(".delImage2").style.display = 'flex'
-		if(toColorEng(order.colorOfFont) === 'rgb(71, 74, 81)'){
-			userImage2.classList.add(`img-474a51`)
-		} else {
-			userImage2.classList.add(`img-${toColorEng(order.colorOfFont)}`)
+		if(order.category === 'bathrobe') {
+			if (toColorEng(order.colorOfFont) === 'rgb(71, 74, 81)') {
+				userImage2.classList.add(`img-474a51`)
+			} else {
+				userImage2.classList.add(`img-${toColorEng(order.colorOfFont)}`)
+			}
 		}
 	} else {
 		userImage2.style.backgroundImage = ''
