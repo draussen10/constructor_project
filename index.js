@@ -291,6 +291,7 @@ function checkAndChangeScaleInput() {
 
 	activeItem.style.height = `${parseInt(original_coords[order.category][activeItemName].height.replace('px', '')) * parseFloat(scaleInput.value)}px`
 	activeItem.style.width = `${parseInt(original_coords[order.category][activeItemName].width.replace('px', '')) * parseFloat(scaleInput.value)}px`
+
 	if(activeItemName.includes('Text')) {
 		activeItem.style.fontSize = `${parseInt(original_coords[order.category][activeItemName].fontSize.replace('px', '')) * parseFloat(scaleInput.value)}px`
 	}
