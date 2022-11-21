@@ -65,45 +65,73 @@ const original_coords = {
 	bathrobe: {
 		userImage1: {
 			top: '175px',
-			left: '115px'
+			left: '115px',
+			width: '150px',
+			height: '182px'
 		},
 		userText: {
 			top: '342.85px',
-			left: '84px'
+			left: '84px',
+			width: '200px',
+			height: '40px',
+			fontSize: '26px'
 		},
 		userImage2: {
 			top: '395px',
-			left: '102px'
+			left: '102px',
+			width: '174px',
+			height: '84px'
+		},
+		userImage3: {
+			top: '273px',
+			left: '201px',
+			width: '120px',
+			height: '100px'
 		}
 	},
 	autonakidka: {
 		userImage1: {
 			top: '130px',
-			left: '115px'
+			left: '115px',
+			width: '150px',
+			height: '182px'
 		}
 	},
 	pillow: {
 		userImage1: {
-			top: '150px',
-			left: '120px'
+			top: '180px',
+			left: '120px',
+			width: '150px',
+			height: '118px'
 		},
 		userText: {
-			top: '310.85px',
-			left: '62.85px'
+			top: '312px',
+			left: '65px',
+			width: '200px',
+			height: '40px',
+			fontSize: '26px'
 		},
 		userPillowText: {
 			top: '313px',
-			left: '67%'
+			left: '67%',
+			width: '58px',
+			height: '25px',
+			fontSize: '32px'
 		}
 	},
 	cap: {
 		userImage1: {
-			top: '234px',
-			left: '115px'
+			top: '280px',
+			left: '128px',
+			width: '125px',
+			height: '75px'
 		},
 		userText: {
 			top: '67%',
-			left: '84px'
+			left: '84px',
+			width: '200px',
+			height: '40px',
+			fontSize: '26px'
 		}
 	}
 }
@@ -246,7 +274,29 @@ function checkAndChangeScaleInput() {
 	} else if (scaleInput.value < 0) {
 		scaleInput.value = 0
 	}
-	activeItem.style.transform = `scale(${scaleInput.value})`
+
+	let activeItemName = ''
+
+	if(activeItem === userText) {
+		activeItemName = 'userText'
+	} else if(activeItem === userPillowText) {
+		activeItemName = 'userPillowText'
+	} else if(activeItem === userImage1) {
+		activeItemName = 'userImage1'
+	} else if(activeItem === userImage2) {
+		activeItemName = 'userImage2'
+	} else if(activeItem === userImage3) {
+		activeItemName = 'userImage3'
+	}
+
+	activeItem.style.height = `${parseInt(original_coords[order.category][activeItemName].height.replace('px', '')) * parseFloat(scaleInput.value)}px`
+	activeItem.style.width = `${parseInt(original_coords[order.category][activeItemName].width.replace('px', '')) * parseFloat(scaleInput.value)}px`
+	if(activeItemName.includes('Text')) {
+		activeItem.style.fontSize = `${parseInt(original_coords[order.category][activeItemName].fontSize.replace('px', '')) * parseFloat(scaleInput.value)}px`
+	}
+	console.log(parseFloat(scaleInput.value))
+	console.log(parseInt(original_coords[order.category][activeItemName].width.replace('px', '')) )
+
 }
 
 //Main Function
@@ -327,34 +377,42 @@ function setOrderOriginSettings() {
 		}
 	}
 
-	if(order.category === 'bathrobe') {
-		userImage1.style.left = original_coords.bathrobe.userImage1.left
-		userImage2.style.left = original_coords.bathrobe.userImage2.left
-		userText.style.left = original_coords.bathrobe.userText.left
+	if('upperImage' in order) {
+		userImage1.style.left = original_coords[order.category].userImage1.left
+		userImage1.style.top = original_coords[order.category].userImage1.top
 
-		userImage1.style.top = original_coords.bathrobe.userImage1.top
-		userImage2.style.top = original_coords.bathrobe.userImage2.top
-		userText.style.top = original_coords.bathrobe.userText.top
+		userImage1.style.height = original_coords[order.category].userImage1.height
+		userImage1.style.width = original_coords[order.category].userImage1.width
+	}
+	if('lowerImage' in order) {
+		userImage2.style.left = original_coords[order.category].userImage2.left
+		userImage2.style.top = original_coords[order.category].userImage2.top
 
-	} else if(order.category === 'autonakidka') {
-		userImage1.style.left = original_coords.autonakidka.userImage1.left
-		userImage1.style.top = original_coords.autonakidka.userImage1.top
+		userImage2.style.height = original_coords[order.category].userImage2.height
+		userImage2.style.width = original_coords[order.category].userImage2.width
+	}
+	if('frontImage' in order) {
+		userImage3.style.left = original_coords[order.category].userImage3.left
+		userImage3.style.top = original_coords[order.category].userImage3.top
 
-	} else if(order.category === 'pillow') {
-		userImage1.style.left = original_coords.pillow.userImage1.left
-		userText.style.left = original_coords.pillow.userText.left
+		userImage3.style.height = original_coords[order.category].userImage3.height
+		userImage3.style.width = original_coords[order.category].userImage3.width
+	}
+	if('text' in order) {
+		userText.style.left = original_coords[order.category].userText.left
+		userText.style.top = original_coords[order.category].userText.top
+
+		userText.style.height = original_coords[order.category].userText.height
+		userText.style.width = original_coords[order.category].userText.width
+		userText.style.fontSize = original_coords[order.category].userText.fontSize
+	}
+	if(order.category === 'pillow') {
 		userPillowText.style.left = original_coords.pillow.userPillowText.left
-
-		userImage1.style.top = original_coords.pillow.userImage1.top
-		userText.style.top = original_coords.pillow.userText.top
 		userPillowText.style.top = original_coords.pillow.userPillowText.top
 
-	} else if(order.category === 'cap') {
-		userImage1.style.left = original_coords.cap.userImage1.left
-		userText.style.left = original_coords.cap.userText.left
-
-		userImage1.style.top = original_coords.cap.userImage1.top
-		userText.style.top = original_coords.cap.userText.top
+		userPillowText.style.height = original_coords.pillow.userPillowText.height
+		userPillowText.style.width = original_coords.pillow.userPillowText.width
+		userPillowText.style.fontSize = original_coords.pillow.userPillowText.fontSize
 	}
 }
 
