@@ -9,6 +9,7 @@ const pillowClothDiv = document.querySelector('.cloth.pillow')
 const capClothDiv = document.querySelector('.cloth.cap')
 
 const frontTextDiv = document.querySelector('.main-front-text')
+const viewDiv = document.querySelector(".main-view")
 
 const bathrobeColorDiv = document.querySelector('.color.bathrobe')
 const autonakidkaColorDiv = document.querySelector('.color.autonakidka')
@@ -51,6 +52,7 @@ let order = {
 	cloth: 'terry',
 	color: "Тёмносиний; darkblue",
 	frontText: 'no',
+	view: 'back',
 	size: '42-44(S)',
 	text: 'Мой текст',
 	colorOfFont: 'Золотой; gold',
@@ -287,6 +289,7 @@ function setOrderOriginSettings() {
 			cloth: 'terry',
 			color: "Тёмносиний; darkblue",
 			frontText: 'no',
+			view: 'back',
 			size: '42-44(S)',
 			text: 'Мой текст',
 			userFont: 'Alexander',
@@ -383,34 +386,41 @@ function updateView() {
 	} else if(order.category === 'pillow') {
 		imageBox.style.backgroundImage = `url(./img/${order.category}.png)`
 	} else if(order.category === 'bathrobe') {
-		if(order.frontText === 'yes') {
-			imageBox.style.backgroundImage = `url(./img/${order.category}/front/${toColorEng(order.color)}.png)`
-		} else {
-			imageBox.style.backgroundImage = `url(./img/${order.category}/back/${toColorEng(order.color)}.png)`
-		}
+		imageBox.style.backgroundImage = `url(./img/${order.category}/${order.view}/${toColorEng(order.color)}.png)`
 	} else {
 		imageBox.style.backgroundImage = `url(./img/${order.category}/${toColorEng(order.color)}.png)`
 	}
 
 	//frontText
 	if(order.frontText) {
-		if (order.frontText == 'yes') {
+		if(order.frontText === 'yes') {
+			viewDiv.style.display = 'block'
+		} else {
+			viewDiv.style.display = 'none'
+			document.querySelector('.active[view]').classList.remove('active')
+			document.querySelector('span[view="back"]').classList.add('active')
+			order.view = 'back'
+			order.frontImage = ''
+			imageBox.style.backgroundImage = `url(./img/${order.category}/${order.view}/${toColorEng(order.color)}.png)`
+		}
+	}
+	//view
+	if(order.view) {
+		if (order.view == 'front') {
 			document.querySelector('.image1').style.display = 'none'
 			document.querySelector('.image2').style.display = 'none'
 			document.querySelector('.image4').style.display = 'flex'
-
 		} else {
 			document.querySelector('.image1').style.display = 'flex'
 			document.querySelector('.image2').style.display = 'flex'
 			document.querySelector('.image4').style.display = 'none'
-
 			}
 	}
 
 	//hood
 	if (order.addition === 'hood') {
 		hoodImg.style.backgroundImage = `url(./img/bathrobe/back/hood/${toColorEng(order.color)}.png)`
-		if(order.frontText && order.frontText === 'no') {
+		if(order.view && order.view === 'back') {
 			hoodImg.style.display = 'block'
 		} else {
 			hoodImg.style.display = 'none'
@@ -430,15 +440,19 @@ function updateView() {
 		userText.style.fontWeight = fontWeight
 		userText.style.color = toColorEng(order.colorOfFont)
 
+		userText.style.pointerEvents = 'auto'
+
 		if(order.category === 'pillow'){
 			userText.innerHTML = order.text.split('\n')[0]
 			userPillowText.innerHTML = order.text.split('\n')[1]
+			userPillowText.style.pointerEvents = 'auto'
 		} else {
 			userText.innerHTML = order.text
 			userPillowText.innerHTML = ''
+			userPillowText.style.pointerEvents = 'none'
 		}
 
-		if(order.frontText && order.frontText !== 'no') {
+		if(order.view && order.view !== 'back') {
 			userText.style.display = 'none'
 		} else {
 			userText.style.display = 'block'
@@ -447,6 +461,8 @@ function updateView() {
 	} else {
 		userText.innerHTML = ''
 		userPillowText.innerHTML = ''
+		userPillowText.style.pointerEvents = 'none'
+		userText.style.pointerEvents = 'none'
 	}
 
 	//upperImage
@@ -461,7 +477,7 @@ function updateView() {
 				userImage1.classList.add(`img-${toColorEng(order.colorOfFont)}`)
 			}
 		}
-		if(order.frontText && order.frontText !== 'no') {
+		if(order.view && order.view !== 'back') {
 			userImage1.style.backgroundImage = ''
 			userImage1.style.pointerEvents = 'none'
 		} else {
@@ -486,7 +502,7 @@ function updateView() {
 				userImage2.classList.add(`img-${toColorEng(order.colorOfFont)}`)
 			}
 		}
-		if(order.frontText && order.frontText !== 'no') {
+		if(order.view && order.view !== 'back') {
 			userImage2.style.backgroundImage = ''
 			userImage2.style.pointerEvents = 'none'
 		} else {
@@ -503,7 +519,7 @@ function updateView() {
 	//frontImage
 	userImage3.className = "userImage3 item";
 	if(order.frontImage) {
-		if(order.frontText !== 'no') {
+		if(order.view !== 'back') {
 			userImage3.style.pointerEvents = 'auto'
 			userImage3.style.backgroundImage = order.frontImage
 		} else {
@@ -637,17 +653,21 @@ document.querySelector('#form-order').addEventListener('submit', e => {
 
 	if(order.category === 'bathrobe') {
 		userText.style.display = 'block'
-		// userImage1.style.background = order.upperImage
-		// userImage2.style.background = order.lowerImage
+
+		userImage3.style.backgroundImage = ''
+		userImage1.style.backgroundImage = order.upperImage
+		userImage2.style.backgroundImage = order.lowerImage
 		imageBox.style.backgroundImage = `url(./img/${order.category}/back/${toColorEng(order.color)}.png)`
 		doPhoto('_back')
 
 		userText.style.display = 'none'
-		// userImage1.style.background = 'none'
-		// userImage2.style.background = 'none'
-		//
-		// userImage3.style.background = order.frontImage
+		userImage1.style.backgroundImage = ''
+		userImage2.style.backgroundImage = ''
+
+		userImage3.style.backgroundImage = order.frontImage
 		imageBox.style.backgroundImage = `url(./img/${order.category}/front/${toColorEng(order.color)}.png)`
+
+
 		doPhoto('_front')
 	} else {
 		doPhoto()
