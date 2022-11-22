@@ -714,7 +714,7 @@ document.querySelector('.toolbar-input-plus').addEventListener('click', () => {
 function doPhoto(imgName = '') {
 	html2canvas(document.querySelector(".imageBox")).then(canvas => {
 		canvas.toBlob(function(blob) {
-			window.saveAs(blob, `order${imgName}`);
+			window.saveAs(blob, `${order.category}${imgName}`);
 		});
 	});
 }
@@ -723,7 +723,7 @@ function doPhoto(imgName = '') {
 document.querySelector('#form-order').addEventListener('submit', e => {
 	e.preventDefault()
 
-	if(order.category === 'bathrobe') {
+	if(order.frontText && order.frontText === 'yes') {
 		userText.style.display = 'block'
 
 		userImage3.style.backgroundImage = ''
