@@ -67,26 +67,30 @@ const original_coords = {
 			top: '175px',
 			left: '115px',
 			width: '150px',
-			height: '182px'
+			height: '182px',
+			k: 1
 		},
 		userText: {
 			top: '342.85px',
 			left: '84px',
 			width: '200px',
 			height: '40px',
-			fontSize: '26px'
+			fontSize: '26px',
+			k: 1
 		},
 		userImage2: {
 			top: '395px',
 			left: '102px',
 			width: '174px',
-			height: '84px'
+			height: '84px',
+			k: 1
 		},
 		userImage3: {
 			top: '273px',
 			left: '201px',
 			width: '120px',
-			height: '100px'
+			height: '100px',
+			k: 1
 		}
 	},
 	autonakidka: {
@@ -94,7 +98,8 @@ const original_coords = {
 			top: '130px',
 			left: '115px',
 			width: '150px',
-			height: '182px'
+			height: '182px',
+			k: 1
 		}
 	},
 	pillow: {
@@ -102,21 +107,24 @@ const original_coords = {
 			top: '180px',
 			left: '120px',
 			width: '150px',
-			height: '118px'
+			height: '118px',
+			k: 1
 		},
 		userText: {
 			top: '312px',
 			left: '65px',
 			width: '200px',
 			height: '40px',
-			fontSize: '26px'
+			fontSize: '26px',
+			k: 1
 		},
 		userPillowText: {
 			top: '313px',
 			left: '67%',
 			width: '58px',
 			height: '25px',
-			fontSize: '32px'
+			fontSize: '32px',
+			k: 1
 		}
 	},
 	cap: {
@@ -124,25 +132,45 @@ const original_coords = {
 			top: '280px',
 			left: '128px',
 			width: '125px',
-			height: '75px'
+			height: '75px',
+			k: 1
 		},
 		userText: {
 			top: '67%',
 			left: '84px',
 			width: '200px',
 			height: '40px',
-			fontSize: '26px'
+			fontSize: '26px',
+			k: 1
 		}
 	}
 }
 
 let activeItem = null
+let activeItemName = null
 
 //Utility Function
 const toColorEng = str => str.split('; ')[1]
 const toColorRu = str => str.split('; ')[0]
 
 const sumStringAndFloat = (str, reduce) => String((parseFloat(str)  + reduce).toFixed(1))
+
+const getActiveItemName = activeItem => {
+
+	if(activeItem === userText) {
+		activeItemName = 'userText'
+	} else if(activeItem === userPillowText) {
+		activeItemName = 'userPillowText'
+	} else if(activeItem === userImage1) {
+		activeItemName = 'userImage1'
+	} else if(activeItem === userImage2) {
+		activeItemName = 'userImage2'
+	} else if(activeItem === userImage3) {
+		activeItemName = 'userImage3'
+	}
+
+	return activeItemName
+}
 
 //DRAG&DROP
 function touchAndDrop(drag) {
@@ -259,11 +287,9 @@ if( window.innerWidth >= 600 ){
 function toolbar(item) {
 	item.addEventListener('click', () => {
 		activeItem = item
-		if(!item.style.transform) {
-			item.style.transform = 'scale(1)'
-		}
-		const scale = +item.style.transform.split(" ")[0].replace("scale(", "").replace(")", "")
-		document.querySelector('input[name = "scale"]').value = scale
+		activeItemName = getActiveItemName(activeItem)
+
+		document.querySelector('input[name = "scale"]').value = original_coords[order.category][activeItemName].k
 		toolbarMenu.style.display = 'block'
 	})
 }
@@ -275,19 +301,7 @@ function checkAndChangeScaleInput() {
 		scaleInput.value = 0
 	}
 
-	let activeItemName = ''
-
-	if(activeItem === userText) {
-		activeItemName = 'userText'
-	} else if(activeItem === userPillowText) {
-		activeItemName = 'userPillowText'
-	} else if(activeItem === userImage1) {
-		activeItemName = 'userImage1'
-	} else if(activeItem === userImage2) {
-		activeItemName = 'userImage2'
-	} else if(activeItem === userImage3) {
-		activeItemName = 'userImage3'
-	}
+	activeItemName = getActiveItemName(activeItem)
 
 	activeItem.style.height = `${parseInt(original_coords[order.category][activeItemName].height.replace('px', '')) * parseFloat(scaleInput.value)}px`
 	activeItem.style.width = `${parseInt(original_coords[order.category][activeItemName].width.replace('px', '')) * parseFloat(scaleInput.value)}px`
@@ -295,8 +309,7 @@ function checkAndChangeScaleInput() {
 	if(activeItemName.includes('Text')) {
 		activeItem.style.fontSize = `${parseInt(original_coords[order.category][activeItemName].fontSize.replace('px', '')) * parseFloat(scaleInput.value)}px`
 	}
-	console.log(parseFloat(scaleInput.value))
-	console.log(parseInt(original_coords[order.category][activeItemName].width.replace('px', '')) )
+	original_coords[order.category][activeItemName].k = scaleInput.value
 
 }
 
