@@ -154,9 +154,7 @@ const toColorEng = str => str.split('; ')[1]
 const toColorRu = str => str.split('; ')[0]
 
 const sumStringAndFloat = (str, reduce) => String((parseFloat(str)  + reduce).toFixed(1))
-
 const getActiveItemName = activeItem => {
-
 	if(activeItem === userText) {
 		activeItemName = 'userText'
 	} else if(activeItem === userPillowText) {
@@ -168,9 +166,10 @@ const getActiveItemName = activeItem => {
 	} else if(activeItem === userImage3) {
 		activeItemName = 'userImage3'
 	}
-
 	return activeItemName
 }
+
+const createImageURL = (str) => 'url(https://draussen10.github.io/constructor_project/img/' + str + `.png)`
 
 //DRAG&DROP
 function touchAndDrop(drag) {
@@ -238,8 +237,6 @@ function dragAndDrop(item) {
 		item.style.zIndex = '1000'
 		offsetDrag.x = e.clientX - item.getBoundingClientRect().left
 		offsetDrag.y = e.clientY - item.getBoundingClientRect().top
-
-
 	}
 
 	function dragend(e) {
@@ -440,7 +437,6 @@ const clearImage = (event, number) => {
 	} else {
 		order.upperImage = ''
 	}
-
 	updateView()
 }
 
@@ -454,13 +450,15 @@ function updateView() {
 
 	//imageBox
 	if(order.category === 'autonakidka') {
-		imageBox.style.backgroundImage = `url(./img/${order.category}/${order.cloth}.png)`
+		imageBox.style.backgroundImage = createImageURL(`${order.category}/${order.cloth}`)
+		console.log(createImageURL(`${order.category}/${order.cloth}`))
+
 	} else if(order.category === 'pillow') {
-		imageBox.style.backgroundImage = `url(./img/${order.category}.png)`
+		imageBox.style.backgroundImage = createImageURL(order.category)
 	} else if(order.category === 'bathrobe') {
-		imageBox.style.backgroundImage = `url(./img/${order.category}/${order.view}/${toColorEng(order.color)}.png)`
+		imageBox.style.backgroundImage = createImageURL(`${order.category}/${order.view}/${toColorEng(order.color)}`)
 	} else {
-		imageBox.style.backgroundImage = `url(./img/${order.category}/${toColorEng(order.color)}.png)`
+		imageBox.style.backgroundImage = createImageURL(`${order.category}/${toColorEng(order.color)}`)
 	}
 
 	//frontText
@@ -473,7 +471,7 @@ function updateView() {
 			document.querySelector('span[view="back"]').classList.add('active')
 			order.view = 'back'
 			order.frontImage = ''
-			imageBox.style.backgroundImage = `url(./img/${order.category}/${order.view}/${toColorEng(order.color)}.png)`
+			imageBox.style.backgroundImage = createImageURL(`${order.category}/${order.view}/${toColorEng(order.color)}`)
 		}
 	}
 	//view
@@ -491,7 +489,7 @@ function updateView() {
 
 	//hood
 	if (order.addition === 'hood') {
-		hoodImg.style.backgroundImage = `url(./img/bathrobe/back/hood/${toColorEng(order.color)}.png)`
+		hoodImg.style.backgroundImage = createImageURL(`bathrobe/back/hood/${toColorEng(order.color)}`)
 		if(order.view && order.view === 'back') {
 			hoodImg.style.display = 'block'
 		} else {
@@ -723,6 +721,9 @@ function doPhoto(imgName = '') {
 document.querySelector('#form-order').addEventListener('submit', e => {
 	e.preventDefault()
 
+	order.whereTalk = document.querySelector('input[name="where-talk"]').value
+	order.dataContact = document.querySelector('input[name="data-contact"]').value
+
 	if(order.frontText && order.frontText === 'yes') {
 		userText.style.display = 'block'
 
@@ -739,10 +740,10 @@ document.querySelector('#form-order').addEventListener('submit', e => {
 		userImage3.style.backgroundImage = order.frontImage
 		imageBox.style.backgroundImage = `url(./img/${order.category}/front/${toColorEng(order.color)}.png)`
 
-
 		doPhoto('_front')
 	} else {
 		doPhoto()
 	}
+
 
 })
