@@ -610,6 +610,38 @@ function updateView() {
 	}
 }
 
+function updatePrice() {
+	let price = 0
+
+	if(order.category === 'bathrobe') {
+		if(order.cloth === 'terry') {
+			price = 4000
+		} else if(order.cloth === 'velour'){
+			price = 5000
+		} else if(order.cloth === 'waffle'){
+			price = 2500
+		}
+
+		if(order.frontText === 'yes') {
+			price += 500
+		}
+
+		if(order.addition === 'hood') {
+			price += 500
+		}
+	} else if(order.category === 'autonakidka') {
+		if(order.cloth === 'alcantara') {
+			price = 3600
+		} else if(order.cloth === 'velour'){
+			price = 4200
+		}
+	} else {
+		price = 2000
+	}
+
+	return price
+}
+
 document.addEventListener('click', e => {
 	for (key in order) {
 		if(e.target.hasAttribute(key)) {
@@ -634,6 +666,8 @@ document.addEventListener('click', e => {
 				setOriginSettings()
 			}
 
+			order.price = updatePrice()
+			document.querySelector('.calc-value').innerHTML = order.price + ' руб.'
 			updateView()
 			return true
 		}
@@ -745,5 +779,15 @@ document.querySelector('#form-order').addEventListener('submit', e => {
 		doPhoto()
 	}
 
+	for(key in order) {
+		document.getElementById('form518019887').querySelector(`input[name="${key}"]`).value = order[key]
+	}
+	document.getElementById('form518019887').querySelector('button[type="submit"]').click()
+
+ 	document.querySelector('.popupImage').style.display = 'none'
+	document.querySelector('.toolbar-menu').style.display = 'none'
+	document.querySelector('.my-container').style.display = 'none'
+
+	document.getElementById('form518019887').style.display = 'block'
 
 })
