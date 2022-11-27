@@ -550,9 +550,9 @@ textarea {
 .popupImage {
 	background-color: beige;
 	position: fixed;
-	width: 45%;
+	width: 32%;
 	height: 100%;
-	z-index: 105;
+	z-index: 10005;
 	top: 0;
 	padding: 40px;
 	overflow-y: auto;
@@ -613,8 +613,8 @@ textarea {
 
 .close {
 	position: fixed;
-	top: 40px;
-	left: 46%;
+	top: 20px;
+	left: 33%;
 	margin-left: auto;
 	width: 40px;
 	height: 40px;
@@ -626,7 +626,7 @@ textarea {
 	align-items: center;
 	cursor: pointer;
 	border-radius: 50px;
-	z-index: 1000;
+	z-index: 10000;
 }
 
 .close span {
